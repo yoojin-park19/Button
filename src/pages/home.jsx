@@ -16,6 +16,13 @@ const HomeIndexPage = () => {
       window.location.href = '/test';
     }
   }
+
+const HomeIndexPage = () => {
+  const [active, setActive] = useState(false);
+
+  function check() {
+    setActive(!active);
+  }
   return (
     <HomePage>
       <img src="../images/logo.png" className="logo" alt="button" />
@@ -106,6 +113,8 @@ const HomePage = styled.section`
     &.left {
       top: 40px;
       right: -110px;
+      top: -50px;
+      left: 0;
     }
   }
 `;
