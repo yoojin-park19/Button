@@ -1,13 +1,13 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomeIndexPage from './pages/home';
-import TestIndex from './test/test.jsx';
+import MainIndexPage from './pages/main';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={HomeIndexPage} />
-          <Route path="/test" exact component={TestIndex} />
+          <Route path="/main" exact component={MainIndexPage} />
         </Switch>
       </BrowserRouter>
     </div>
