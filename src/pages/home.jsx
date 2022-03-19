@@ -13,16 +13,10 @@ const HomeIndexPage = () => {
       console.log('실행');
     }, 1000);
     function locateKap() {
-      window.location.href = '/test';
+      window.location.href = '/main';
     }
   }
 
-const HomeIndexPage = () => {
-  const [active, setActive] = useState(false);
-
-  function check() {
-    setActive(!active);
-  }
   return (
     <HomePage>
       <img src="../images/logo.png" className="logo" alt="button" />
