@@ -21,6 +21,7 @@ export const FirstMain = () => {
 
 const FirstMainPage = styled.section`
   background-color: ${COLOR.main};
+
   background-image: url('./images/lavender_back.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -29,8 +30,6 @@ const FirstMainPage = styled.section`
   display: flex;
   justify-content: center;
   gap: 100px;
-  position: relative;
-  z-index: -20;
   img {
     margin: 100px 100px 0 50px;
     width: 400px;
@@ -38,8 +37,6 @@ const FirstMainPage = styled.section`
   }
   .cont-item {
     margin: 150px 100px 0 0;
-    position: relative;
-
     h2 {
       margin-bottom: 40px;
       font-size: 60px;
