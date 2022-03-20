@@ -57,8 +57,11 @@ const Card = styled.section`
   background-color: rgba(248, 245, 245, 0.7);
   box-shadow: 10px 10px 4px rgba(101, 98, 98, 0.25);
   border-radius: 5px;
-
   box-sizing: border-box;
+  &:hover {
+    transform: translate(-10px, -10px);
+    transition: 0.5s ease-in-out;
+  }
   p {
     font-family: ${Font.title};
     font-size: 20px;
