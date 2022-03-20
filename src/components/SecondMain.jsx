@@ -20,7 +20,7 @@ export const SecondMain = () => {
           <button>Find Your Gift</button>
         </Link>
       </div>
-      <img src="./images/home_image.png" alt="recommend gift" />
+      <img src="./images/second_item.png" alt="recommend gift" />
     </SecondMainPage>
   );
 };

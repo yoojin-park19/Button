@@ -14,12 +14,18 @@ export const FirstMain = () => {
           <button>Find Your Mood</button>
         </Link>
       </div>
+      <div className="backgroundImage"></div>
     </FirstMainPage>
   );
 };
 
 const FirstMainPage = styled.section`
   background-color: ${COLOR.main};
+
+  background-image: url('./images/lavender_back.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 1100px;
   height: 100vh;
   display: flex;
   justify-content: center;

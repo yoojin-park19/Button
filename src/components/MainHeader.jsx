@@ -15,13 +15,6 @@ export const MainHeader = () => {
         </Link>
         <Link to="#">
           <p>ABOUT US</p>
-          <p>나에게 맞는 향수찾기</p>
-        </Link>
-        <Link to="#">
-          <p>선물할 향수찾기</p>
-        </Link>
-        <Link to="#">
-          <p>카테고리별 향수찾기</p>
         </Link>
       </div>
     </Mainheader>
