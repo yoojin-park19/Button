@@ -14,6 +14,9 @@ export const MainHeader = () => {
           <p>FOR PRESENT</p>
         </Link>
         <Link to="#">
+          <p>KATEGORIE</p>
+        </Link>
+        <Link to="#">
           <p>ABOUT US</p>
         </Link>
       </div>
@@ -27,11 +30,12 @@ const Mainheader = styled.section`
   justify-content: space-between;
   padding: 0 60px;
   img {
+    width: 120px;
     margin-top: 20px;
   }
   .cont-menu {
     display: flex;
     gap: 60px;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
