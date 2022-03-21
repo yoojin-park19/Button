@@ -5,6 +5,8 @@ export const COLOR = {
   point: '#B0AC4D',
   right: '#FCF9A2',
   figma: '#B6A1FD',
+  gray: '#C4C4C4',
+  blue: '#2E70FF',
 };
 
 export const Font = {
