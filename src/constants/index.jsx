@@ -10,7 +10,7 @@ export const COLOR = {
 };
 
 export const Font = {
-  title: `'Merriweather', serif`,
+  title: `'gowun', serif`,
   des: `'Caveat', cursive`,
 };
 
