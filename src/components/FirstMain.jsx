@@ -5,22 +5,26 @@ import { Link } from 'react-router-dom';
 export const FirstMain = () => {
   return (
     <FirstMainPage>
-      <img className="back-flower" src="./images/flower.png" alt="배경" />
-      <img className="main-img" src="./images/lavender.jpg" alt="home" />
+      <Img>
+        <img className="back-flower" src="./images/flower.png" alt="배경" />
+      </Img>
       <div className="cont-item">
         <h2>It's For You</h2>
         <p>Choose a perfume that suits your mood.</p>
         <p>We recommend perfume to suit the mood you want.</p>
-        <Link to="#">
+        <Link to="/test">
           <button>Find Your Mood</button>
         </Link>
+        <img
+          className="back-img"
+          src="./images/lavender_back.png"
+          alt="라벤더"
+        />
       </div>
-      <img className="back-img" src="./images/lavender_back.png" alt="라벤더" />
     </FirstMainPage>
   );
 };
-
-const FirstMainPage = styled.section`
+const Img = styled.div`
   @keyframes showup {
     from {
       opacity: 0;
@@ -29,24 +33,33 @@ const FirstMainPage = styled.section`
       opacity: 1;
     }
   }
+  background: url('./images/lavender.jpg');
+  background-size: cover;
+  position: relative;
+  margin: 100px 100px 0 50px;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  .back-flower {
+    position: absolute;
+    bottom: -150px;
+    right: -200px;
+    width: 200px;
+    height: 400px;
+    animation: showup;
+    animation-duration: 8s;
+  }
+`;
+const FirstMainPage = styled.section`
   background-color: ${COLOR.main};
   background-position: 1100px;
   height: 130vh;
   display: flex;
   justify-content: center;
-  gap: 100px;
   position: relative;
-  .main-img {
-    margin: 100px 100px 0 50px;
-    width: 400px;
-    height: 400px;
-    z-index: 1;
-  }
   .cont-item {
     margin: 150px 120px 0 0;
     z-index: 1;
-    animation: showup;
-    animation-duration: 3s;
     h2 {
       margin-bottom: 40px;
       font-size: 60px;
@@ -71,15 +84,7 @@ const FirstMainPage = styled.section`
       }
     }
   }
-  .back-flower {
-    position: absolute;
-    top: 200px;
-    left: 520px;
-    width: 200px;
-    height: 400px;
-    animation: showup;
-    animation-duration: 5s;
-  }
+
   .back-img {
     position: absolute;
     width: 400px;
@@ -88,6 +93,7 @@ const FirstMainPage = styled.section`
     top: 230px;
     transform: rotate(35deg);
     animation: showup;
-    animation-duration: 5s;
+    animation-duration: 8s;
+    z-index: -1;
   }
 `;

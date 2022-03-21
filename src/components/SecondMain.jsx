@@ -27,20 +27,12 @@ export const SecondMain = () => {
         alt="recommend gift"
       />
       <img className="back-img" src="./images/watercolor.png" alt="배경" />
-      <img className="back-paint2" src="./images/paint.png" alt="배경" />
+      {/* <img className="back-paint2" src="./images/paint.png" alt="배경" /> */}
     </SecondMainPage>
   );
 };
 
 const SecondMainPage = styled.section`
-  @keyframes showup {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
   @keyframes rightup {
     from {
       left: -500px;
@@ -70,7 +62,7 @@ const SecondMainPage = styled.section`
     width: 550px;
     height: 150px;
     animation: rightup;
-    animation-duration: 2s;
+    animation-duration: 10s;
   }
   .back-img {
     position: absolute;
@@ -79,8 +71,6 @@ const SecondMainPage = styled.section`
     width: 550px;
     height: 150px;
     transform: rotate(180deg);
-    animation: showup;
-    animation-duration: 4s;
   }
   .back-paint2 {
     position: absolute;
@@ -90,13 +80,11 @@ const SecondMainPage = styled.section`
     height: 150px;
     transform: rotate(180deg);
     animation: leftup;
-    animation-duration: 4s;
+    animation-duration: 10s;
   }
   .cont-item {
     margin: 100px 0;
     width: 500px;
-    animation: showup;
-    animation-duration: 4s;
     h2 {
       margin-bottom: 40px;
       font-size: 60px;
@@ -126,7 +114,5 @@ const SecondMainPage = styled.section`
     width: 550px;
     height: 500px;
     z-index: 1;
-    animation: showup;
-    animation-duration: 4s;
   }
 `;
