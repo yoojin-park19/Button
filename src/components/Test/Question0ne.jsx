@@ -1,28 +1,114 @@
-import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { Font, COLOR } from '../../constants';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TestList } from '../../constants/testList';
 
 export const Question0nePage = (props) => {
-  console.log(TestList);
-  console.log(TestList[1].Item[0].Question);
-  return (
-    <Question0ne>
-      <p className="questionTit">{TestList[1].Title}</p>
+  const [Test, setTest] = useState(0);
+  const [checkList, setCheckList] = useState([]);
+  const check = (e) => {
+    if (e.target.value === 'on') {
+      checkList[`${Test}`] = 1;
+      setCheckList(checkList);
+      setTest(Test + 1);
+    } else {
+      checkList[`${Test}`] = parseInt(e.target.value);
+      setCheckList(checkList);
+      setTest(Test + 1);
+      console.log(checkList);
+    }
+  };
 
-      <form action="">
-        <div className="itemContainer">
-          <div>
-            <input id="0" type="radio" name="test" />
-            <label htmlFor="0">{TestList[1].Item[0].Question}</label>
-          </div>
-          <div>
-            <input id="1" type="radio" name="test" />
-            <label htmlFor="1">{TestList[1].Item[1].Question}</label>
-          </div>
-        </div>
-      </form>
-    </Question0ne>
+  return (
+    <>
+      {Test !== 5 ? (
+        <Question0ne>
+          <p className="questionTit">{TestList[`${Test}`].Title}</p>
+          <form action="">
+            <div className="itemContainer">
+              <div>
+                <input
+                  id="1"
+                  type="radio"
+                  name="test"
+                  vaulue="1"
+                  onClick={check}
+                />
+                <label htmlFor="1">
+                  {TestList[`${Test}`].Item[0].Question}
+                </label>
+              </div>
+              <div>
+                <input
+                  id="2"
+                  type="radio"
+                  name="test"
+                  value="2"
+                  onClick={check}
+                />
+                <label htmlFor="2">
+                  {TestList[`${Test}`].Item[1].Question}
+                </label>
+              </div>
+              <div>
+                <input
+                  id="3"
+                  type="radio"
+                  name="test"
+                  value="3"
+                  onClick={check}
+                />
+                <label htmlFor="3">
+                  {TestList[`${Test}`].Item[2].Question}
+                </label>
+              </div>
+              <div>
+                <input
+                  id="4"
+                  type="radio"
+                  name="test"
+                  value="4"
+                  onClick={check}
+                />
+                <label htmlFor="4">
+                  {TestList[`${Test}`].Item[3].Question}
+                </label>
+              </div>
+              <div>
+                <input
+                  id="5"
+                  type="radio"
+                  name="test"
+                  value="5"
+                  onClick={check}
+                />
+                <label htmlFor="5">
+                  {TestList[`${Test}`].Item[4].Question}
+                </label>
+              </div>
+              {Test === (2 || 3) ? (
+                <div>
+                  <input
+                    id="6"
+                    type="radio"
+                    name="test"
+                    value="6"
+                    onClick={check}
+                  />
+                  <label htmlFor="6">
+                    {TestList[`${Test}`].Item[5].Question}
+                  </label>
+                </div>
+              ) : null}
+            </div>
+          </form>
+        </Question0ne>
+      ) : (
+        <Link to="/result">
+          <button>결과보러가기</button>
+        </Link>
+      )}
+    </>
   );
 };
 
