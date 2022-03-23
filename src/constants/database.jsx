@@ -1,5 +1,6 @@
 const root = './images/items/';
-export const Perfume = [
+
+const Perfume = [
   {
     index: 0,
     brand: '조말론',
@@ -267,3 +268,4 @@ export const Perfume = [
     gender: 2,
   },
 ];
+export default Perfume;
