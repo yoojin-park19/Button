@@ -108,7 +108,7 @@ export const Question0nePage = (props) => {
           to={{
             pathname: `/result`,
             state: {
-              list: checkList,
+              testList: checkList,
             },
           }}
         >

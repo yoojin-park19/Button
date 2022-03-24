@@ -5,43 +5,53 @@ import { Link } from 'react-router-dom';
 export const Cards = (props) => {
   return (
     <Card>
-      <img src={props.img} alt="향수 추천" />
-      <p className="name">{props.name}</p>
-      <Link>
-        <button>보러가기</button>
-      </Link>
+      <img src={props.image} alt="향수 추천" />
+      <p className="title">{props.title}</p>
+      <p className="etitle">{props.etitle}</p>
+      <p className="price">50ml 기준 : {props.price} 원</p>
+      <p classNmae="des">{props.des}</p>
+      <p className="brand">{props.brand}</p>
     </Card>
   );
 };
 
 const Card = styled.li`
   width: 250px;
-  height: 450px;
+  height: 500px;
+  padding: 10px 20px;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
   border-radius: 10px;
   border: none;
   background-color: ${COLOR.sub};
   box-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
-
+  position: relative;
   img {
-    width: 150px;
-    height: 250px;
+    width: 250px;
+    height: 300px;
+    margin-bottom: 20px;
   }
-  .name {
+  .title {
     font-size: 20px;
   }
-  button {
-    width: 200px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    background-color: ${COLOR.deep};
-    color: #fff;
-    font-weight: 700;
+  .etitle {
+    font-size: 13px;
+  }
+  .price {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .des {
+    font-size: 13px;
+  }
+  .brand {
+    font-size: 12px;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 10px;
+    right: 125px;
   }
 `;
