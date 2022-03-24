@@ -4,13 +4,11 @@ import { Font } from '../constants';
 import { MainHeader } from '../components/MainHeader';
 import { Cards } from '../components/Result/Card';
 import Perfume from '../constants/database';
-const ResultIndexPage = () => {
-  const list = [3, 2, 2, 2];
+const ResultIndexPage = (props) => {
+  const list = props.location.state.list;
   const dataList = [{}];
-  const matchData = [{}];
-  matchData.pop();
-  dataList.pop();
 
+  console.log(list);
   function data() {
     Perfume.map((item, index) => {
       dataList.push({
@@ -24,20 +22,23 @@ const ResultIndexPage = () => {
   }
 
   function Score() {
+    let match100 = [];
+    let match75 = [];
     for (let i = 0; i <= 18; i++) {
       let score = 0;
       for (let j = 0; j <= 3; j++) {
         if (dataList[i][j] === list[j]) {
           score = score + 25;
           if (score === 100) {
-            matchData.push({ 100: dataList[i] });
+            match100.push({ [i]: dataList[i] });
           } else if (score === 75) {
-            matchData.push({ 75: dataList[i] });
+            match75.push({ [i]: dataList[i] });
           }
         }
       }
     }
-    console.log(matchData);
+    console.log(match100);
+    console.log(match75);
   }
 
   return (

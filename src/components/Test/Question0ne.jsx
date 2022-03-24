@@ -104,8 +104,15 @@ export const Question0nePage = (props) => {
           </form>
         </Question0ne>
       ) : (
-        <Link to="/result">
-          <button>결과보러가기</button>
+        <Link
+          to={{
+            pathname: `/result`,
+            state: {
+              list: checkList,
+            },
+          }}
+        >
+          <Button>결과보러가기</Button>
         </Link>
       )}
     </>
@@ -147,4 +154,9 @@ const Question0ne = styled.section`
     line-height: 24px;
     margin-bottom: 20px;
   }
+`;
+
+const Button = styled.button`
+  width: 100px;
+  height: 30px;
 `;
