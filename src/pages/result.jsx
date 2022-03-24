@@ -3,12 +3,50 @@ import { COLOR } from '../constants';
 import { Font } from '../constants';
 import { MainHeader } from '../components/MainHeader';
 import { Cards } from '../components/Result/Card';
-const ResultIndexPage = () => {
+import { Perfume } from '../constants/database';
+const ResultIndexPage = (props) => {
+  const list = props.location.state.list;
+  const dataList = [{}];
+
+  console.log(list);
+  function data() {
+    Perfume.map((item, index) => {
+      dataList.push({
+        0: item.strong,
+        1: item.top,
+        2: item.second,
+        3: item.last,
+      });
+    });
+    Score();
+  }
+
+  function Score() {
+    let match100 = [];
+    let match75 = [];
+    for (let i = 0; i <= 18; i++) {
+      let score = 0;
+      for (let j = 0; j <= 3; j++) {
+        if (dataList[i][j] === list[j]) {
+          score = score + 25;
+          if (score === 100) {
+            match100.push({ [i]: dataList[i] });
+          } else if (score === 75) {
+            match75.push({ [i]: dataList[i] });
+          }
+        }
+      }
+    }
+    console.log(match100);
+    console.log(match75);
+  }
+
   return (
     <>
       <MainHeader />
       <ResultPage>
         <p className="title">당신을 위한 추천 향수는</p>
+        <button onClick={data}></button>
         <CardList>
           <Cards img="/images/lavender.jpg" name="라벤더 향수" />
           <Cards img="/images/lavender.jpg" name="라벤더 향수" />
@@ -34,6 +72,10 @@ const ResultPage = styled.section`
     text-align: center;
     line-height: 2;
     border-bottom: 2px double #000;
+  }
+  button {
+    width: 100px;
+    height: 50px;
   }
 `;
 
