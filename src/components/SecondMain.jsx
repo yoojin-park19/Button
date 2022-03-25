@@ -97,15 +97,17 @@ const SecondMainPage = styled.section`
       font-family: ${Font.des};
     }
     button {
-      width: 250px;
-      height: 40px;
+      width: 400px;
+      height: 80px;
       margin-top: 70px;
-      border: none;
-      background-color: ${COLOR.point};
-      font-size: 18px;
+      border: 3px solid #fff;
+      border-radius: 10px;
+      background-color: ${COLOR.deep};
+      font-size: 28px;
+      font-family: ${Font.des};
       color: #fff;
       &:hover {
-        background-color: #797742;
+        background-color: ${COLOR.figma};
       }
     }
   }

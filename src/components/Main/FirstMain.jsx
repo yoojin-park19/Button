@@ -21,29 +21,28 @@ export const FirstMain = () => {
 };
 
 const FirstMainPage = styled.section`
-  @keyframes showup {
+  /* @keyframes showup {
     from {
       opacity: 0;
     }
     to {
       opacity: 1;
     }
-  }
+  } */
   background-color: ${COLOR.main};
-  background-position: 1100px;
   height: 130vh;
   display: flex;
   justify-content: center;
-  gap: 100px;
   position: relative;
   .main-img {
-    margin: 100px 100px 0 50px;
+    margin: 100px 150px 0 0;
     width: 400px;
     height: 400px;
     z-index: 1;
   }
   .cont-item {
-    margin: 150px 120px 0 0;
+    margin-top: 150px;
+    margin-left: 200px;
     z-index: 1;
     animation: showup;
     animation-duration: 3s;
@@ -70,24 +69,24 @@ const FirstMainPage = styled.section`
         background-color: #797742;
       }
     }
-  }
-  .back-flower {
-    position: absolute;
-    top: 200px;
-    left: 520px;
-    width: 200px;
-    height: 400px;
-    animation: showup;
-    animation-duration: 5s;
-  }
-  .back-img {
-    position: absolute;
-    width: 400px;
-    height: 530px;
-    right: -50px;
-    top: 230px;
-    transform: rotate(35deg);
-    animation: showup;
-    animation-duration: 5s;
+    .back-flower {
+      position: absolute;
+      top: 200px;
+      left: 520px;
+      width: 200px;
+      height: 400px;
+      animation: showup;
+      animation-duration: 5s;
+    }
+    .back-img {
+      position: absolute;
+      width: 400px;
+      height: 530px;
+      right: -50px;
+      top: 230px;
+      transform: rotate(35deg);
+      animation: showup;
+      animation-duration: 5s;
+    }
   }
 `;

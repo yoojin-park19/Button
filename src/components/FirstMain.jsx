@@ -7,6 +7,11 @@ export const FirstMain = () => {
     <FirstMainPage>
       <Img>
         <img className="back-flower" src="./images/flower.png" alt="배경" />
+        <img
+          className="back-img"
+          src="./images/lavender_back.png"
+          alt="라벤더"
+        />
       </Img>
       <div className="cont-item">
         <h2>It's For You</h2>
@@ -15,11 +20,6 @@ export const FirstMain = () => {
         <Link to="/test">
           <button>Find Your Mood</button>
         </Link>
-        <img
-          className="back-img"
-          src="./images/lavender_back.png"
-          alt="라벤더"
-        />
       </div>
     </FirstMainPage>
   );
@@ -36,9 +36,9 @@ const Img = styled.div`
   background: url('./images/lavender.jpg');
   background-size: cover;
   position: relative;
-  margin: 100px 100px 0 50px;
   width: 400px;
   height: 400px;
+  border-radius: 50px;
   z-index: 1;
   .back-flower {
     position: absolute;
@@ -49,16 +49,27 @@ const Img = styled.div`
     animation: showup;
     animation-duration: 8s;
   }
+  .back-img {
+    position: absolute;
+    width: 400px;
+    height: 530px;
+    right: -350px;
+    bottom: 0px;
+    transform: rotate(35deg);
+    animation: showup;
+    animation-duration: 8s;
+    z-index: -1;
+  }
 `;
 const FirstMainPage = styled.section`
   background-color: ${COLOR.main};
-  background-position: 1100px;
-  height: 130vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  padding-top: 200px;
+  justify-content: space-evenly;
   position: relative;
   .cont-item {
-    margin: 150px 120px 0 0;
+    margin-top: 50px;
     z-index: 1;
     h2 {
       margin-bottom: 40px;
@@ -72,28 +83,18 @@ const FirstMainPage = styled.section`
       font-family: ${Font.des};
     }
     button {
-      width: 250px;
-      height: 40px;
+      width: 400px;
+      height: 80px;
       margin-top: 70px;
-      border: none;
-      background-color: ${COLOR.point};
-      font-size: 18px;
+      border: 3px solid #fff;
+      border-radius: 10px;
+      background-color: ${COLOR.deep};
+      font-size: 28px;
+      font-family: ${Font.des};
       color: #fff;
       &:hover {
-        background-color: #797742;
+        background-color: ${COLOR.figma};
       }
     }
-  }
-
-  .back-img {
-    position: absolute;
-    width: 400px;
-    height: 530px;
-    right: -50px;
-    top: 230px;
-    transform: rotate(35deg);
-    animation: showup;
-    animation-duration: 8s;
-    z-index: -1;
   }
 `;

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { COLOR } from '../constants';
 import { Link } from 'react-router-dom';
 import { Font } from '../constants';
 
@@ -9,20 +8,20 @@ export const ThirdMain = () => {
       <CardList>
         <Card>
           <p>Find Your Perfume</p>
-          <Link to="#">
-            <button>Shortcut</button>
+          <Link to="/test">
+            <button>바로가기</button>
           </Link>
         </Card>
         <Card>
           <p>Find Gift</p>
-          <Link to="#">
-            <button>Shortcut</button>
+          <Link to="/gift">
+            <button>바로가기</button>
           </Link>
         </Card>
         <Card>
-          <p>About Us</p>
-          <Link to="#">
-            <button>Shortcut</button>
+          <p>About Perfume</p>
+          <Link to="/category">
+            <button>바로가기</button>
           </Link>
         </Card>
       </CardList>
