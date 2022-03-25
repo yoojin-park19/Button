@@ -14,13 +14,13 @@ export const ThirdMain = () => {
           </Link>
         </Card>
         <Card>
-          <p>Find Your Gift</p>
+          <p>Find Gift</p>
           <Link to="#">
             <button>Shortcut</button>
           </Link>
         </Card>
         <Card>
-          <p>Find About Us</p>
+          <p>About Us</p>
           <Link to="#">
             <button>Shortcut</button>
           </Link>

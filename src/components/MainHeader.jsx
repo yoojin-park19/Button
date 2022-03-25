@@ -7,14 +7,14 @@ export const MainHeader = () => {
     <Mainheader>
       <img src="../images/logo_trans.png" alt="logo" />
       <div className="cont-menu">
-        <Link to="#">
+        <Link to="/test">
           <p>FOR YOU</p>
         </Link>
-        <Link to="#">
+        <Link to="/gift">
           <p>FOR PRESENT</p>
         </Link>
-        <Link to="#">
-          <p>KATEGORIE</p>
+        <Link to="/category">
+          <p>CATEGORY</p>
         </Link>
         <Link to="#">
           <p>ABOUT US</p>
