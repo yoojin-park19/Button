@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TestList } from '../../constants/testList';
+import { TestListForGift } from '../../constants/testList';
 import { COLOR, Font } from '../../constants';
 
-export const Question0nePage = (props) => {
+export const QuestionGiftPage = (props) => {
   const [Test, setTest] = useState(0);
   const [checkList, setCheckList] = useState([]);
   const check = (e) => {
@@ -16,14 +16,15 @@ export const Question0nePage = (props) => {
       checkList[`${Test}`] = parseInt(e.target.value);
       setCheckList(checkList);
       setTest(Test + 1);
+      console.log(checkList);
     }
   };
 
   return (
     <>
       {Test !== 5 ? (
-        <Question0ne>
-          <p className="questionTit">{TestList[`${Test}`].Title}</p>
+        <QuestionGift>
+          <p className="questionTit">{TestListForGift[`${Test}`].Title}</p>
           <form action="">
             <div className="itemContainer">
               <div>
@@ -35,7 +36,7 @@ export const Question0nePage = (props) => {
                   onClick={check}
                 />
                 <label htmlFor="1">
-                  {TestList[`${Test}`].Item[0].Question}
+                  {TestListForGift[`${Test}`].Item[0].Question}
                 </label>
               </div>
               <div>
@@ -47,7 +48,7 @@ export const Question0nePage = (props) => {
                   onClick={check}
                 />
                 <label htmlFor="2">
-                  {TestList[`${Test}`].Item[1].Question}
+                  {TestListForGift[`${Test}`].Item[1].Question}
                 </label>
               </div>
               <div>
@@ -59,7 +60,7 @@ export const Question0nePage = (props) => {
                   onClick={check}
                 />
                 <label htmlFor="3">
-                  {TestList[`${Test}`].Item[2].Question}
+                  {TestListForGift[`${Test}`].Item[2].Question}
                 </label>
               </div>
               <div>
@@ -71,7 +72,7 @@ export const Question0nePage = (props) => {
                   onClick={check}
                 />
                 <label htmlFor="4">
-                  {TestList[`${Test}`].Item[3].Question}
+                  {TestListForGift[`${Test}`].Item[3].Question}
                 </label>
               </div>
               <div>
@@ -83,7 +84,7 @@ export const Question0nePage = (props) => {
                   onClick={check}
                 />
                 <label htmlFor="5">
-                  {TestList[`${Test}`].Item[4].Question}
+                  {TestListForGift[`${Test}`].Item[4].Question}
                 </label>
               </div>
               {Test === (2 || 3) ? (
@@ -96,19 +97,19 @@ export const Question0nePage = (props) => {
                     onClick={check}
                   />
                   <label htmlFor="6">
-                    {TestList[`${Test}`].Item[5].Question}
+                    {TestListForGift[`${Test}`].Item[5].Question}
                   </label>
                 </div>
               ) : null}
             </div>
           </form>
-        </Question0ne>
+        </QuestionGift>
       ) : (
         <Link
           to={{
             pathname: `/result`,
             state: {
-              testList: checkList,
+              list: checkList,
             },
           }}
         >
@@ -137,8 +138,7 @@ const Button = styled.button`
     color: ${COLOR.deep};
   }
 `;
-
-const Question0ne = styled.section`
+const QuestionGift = styled.section`
   width: 40vw;
   height: 20px;
   .itemContainer {
@@ -146,6 +146,8 @@ const Question0ne = styled.section`
     flex-direction: column;
     justify-content: center;
     position: relative;
+    overflow: hidden;
+    width: 41vw;
     div {
       position: relative;
     }
