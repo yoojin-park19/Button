@@ -17,28 +17,30 @@ export const Cards = (props) => {
 
 const Card = styled.li`
   width: 250px;
-  height: 500px;
+  height: 600px;
   padding: 10px 20px;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-radius: 10px;
   border: none;
   background-color: ${COLOR.sub};
   box-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
   position: relative;
   img {
-    width: 250px;
+    width: 180px;
     height: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .title {
     font-size: 20px;
   }
   .etitle {
     font-size: 13px;
+    margin-bottom: 20px;
   }
   .price {
     font-size: 12px;

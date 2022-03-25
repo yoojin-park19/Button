@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { COLOR } from '../constants';
 import { Font } from '../constants';
 import { MainHeader } from '../components/MainHeader';
@@ -13,6 +14,23 @@ const ResultIndexPage = (props) => {
   let match75 = [];
   const [matchData, setMatchData] = useState([]);
 
+  function calcul() {
+    dataList.map((item) => {
+      if (item[4] < 100000) {
+        item[4] = 1;
+      } else if (item[4] < 150000) {
+        item[4] = 2;
+      } else if (item[4] < 200000) {
+        item[4] = 3;
+      } else if (item[4] < 300000) {
+        item[4] = 4;
+      } else if (300000 <= item[4]) {
+        item[4] = 5;
+      }
+    });
+    Score();
+  }
+
   function data() {
     setActive(true);
     Perfume.map((item) => {
@@ -21,16 +39,16 @@ const ResultIndexPage = (props) => {
         1: item.top,
         2: item.second,
         3: item.last,
+        4: item.price,
       });
     });
-    console.log(dataList);
-    Score();
+    calcul();
   }
 
   function Score() {
     for (let i = 0; i <= 18; i++) {
       let score = 0;
-      for (let j = 0; j <= 3; j++) {
+      for (let j = 0; j <= 4; j++) {
         if (dataList[i][j] === testList[j]) {
           score = score + 25;
         }
@@ -44,10 +62,9 @@ const ResultIndexPage = (props) => {
     Rander(match100, match75);
   }
 
-  function Rander(match100, match75) {
+  function Rander(match100, match75, match50) {
     const count = Object.keys(match100).length;
     const count75 = Object.keys(match75).length;
-
     if (count === 3) {
       for (let i = 0; i <= 2; i++) {
         let idx100 = parseInt(Object.keys(match100[i]).join(''));
@@ -67,7 +84,7 @@ const ResultIndexPage = (props) => {
         matchData.push(matchData75);
         setMatchData(matchData);
       } else {
-        matchData.push(11111);
+        matchData.push(333333);
         setMatchData(matchData);
       }
     } else if (count === 1) {
@@ -82,7 +99,7 @@ const ResultIndexPage = (props) => {
           setMatchData(matchData);
         }
       } else {
-        matchData.push(22222);
+        matchData.push(333333);
         setMatchData(matchData);
       }
     } else {
@@ -94,17 +111,14 @@ const ResultIndexPage = (props) => {
           setMatchData(matchData);
         }
       } else {
-        matchData.push(33333);
+        matchData.push(333333);
         setMatchData(matchData);
       }
     }
   }
-
   let firstOne = matchData[0];
   let SecondOne = matchData[1];
   let ThirdOne = matchData[2];
-  console.log(firstOne);
-  console.log(matchData);
 
   return (
     <>
@@ -125,8 +139,8 @@ const ResultIndexPage = (props) => {
                   title={item.title}
                   etitle={item.etitle}
                   des={item.des}
-                  price={matchData[0].price}
-                  brand={matchData[0].brand}
+                  price={item.price}
+                  brand={item.brand}
                 />
               </div>
             ))}
@@ -137,8 +151,8 @@ const ResultIndexPage = (props) => {
                   title={item.title}
                   etitle={item.etitle}
                   des={item.des}
-                  price={matchData[0].price}
-                  brand={matchData[0].brand}
+                  price={item.price}
+                  brand={item.brand}
                 />
               </div>
             ))}
@@ -151,8 +165,8 @@ const ResultIndexPage = (props) => {
                       title={item.title}
                       etitle={item.etitle}
                       des={item.des}
-                      price={matchData[0].price}
-                      brand={matchData[0].brand}
+                      price={item.price}
+                      brand={item.brand}
                     />
                   </div>
                 ))}
@@ -168,6 +182,9 @@ const ResultIndexPage = (props) => {
             </CardList>
           </div>
         )}
+        <Link to="/test">
+          <button className="btn-again">Find Again</button>
+        </Link>
       </ResultPage>
     </>
   );
@@ -175,7 +192,8 @@ const ResultIndexPage = (props) => {
 
 const ResultPage = styled.section`
   background-color: ${COLOR.main};
-  height: 100vh;
+  height: 100%;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -200,6 +218,15 @@ const ResultPage = styled.section`
     top: 150px;
     color: #fff;
     font-size: 30px;
+  }
+  .btn-again {
+    margin: 50px 0;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: ${COLOR.deep};
+    color: #fff;
+    font-size: 18px;
   }
 `;
 

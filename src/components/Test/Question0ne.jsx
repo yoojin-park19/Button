@@ -15,7 +15,6 @@ export const Question0nePage = (props) => {
       checkList[`${Test}`] = parseInt(e.target.value);
       setCheckList(checkList);
       setTest(Test + 1);
-      console.log(checkList);
     }
   };
 
