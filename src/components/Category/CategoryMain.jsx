@@ -8,7 +8,7 @@ export const CategoryMain = () => {
   const [activePrice, setActivePrice] = useState('false');
   const [activeBrand, setActiveBrand] = useState('false');
   const [activeMiddle, setActiveMiddle] = useState('false');
-  const [activeGender, setActiveMiddle] = useState('false');
+  const [activeGender, setActiveGender] = useState('false');
 
   function Pricelist() {
     setActivePrice(true);
@@ -23,7 +23,7 @@ export const CategoryMain = () => {
   }
 
   function Genderlist() {
-    setActiveMiddle(true);
+    setActiveGender(true);
   }
 
   return (
