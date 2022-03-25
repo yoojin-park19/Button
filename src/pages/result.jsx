@@ -62,7 +62,7 @@ const ResultIndexPage = (props) => {
     Rander(match100, match75);
   }
 
-  function Rander(match100, match75, match50) {
+  function Rander(match100, match75) {
     const count = Object.keys(match100).length;
     const count75 = Object.keys(match75).length;
     if (count === 3) {

@@ -109,7 +109,7 @@ export const QuestionGiftPage = (props) => {
           to={{
             pathname: `/result`,
             state: {
-              list: checkList,
+              testList: checkList,
             },
           }}
         >
