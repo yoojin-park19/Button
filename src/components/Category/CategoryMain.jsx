@@ -23,7 +23,7 @@ export const CategoryMain = () => {
   }
 
   function Genderlist() {
-    setActiveMiddle(!activeGender);
+    setActiveGender(!activeGender);
   }
 
   return (
