@@ -111,6 +111,14 @@ const HomePage = styled.section`
       left: 0;
     }
   }
+  @media screen and (max-width: 390px) {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    .logo {
+      width: 100vw;
+    }
+  }
 `;
 
 export default HomeIndexPage;

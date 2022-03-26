@@ -89,4 +89,13 @@ const FirstMainPage = styled.section`
       animation-duration: 5s;
     }
   }
+  @media screen and (max-width: 390px) {
+    height: 130vh;
+    .main-img {
+      border: 1px solid red;
+      margin: 100px 150px 0 0;
+      width: 100px;
+      height: 100px;
+    }
+  }
 `;
