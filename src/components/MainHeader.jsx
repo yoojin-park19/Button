@@ -18,13 +18,15 @@ export const MainHeader = () => {
   };
   return (
     <Mainheader>
-      <img src="../images/logo_trans.png" alt="logo" />
-      <button
-        onClick={displayOn}
-        className={displaytoggle ? 'moreListBtn' : 'moreListBtn on'}
-      >
-        <img src="./images/icon/icon_menu_btn.svg" alt="더보기" />
-      </button>
+      <div className="media_align">
+        <img src="../images/logo_trans.png" alt="logo" />
+        <button
+          onClick={displayOn}
+          className={displaytoggle ? 'moreListBtn' : 'moreListBtn on'}
+        >
+          <img src="./images/icon/icon_menu_btn.svg" alt="더보기" />
+        </button>
+      </div>
       {displaytoggle ? (
         <div className="cont-menu">
           <Link to="/test">
@@ -62,23 +64,29 @@ const Mainheader = styled.section`
     gap: 60px;
     font-size: 18px;
   }
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 440px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    .moreListBtn {
+    .media_align {
       width: 100vw;
-      height: 50px;
-      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 0 30px;
+    }
+    .moreListBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: end;
-      align-items: center;
+      border: none;
       background-color: transparent;
       &.on {
-        justify-content: center;
+        justify-content: end;
       }
       img {
         margin: 0;
@@ -89,6 +97,7 @@ const Mainheader = styled.section`
       flex-direction: column;
       margin-top: 20px;
       text-align: center;
+      padding-bottom: 20px;
     }
   }
 `;
