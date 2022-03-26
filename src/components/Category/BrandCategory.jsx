@@ -4,18 +4,18 @@ import { Perfume } from '../../constants/database';
 import { Font, COLOR } from '../../constants';
 import { Cards } from './CategoryItem';
 
-export const PriceCategory = () => {
+export const BrandCategory = () => {
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
   const [active3, setActive3] = useState(false);
   const [active4, setActive4] = useState(false);
   const [active5, setActive5] = useState(false);
-  const [price1, setPrice1] = useState([]);
-  const [price2, setPrice2] = useState([]);
-  const [price3, setPrice3] = useState([]);
-  const [price4, setPrice4] = useState([]);
-  const [price5, setPrice5] = useState([]);
-  function pricecheck1() {
+  const [brand1, setBrand1] = useState([]);
+  const [brand2, setBrand2] = useState([]);
+  const [brand3, setBrand3] = useState([]);
+  const [brand4, setBrand4] = useState([]);
+  const [brand5, setBrand5] = useState([]);
+  function brandcheck1() {
     setActive1(!active1);
     if (active2) {
       setActive2(!active2);
@@ -30,13 +30,13 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 100000) {
-        price1.push(item);
-        setPrice1(price1);
+      if (item.brand === '조말론') {
+        brand1.push(item);
+        setBrand1(brand1);
       }
     });
   }
-  function pricecheck2() {
+  function brandcheck2() {
     setActive2(!active2);
     if (active1) {
       setActive1(!active1);
@@ -51,13 +51,13 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 150000 && item.price > 100000) {
-        price2.push(item);
-        setPrice2(price2);
+      if (item.brand === '샤넬') {
+        brand2.push(item);
+        setBrand2(brand2);
       }
     });
   }
-  function pricecheck3() {
+  function brandcheck3() {
     setActive3(!active3);
     if (active1) {
       setActive1(!active1);
@@ -69,14 +69,14 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 200000 && item.price > 150000) {
-        price3.push(item);
-        setPrice3(price3);
+      if (item.brand === '딥디크') {
+        brand3.push(item);
+        setBrand3(brand3);
       }
     });
   }
 
-  function pricecheck4() {
+  function brandcheck4() {
     setActive4(!active4);
     if (active1) {
       setActive1(!active1);
@@ -88,13 +88,13 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 300000 && item.price > 200000) {
-        price4.push(item);
-        setPrice4(price4);
+      if (item.brand === '구찌') {
+        brand4.push(item);
+        setBrand4(brand4);
       }
     });
   }
-  function pricecheck5() {
+  function brandcheck5() {
     setActive5(!active5);
     if (active1) {
       setActive1(!active1);
@@ -106,38 +106,38 @@ export const PriceCategory = () => {
       setActive4(!active4);
     }
     Perfume.map((item, index) => {
-      if (300000 < item.price) {
-        price5.push(item);
-        setPrice5(price5);
+      if (item.brand === '불가리') {
+        brand5.push(item);
+        setBrand5(brand5);
       }
     });
   }
 
   // console.log(price1);
   return (
-    <PriceCategoryPage>
-      <PricePage>
+    <BrandCategoryPage>
+      <BrandPage>
         <li className="assortList">
-          <button onClick={pricecheck1}>10만원 미만</button>
+          <button onClick={brandcheck1}>조말론</button>
         </li>
         <li className="assortList">
-          <button onClick={pricecheck2}>10만원 이상 15만원 미만</button>
+          <button onClick={brandcheck2}>샤넬</button>
         </li>
         <li className="assortList">
-          <button onClick={pricecheck3}>15만원 이상 20만원 미만</button>
+          <button onClick={brandcheck3}>딥디크</button>
         </li>
         <li className="assortList">
-          <button onClick={pricecheck4}>20만원 이상 30만원 미만</button>
+          <button onClick={brandcheck4}>구찌</button>
         </li>
 
         <li className="assortList">
-          <button onClick={pricecheck5}>30만원 이상</button>
+          <button onClick={brandcheck5}>불가리</button>
         </li>
-      </PricePage>
+      </BrandPage>
       <AssortPage>
         {active1 ? (
           <div className="cartegory-card">
-            {price1.map((item, index) => (
+            {brand1.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -154,7 +154,7 @@ export const PriceCategory = () => {
         ) : null}
         {active2 ? (
           <div className="cartegory-card">
-            {price2.map((item, index) => (
+            {brand2.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -171,7 +171,7 @@ export const PriceCategory = () => {
         ) : null}
         {active3 ? (
           <div className="cartegory-card">
-            {price3.map((item, index) => (
+            {brand3.map((item, index) => (
               <Cards
                 image={item.image}
                 alt={item.alt}
@@ -186,7 +186,7 @@ export const PriceCategory = () => {
         ) : null}
         {active4 ? (
           <div className="cartegory-card">
-            {price4.map((item, index) => (
+            {brand4.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -203,7 +203,7 @@ export const PriceCategory = () => {
         ) : null}
         {active5 ? (
           <div className="cartegory-card">
-            {price5.map((item, index) => (
+            {brand5.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -219,15 +219,16 @@ export const PriceCategory = () => {
           </div>
         ) : null}
       </AssortPage>
-    </PriceCategoryPage>
+    </BrandCategoryPage>
   );
 };
-const PriceCategoryPage = styled.section`
+
+const BrandCategoryPage = styled.section`
   height: 100vh;
   display: flex;
 `;
 
-const PricePage = styled.ul`
+const BrandPage = styled.ul`
   text-align: left;
   margin-left: 20px;
   .assortList {
@@ -245,13 +246,12 @@ const PricePage = styled.ul`
     }
   }
 `;
-
 const AssortPage = styled.section`
   height: 100vh;
   width: 73vw;
   list-style: none;
   position: relative;
-  top: -180px;
+  top: -240px;
   padding: 100px;
   background-color: rgba(255, 255, 255, 0.3);
   .cartegory-card {
