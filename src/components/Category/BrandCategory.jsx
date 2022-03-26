@@ -10,11 +10,13 @@ export const BrandCategory = () => {
   const [active3, setActive3] = useState(false);
   const [active4, setActive4] = useState(false);
   const [active5, setActive5] = useState(false);
+  const [active6, setActive6] = useState(false);
   const [brand1, setBrand1] = useState([]);
   const [brand2, setBrand2] = useState([]);
   const [brand3, setBrand3] = useState([]);
   const [brand4, setBrand4] = useState([]);
   const [brand5, setBrand5] = useState([]);
+  const [brand6, setBrand6] = useState([]);
   function brandcheck1() {
     setActive1(!active1);
     if (active2) {
@@ -28,6 +30,9 @@ export const BrandCategory = () => {
     }
     if (active5) {
       setActive5(!active5);
+    }
+    if (active6) {
+      setActive6(!active6);
     }
     Perfume.map((item, index) => {
       if (item.brand === '조말론') {
@@ -50,6 +55,9 @@ export const BrandCategory = () => {
     if (active5) {
       setActive5(!active5);
     }
+    if (active6) {
+      setActive6(!active6);
+    }
     Perfume.map((item, index) => {
       if (item.brand === '샤넬') {
         brand2.push(item);
@@ -67,6 +75,8 @@ export const BrandCategory = () => {
       setActive4(!active4);
     } else if (active5) {
       setActive5(!active5);
+    } else if (active6) {
+      setActive5(!active6);
     }
     Perfume.map((item, index) => {
       if (item.brand === '딥디크') {
@@ -86,6 +96,8 @@ export const BrandCategory = () => {
       setActive3(!active3);
     } else if (active5) {
       setActive5(!active5);
+    } else if (active6) {
+      setActive5(!active6);
     }
     Perfume.map((item, index) => {
       if (item.brand === '구찌') {
@@ -104,11 +116,34 @@ export const BrandCategory = () => {
       setActive3(!active3);
     } else if (active4) {
       setActive4(!active4);
+    } else if (active6) {
+      setActive5(!active6);
     }
     Perfume.map((item, index) => {
       if (item.brand === '불가리') {
         brand5.push(item);
         setBrand5(brand5);
+      }
+    });
+  }
+
+  function brandcheck6() {
+    setActive6(!active6);
+    if (active1) {
+      setActive1(!active1);
+    } else if (active2) {
+      setActive2(!active2);
+    } else if (active3) {
+      setActive3(!active3);
+    } else if (active4) {
+      setActive4(!active4);
+    } else if (active5) {
+      setActive5(!active5);
+    }
+    Perfume.map((item, index) => {
+      if (item.brand === '크리드') {
+        brand6.push(item);
+        setBrand6(brand6);
       }
     });
   }
@@ -129,9 +164,11 @@ export const BrandCategory = () => {
         <li className="assortList">
           <button onClick={brandcheck4}>구찌</button>
         </li>
-
         <li className="assortList">
           <button onClick={brandcheck5}>불가리</button>
+        </li>
+        <li className="assortList">
+          <button onClick={brandcheck6}>크리드</button>
         </li>
       </BrandPage>
       <AssortPage>
@@ -204,6 +241,23 @@ export const BrandCategory = () => {
         {active5 ? (
           <div className="cartegory-card">
             {brand5.map((item, index) => (
+              <div key={index}>
+                <Cards
+                  image={item.image}
+                  alt={item.alt}
+                  title={item.title}
+                  etitle={item.etitle}
+                  des={item.des}
+                  price={item.price}
+                  brand={item.brand}
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {active6 ? (
+          <div className="cartegory-card">
+            {brand6.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
