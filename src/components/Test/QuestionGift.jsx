@@ -107,7 +107,7 @@ export const QuestionGiftPage = (props) => {
       ) : (
         <Link
           to={{
-            pathname: `/result`,
+            pathname: `/giftResult`,
             state: {
               testList: checkList,
             },

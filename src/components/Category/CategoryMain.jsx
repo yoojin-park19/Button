@@ -10,31 +10,41 @@ export const CategoryMain = () => {
   const [activeMiddle, setActiveMiddle] = useState('false');
   const [activeGender, setActiveGender] = useState('false');
 
-  function Pricelist() {
-    setActivePrice(true);
-  }
+  const Pricelist = () => {
+    setActivePrice(!activePrice);
+  };
 
   function Brandlist() {
-    setActiveBrand(true);
+    setActiveBrand(!activeBrand);
   }
 
   function Middlelist() {
-    setActiveMiddle(true);
+    setActiveMiddle(!activeMiddle);
   }
 
   function Genderlist() {
-    setActiveGender(true);
+    setActiveGender(!activeGender);
   }
 
   return (
     <CategoryMainPage>
       <ItemContainer>
         <AssortContainer>
-          <button onClick={Pricelist}>가격별로 보기</button>
-          {activePrice ? <PriceCategory /> : null}
-          <button onClick={Brandlist}>브랜드별로 보기</button>
-          <button onClick={Middlelist}>향기별로 보기</button>
-          <button onClick={Genderlist}>성별로 보기</button>
+          <div className="assortwrap">
+            <button className="listCont" onClick={Pricelist}>
+              가격별로 보기
+            </button>
+            <button className="listCont" onClick={Brandlist}>
+              브랜드별로 보기
+            </button>
+            <button className="listCont" onClick={Middlelist}>
+              향기별로 보기
+            </button>
+            <button className="listCont" onClick={Genderlist}>
+              성별로 보기
+            </button>
+          </div>
+          {activePrice ? null : <PriceCategory />}
         </AssortContainer>
         <div className="itemList"></div>
       </ItemContainer>
@@ -50,13 +60,27 @@ const CategoryMainPage = styled.section`
 `;
 
 const AssortContainer = styled.section`
-  button {
+  position: relative;
+  display: flex;
+  .assortwrap {
+    margin-top: 100px;
+    display: flex;
+    gap: 20px 0;
+    flex-direction: column;
+  }
+  .listCont {
     display: block;
     width: 200px;
     height: 50px;
     border: none;
     border-radius: 15px;
-    background-color: #fff;
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 3px 3px 3px orchid;
+    background-color: transparent;
+    &:hover {
+      background-color: ${COLOR.sub};
+    }
   }
 `;
 
