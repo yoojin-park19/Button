@@ -60,6 +60,28 @@ const Img = styled.div`
     animation-duration: 8s;
     z-index: -1;
   }
+  @media screen and (max-width: 420px) {
+    background: none;
+
+    position: relative;
+    width: 1px;
+    height: 1px;
+    border-radius: 0px;
+    z-index: 1;
+    .back-img {
+      display: none;
+    }
+    .back-flower {
+      position: absolute;
+      transform: rotate(270deg);
+      bottom: 50px;
+      right: -250px;
+      width: 100px;
+      height: 200px;
+      animation: showup;
+      animation-duration: 8s;
+    }
+  }
 `;
 const FirstMainPage = styled.section`
   background-color: ${COLOR.main};
@@ -94,6 +116,50 @@ const FirstMainPage = styled.section`
       color: #fff;
       &:hover {
         background-color: ${COLOR.figma};
+      }
+    }
+  }
+  @media screen and (max-width: 440px) {
+    display: flex;
+    padding-top: 0px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .cont-item {
+      display: flex;
+      flex-direction: column;
+      padding-top: 0px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: 440px;
+      margin-top: 50px;
+      z-index: 1;
+      h2 {
+        margin-bottom: 40px;
+        font-size: 40px;
+        font-family: ${Font.des};
+        color: #fff;
+        text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      p {
+        font-size: 20px;
+        font-family: ${Font.des};
+      }
+      button {
+        width: 300px;
+        height: 80px;
+        margin-top: 70px;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        background-color: ${COLOR.deep};
+        font-size: 18px;
+        font-family: ${Font.des};
+        color: #fff;
+        &:hover {
+        }
       }
     }
   }

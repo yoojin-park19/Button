@@ -42,11 +42,14 @@ const CardList = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 100px;
+  @media screen and (max-width: 440px) {
+    flex-direction: column;
+  }
 `;
 
 const Card = styled.section`
   width: 272px;
-  height:300px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,9 +71,12 @@ const Card = styled.section`
   button {
     width: 148px;
     height: 58px;
-    background-color: #B6A1FD;
+    background-color: #b6a1fd;
     box-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
-    border:none;
+    border: none;
     border-radius: 10px;
     color: #fff;
+  }
+  @media screen and (max-width: 440px) {
+  }
 `;

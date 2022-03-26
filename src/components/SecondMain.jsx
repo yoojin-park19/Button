@@ -117,4 +117,51 @@ const SecondMainPage = styled.section`
     height: 500px;
     z-index: 1;
   }
+  @media screen and (max-width: 440px) {
+    .back-paint {
+      position: absolute;
+      left: -15px;
+      top: -80px;
+      width: 150px;
+      height: 150px;
+      animation: rightup;
+      animation-duration: 10s;
+    }
+    .cont-item {
+      margin: 100px 0;
+      width: 390px;
+      h2 {
+        margin-bottom: 40px;
+        font-size: 60px;
+        font-family: ${Font.des};
+        color: #fff;
+        text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      p {
+        font-size: 30px;
+        font-family: ${Font.des};
+      }
+      button {
+        width: 387px;
+        height: 80px;
+        margin-top: 70px;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        background-color: ${COLOR.deep};
+        font-size: 28px;
+        font-family: ${Font.des};
+        color: #fff;
+        &:hover {
+          background-color: ${COLOR.figma};
+        }
+      }
+    }
+    .main-img {
+      /* margin-top: 10px;
+    width: 550px;
+    height: 500px;
+    z-index: 1; */
+      display: none;
+    }
+  }
 `;
