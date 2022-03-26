@@ -11,50 +11,49 @@ export const Cards = (props) => {
 
   return (
     <Card>
-      <img src={props.image} alt={props.alt} />
       <p className="brand">{props.brand}</p>
+      <img src={props.image} alt={props.alt} />
       <p className="title">{props.title}</p>
       <p className="etitle">{props.etitle}</p>
-      <p className="price">50ml 기준 : {props.price} 원</p>
       <p className="des">{props.des}</p>
-      <p>보러가기</p>
+      <p className="price">50ml 기준 : {props.price} 원</p>
     </Card>
   );
 };
 
 const Card = styled.li`
-  width: 200px;
+  width: 215px;
   height: 400px;
-  font-family: 'gowun';
+  border: 3px double ${COLOR.deep};
+  font-family: ${Font.title};
   text-align: center;
+  padding-top: 20px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   img {
-    width: 60px;
-    margin-bottom: 40px;
+    width: 100px;
+    height: 100px;
+    margin: 40px 0;
   }
   p {
     display: block;
     margin-bottom: 10px;
   }
   .title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
     text-align: center;
   }
   .etitle {
-    font-size: 13px;
+    font-size: 12px;
+    margin-bottom: 20px;
   }
   .des {
     text-align: start;
     font-size: 12px;
     width: 200px;
-    /* border: 1px solid red; */
-    /* overflow: hidden; */
-    /* white-space: nowrap; */
     text-overflow: ellipsis;
   }
 `;

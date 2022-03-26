@@ -4,18 +4,18 @@ import { Perfume } from '../../constants/database';
 import { Font, COLOR } from '../../constants';
 import { Cards } from './CategoryItem';
 
-export const PriceCategory = () => {
+export const MiddleCategory = () => {
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
   const [active3, setActive3] = useState(false);
   const [active4, setActive4] = useState(false);
   const [active5, setActive5] = useState(false);
-  const [price1, setPrice1] = useState([]);
-  const [price2, setPrice2] = useState([]);
-  const [price3, setPrice3] = useState([]);
-  const [price4, setPrice4] = useState([]);
-  const [price5, setPrice5] = useState([]);
-  function pricecheck1() {
+  const [middle1, setMiddle1] = useState([]);
+  const [middle2, setMiddle2] = useState([]);
+  const [middle3, setMiddle3] = useState([]);
+  const [middle4, setMiddle4] = useState([]);
+  const [middle5, setMiddle5] = useState([]);
+  function middlecheck1() {
     setActive1(!active1);
     if (active2) {
       setActive2(!active2);
@@ -30,13 +30,13 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 100000) {
-        price1.push(item);
-        setPrice1(price1);
+      if (item.second === 1) {
+        middle1.push(item);
+        setMiddle1(middle1);
       }
     });
   }
-  function pricecheck2() {
+  function middlecheck2() {
     setActive2(!active2);
     if (active1) {
       setActive1(!active1);
@@ -51,13 +51,13 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 150000 && item.price > 100000) {
-        price2.push(item);
-        setPrice2(price2);
+      if (item.second === 2) {
+        middle2.push(item);
+        setMiddle2(middle2);
       }
     });
   }
-  function pricecheck3() {
+  function middlecheck3() {
     setActive3(!active3);
     if (active1) {
       setActive1(!active1);
@@ -69,14 +69,14 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 200000 && item.price > 150000) {
-        price3.push(item);
-        setPrice3(price3);
+      if (item.second === 3) {
+        middle3.push(item);
+        setMiddle3(middle3);
       }
     });
   }
 
-  function pricecheck4() {
+  function middlecheck4() {
     setActive4(!active4);
     if (active1) {
       setActive1(!active1);
@@ -88,13 +88,13 @@ export const PriceCategory = () => {
       setActive5(!active5);
     }
     Perfume.map((item, index) => {
-      if (item.price < 300000 && item.price > 200000) {
-        price4.push(item);
-        setPrice4(price4);
+      if (item.second === 4) {
+        middle4.push(item);
+        setMiddle4(middle4);
       }
     });
   }
-  function pricecheck5() {
+  function middlecheck5() {
     setActive5(!active5);
     if (active1) {
       setActive1(!active1);
@@ -106,38 +106,38 @@ export const PriceCategory = () => {
       setActive4(!active4);
     }
     Perfume.map((item, index) => {
-      if (300000 < item.price) {
-        price5.push(item);
-        setPrice5(price5);
+      if (item.second === 5) {
+        middle5.push(item);
+        setMiddle5(middle5);
       }
     });
   }
 
   // console.log(price1);
   return (
-    <PriceCategoryPage>
-      <PricePage>
+    <MiddleCategoryPage>
+      <MiddlePage>
         <li className="assortList">
-          <button onClick={pricecheck1}>10만원 미만</button>
+          <button onClick={middlecheck1}>프루티 계열</button>
         </li>
         <li className="assortList">
-          <button onClick={pricecheck2}>10만원 이상 15만원 미만</button>
+          <button onClick={middlecheck2}>플로럴 계열</button>
         </li>
         <li className="assortList">
-          <button onClick={pricecheck3}>15만원 이상 20만원 미만</button>
+          <button onClick={middlecheck3}>아로마 계열</button>
         </li>
         <li className="assortList">
-          <button onClick={pricecheck4}>20만원 이상 30만원 미만</button>
+          <button onClick={middlecheck4}>아쿠아 계열</button>
         </li>
 
         <li className="assortList">
-          <button onClick={pricecheck5}>30만원 이상</button>
+          <button onClick={middlecheck5}>스위트 계열</button>
         </li>
-      </PricePage>
+      </MiddlePage>
       <AssortPage>
         {active1 ? (
           <div className="cartegory-card">
-            {price1.map((item, index) => (
+            {middle1.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -154,7 +154,7 @@ export const PriceCategory = () => {
         ) : null}
         {active2 ? (
           <div className="cartegory-card">
-            {price2.map((item, index) => (
+            {middle2.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -171,7 +171,7 @@ export const PriceCategory = () => {
         ) : null}
         {active3 ? (
           <div className="cartegory-card">
-            {price3.map((item, index) => (
+            {middle3.map((item, index) => (
               <Cards
                 image={item.image}
                 alt={item.alt}
@@ -186,7 +186,7 @@ export const PriceCategory = () => {
         ) : null}
         {active4 ? (
           <div className="cartegory-card">
-            {price4.map((item, index) => (
+            {middle4.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -203,7 +203,7 @@ export const PriceCategory = () => {
         ) : null}
         {active5 ? (
           <div className="cartegory-card">
-            {price5.map((item, index) => (
+            {middle5.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
@@ -219,15 +219,16 @@ export const PriceCategory = () => {
           </div>
         ) : null}
       </AssortPage>
-    </PriceCategoryPage>
+    </MiddleCategoryPage>
   );
 };
-const PriceCategoryPage = styled.section`
+
+const MiddleCategoryPage = styled.section`
   height: 100vh;
   display: flex;
 `;
 
-const PricePage = styled.ul`
+const MiddlePage = styled.ul`
   text-align: left;
   margin-left: 20px;
   .assortList {
@@ -251,7 +252,7 @@ const AssortPage = styled.section`
   width: 73vw;
   list-style: none;
   position: relative;
-  top: -180px;
+  top: -310px;
   padding: 100px;
   background-color: rgba(255, 255, 255, 0.3);
   .cartegory-card {

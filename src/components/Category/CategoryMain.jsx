@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
 import { COLOR } from '../../constants';
-import { Font } from '../../constants';
-import { Link } from 'react-router-dom';
+
 import { useState } from 'react';
 import { PriceCategory } from './PriceCategory';
+import { BrandCategory } from './BrandCategory';
+import { MiddleCategory } from './MiddleCategory';
+import { GenderCategory } from './GenderCategory';
 export const CategoryMain = () => {
   const [activePrice, setActivePrice] = useState('false');
   const [activeBrand, setActiveBrand] = useState('false');
@@ -34,17 +36,20 @@ export const CategoryMain = () => {
             <button className="listCont" onClick={Pricelist}>
               가격별로 보기
             </button>
+            {activePrice ? null : <PriceCategory />}
             <button className="listCont" onClick={Brandlist}>
               브랜드별로 보기
             </button>
+            {activeBrand ? null : <BrandCategory />}
             <button className="listCont" onClick={Middlelist}>
               향기별로 보기
             </button>
+            {activeMiddle ? null : <MiddleCategory />}
             <button className="listCont" onClick={Genderlist}>
               성별로 보기
             </button>
+            {activeGender ? null : <GenderCategory />}
           </div>
-          {activePrice ? null : <PriceCategory />}
         </AssortContainer>
         <div className="itemList"></div>
       </ItemContainer>
@@ -57,9 +62,11 @@ const CategoryMainPage = styled.section`
   height: calc(100vh - 87px);
   box-sizing: border-box;
   background-color: ${COLOR.main};
+  overflow: hidden;
 `;
 
 const AssortContainer = styled.section`
+  width: 15vw;
   position: relative;
   display: flex;
   .assortwrap {
@@ -70,16 +77,18 @@ const AssortContainer = styled.section`
   }
   .listCont {
     display: block;
-    width: 200px;
+    width: 170px;
     height: 50px;
     border: none;
-    border-radius: 15px;
     color: #fff;
     font-size: 20px;
     text-shadow: 3px 3px 3px orchid;
     background-color: transparent;
+    text-align: left;
+    margin-left: 10px;
     &:hover {
       background-color: ${COLOR.sub};
+      width: 160px;
     }
   }
 `;
