@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { COLOR } from '../constants';
+import { BackAnimationIndex } from '../components/Background/BackAnimation';
 const HomeIndexPage = () => {
   const [active, setActive] = useState(false);
   console.log(active);
@@ -19,6 +20,7 @@ const HomeIndexPage = () => {
 
   return (
     <HomePage>
+      <BackAnimationIndex />
       <img src="../images/logo.png" className="logo" alt="button" />
       <div className="cont-check">
         <button className="check-box" alt="check here" onClick={check} />
@@ -28,7 +30,6 @@ const HomeIndexPage = () => {
         {active ? (
           <div>
             <div className="card right fadeout"></div>
-            <div className="card left fadeout"></div>
           </div>
         ) : null}
       </div>
@@ -59,19 +60,25 @@ const HomePage = styled.section`
       transform: scale(8);
     }
   }
-  background: linear-gradient(to bottom, #c4a1fd, #fff);
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(to bottom, #c4a1fd, #fff);
+  background-image: url('./images/flowers_circle.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
   .logo {
-    margin: 80px 0;
+    margin: 200px 0 0;
     width: 580px;
     height: 120px;
   }
   .cont-check {
     position: relative;
+    z-index: 10;
     .check-box {
       background: url('../images/checkbox.svg') no-repeat;
       background-size: cover;

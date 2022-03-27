@@ -1,12 +1,14 @@
 export const COLOR = {
   main: '#C4A1FD',
-  sub: '#D6BDFF',
+  sub: '#DB7093',
   deep: '#7E5FB0',
   point: '#B0AC4D',
   right: '#FCF9A2',
   figma: '#B6A1FD',
   gray: '#C4C4C4',
   blue: '#2E70FF',
+  trend_main: '#800080',
+  trend_sub: '#DB7093',
 };
 
 export const Font = {
