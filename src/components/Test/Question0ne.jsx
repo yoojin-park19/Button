@@ -179,4 +179,20 @@ const Question0ne = styled.section`
     line-height: 24px;
     margin-bottom: 20px;
   }
+  @media screen and (max-width: 420px) {
+    width: 90vw;
+    .questionTit {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    label {
+    display: flex;
+    align-items:center;
+    width: 90vw;
+    height: 60px;
+    font-size: 14px;
+    line-height: 16px;
+
+  }
 `;
