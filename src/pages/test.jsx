@@ -22,7 +22,6 @@ const TestIndexPage = () => {
           {test ? (
             <>
               <Welcome description={TestList[0].Title} />
-              <Welcome description={TestList[0].Title2} />
             </>
           ) : (
             <>
@@ -40,7 +39,7 @@ const TestIndexPage = () => {
 const TestPage = styled.section`
   width: 100vw;
   height: 100%;
-  background-color: ${COLOR.gray};
+  background-color: ${COLOR.main};
   font-family: ${Font.title};
   .container {
     width: 60vw;
@@ -53,7 +52,6 @@ const TestPage = styled.section`
     padding-left: 5vw;
     padding-right: 5vw;
   }
-
   .wrap {
     height: 418px;
     width: 50vw;
@@ -63,6 +61,25 @@ const TestPage = styled.section`
     border-radius: 10px;
     background-color: rgba(236, 236, 236, 0.6);
     box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.3);
+  }
+  @media screen and (max-width: 420px) {
+    width: 100vw;
+    height: 100vh;
+    .container {
+      width: 100vw;
+      padding: 0px;
+      margin: 0px;
+    }
+    .wrap {
+      height: 100vh;
+      width: 100vw;
+      padding: 50px 5vw;
+      box-sizing: border-box;
+      margin: 0 auto;
+      border-radius: 0;
+      background-color: rgba(236, 236, 236, 0.6);
+      box-shadow: none;
+    }
   }
 `;
 const TestProgress = styled.section`
@@ -90,6 +107,9 @@ const TestProgress = styled.section`
     align-items: center;
     font-size: 20px;
     color: ${COLOR.blue};
+  }
+  @media screen and (max-width: 420px) {
+    display: none;
   }
 `;
 

@@ -17,4 +17,9 @@ const WelcomeMessage = styled.section`
     font-weight: 900;
     text-shadow: 5px 5px 5px gray;
   }
+  @media screen and (max-width: 420px) {
+    .firstMessage {
+      font-size: 16px;
+    }
+  }
 `;
