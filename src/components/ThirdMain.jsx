@@ -35,6 +35,9 @@ const ThridMainPage = styled.section`
   height: 100vh;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 440px) {
+    height: 100%;
+  }
 `;
 
 const CardList = styled.ul`
@@ -78,5 +81,6 @@ const Card = styled.section`
     color: #fff;
   }
   @media screen and (max-width: 440px) {
+    height: 200px;
   }
 `;
