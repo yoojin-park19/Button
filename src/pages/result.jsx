@@ -195,6 +195,7 @@ const ResultPage = styled.section`
   height: 100%;
   padding: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -228,11 +229,19 @@ const ResultPage = styled.section`
     color: #fff;
     font-size: 18px;
   }
+  @media screen and (max-width: 720px) {
+    display: flex;
+    .head {
+      font-size: 20px;
+    }
+  }
 `;
 
 const CardList = styled.ul`
   display: flex;
   gap: 80px;
+  @media screen and (max-width: 720px) {
+    flex-direction:column;
 `;
 
 export default ResultIndexPage;
