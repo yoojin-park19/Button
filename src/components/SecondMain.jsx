@@ -27,7 +27,6 @@ export const SecondMain = () => {
         alt="recommend gift"
       />
       <img className="back-img" src="./images/watercolor.png" alt="배경" />
-      {/* <img className="back-paint2" src="./images/paint.png" alt="배경" /> */}
     </SecondMainPage>
   );
 };
@@ -72,16 +71,6 @@ const SecondMainPage = styled.section`
     height: 150px;
     transform: rotate(180deg);
   }
-  .back-paint2 {
-    position: absolute;
-    bottom: 230px;
-    right: -50px;
-    width: 550px;
-    height: 150px;
-    transform: rotate(180deg);
-    animation: leftup;
-    animation-duration: 10s;
-  }
   .cont-item {
     margin: 100px 0;
     width: 500px;
@@ -118,49 +107,58 @@ const SecondMainPage = styled.section`
     z-index: 1;
   }
   @media screen and (max-width: 440px) {
+    height: 100vh;
     .back-paint {
       position: absolute;
-      left: -15px;
+      left: -20px;
       top: -80px;
-      width: 150px;
-      height: 150px;
+      width: 300px;
+      height: 100px;
       animation: rightup;
       animation-duration: 10s;
     }
+    .back-img {
+      position: absolute;
+      bottom: 0px;
+      right: -12px;
+      width: 300px;
+      height: 100px;
+      transform: rotate(180deg);
+    }
     .cont-item {
-      margin: 100px 0;
-      width: 390px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      margin: 0;
+      z-index: 1;
       h2 {
         margin-bottom: 40px;
-        font-size: 60px;
+        font-size: 40px;
         font-family: ${Font.des};
         color: #fff;
         text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
       }
       p {
-        font-size: 30px;
+        font-size: 20px;
         font-family: ${Font.des};
+        text-align: center;
       }
       button {
-        width: 387px;
+        width: 300px;
         height: 80px;
         margin-top: 70px;
         border: 3px solid #fff;
         border-radius: 10px;
         background-color: ${COLOR.deep};
-        font-size: 28px;
+        font-size: 18px;
         font-family: ${Font.des};
         color: #fff;
         &:hover {
-          background-color: ${COLOR.figma};
         }
       }
     }
     .main-img {
-      /* margin-top: 10px;
-    width: 550px;
-    height: 500px;
-    z-index: 1; */
       display: none;
     }
   }
