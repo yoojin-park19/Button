@@ -59,7 +59,7 @@ export const CategoryMain = () => {
 
 const CategoryMainPage = styled.section`
   width: 100vw;
-  height: calc(100vh - 87px);
+  height: 100vh;
   box-sizing: border-box;
   background-color: ${COLOR.main};
   overflow: hidden;
@@ -98,7 +98,6 @@ const ItemContainer = styled.section`
   .itemList {
     height: 60px;
     width: 80px;
-    overflow: hidden;
     margin: 0 80px;
     img {
       width: 18vw;

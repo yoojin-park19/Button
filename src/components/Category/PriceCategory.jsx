@@ -247,11 +247,12 @@ const PricePage = styled.ul`
 `;
 
 const AssortPage = styled.section`
-  height: 100vh;
+  height: 1000px;
+  overflow-y: scroll;
   width: 73vw;
   list-style: none;
   position: relative;
-  top: -180px;
+  top: -170px;
   padding: 100px;
   background-color: rgba(255, 255, 255, 0.3);
   .cartegory-card {

@@ -1,20 +1,14 @@
 import styled from '@emotion/styled';
-import { COLOR } from '../constants';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 export const MainHeader = () => {
   const [displaytoggle, setDisplaytoggle] = useState(false);
   const mediaTarget = window.innerWidth;
   console.log(mediaTarget);
-  useEffect(() => {
-    if (mediaTarget > 720) {
-      setDisplaytoggle(true);
-      return;
-    }
-  });
 
   const displayOn = () => {
-    setDisplaytoggle(!displaytoggle);
+    setDisplaytoggle((prev) => !prev);
+    console.log(displaytoggle);
   };
   return (
     <Mainheader>
@@ -22,7 +16,7 @@ export const MainHeader = () => {
         <img src="../images/logo_trans.png" alt="logo" />
         <button
           onClick={displayOn}
-          className={displaytoggle ? 'moreListBtn' : 'moreListBtn on'}
+          className={displaytoggle ? 'moreListBtn on' : 'moreListBtn'}
         >
           <img src="./images/icon/icon_menu_btn.svg" alt="더보기" />
         </button>
@@ -64,7 +58,7 @@ const Mainheader = styled.section`
     gap: 60px;
     font-size: 18px;
   }
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 720px) {
     display: flex;
     flex-direction: column;
     align-items: center;
