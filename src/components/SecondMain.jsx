@@ -6,160 +6,63 @@ import { Link } from 'react-router-dom';
 export const SecondMain = () => {
   return (
     <SecondMainPage>
-      <img className="back-paint" src="./images/paint.png" alt="배경" />
       <div className="cont-item">
         <h2>It's For your loved ones</h2>
-        <p>
-          Give your precious people a scent. The scent will be a valuable clue
-          for that person to remember you.
-        </p>
-        <p>
-          We recommend gifts according to your preference, mood, purpose and
-          price.
-        </p>
-        <Link to="#">
-          <button>Find Your Gift</button>
+        <p className="kr">당신의 소중한 사람에게 선물할 향수를 추천해드려요.</p>
+        <Link to="/test">
+          <Button>
+            <img src="./images/check.svg" alt="체크" />
+            <p>Click to</p>
+            <p>Find Your Mood</p>
+          </Button>
         </Link>
       </div>
-      <img
-        className="main-img"
-        src="./images/second_item.png"
-        alt="recommend gift"
-      />
-      <img className="back-img" src="./images/watercolor.png" alt="배경" />
     </SecondMainPage>
   );
 };
 
 const SecondMainPage = styled.section`
-  @keyframes rightup {
-    from {
-      left: -500px;
-    }
-    to {
-      left: -15px;
-    }
-  }
-  @keyframes leftup {
-    from {
-      right: -500px;
-    }
-    to {
-      right: -50px;
-    }
-  }
-  background-color: ${COLOR.main};
-  height: 120vh;
+  height: 90vh;
   display: flex;
-  justify-content: center;
-  gap: 100px;
+  padding-top: 200px;
+  justify-content: space-evenly;
   position: relative;
-  .back-paint {
-    position: absolute;
-    left: -15px;
-    top: -80px;
-    width: 550px;
-    height: 150px;
-    animation: rightup;
-    animation-duration: 10s;
-  }
-  .back-img {
-    position: absolute;
-    top: 330px;
-    right: 300px;
-    width: 550px;
-    height: 150px;
-    transform: rotate(180deg);
-  }
   .cont-item {
-    margin: 100px 0;
-    width: 500px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    text-align: center;
+    text-align: center;
     h2 {
-      margin-bottom: 40px;
-      font-size: 60px;
+      font-size: 120px;
       font-family: ${Font.des};
-      color: #fff;
-      text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
+      color: ${COLOR.trend_main};
+      text-shadow: 8px 4px 15px rgba(105, 0, 147, 0.7);
     }
-    p {
+    .kr {
+      color: #777;
       font-size: 30px;
-      font-family: ${Font.des};
-    }
-    button {
-      width: 400px;
-      height: 80px;
-      margin-top: 70px;
-      border: 3px solid #fff;
-      border-radius: 10px;
-      background-color: ${COLOR.deep};
-      font-size: 28px;
-      font-family: ${Font.des};
-      color: #fff;
-      &:hover {
-        background-color: ${COLOR.figma};
-      }
+      font-family: ${Font.etilte};
     }
   }
-  .main-img {
-    margin-top: 10px;
-    width: 550px;
-    height: 500px;
-    z-index: 1;
-  }
-  @media screen and (max-width: 440px) {
-    height: 100vh;
-    .back-paint {
-      position: absolute;
-      left: -20px;
-      top: -80px;
-      width: 300px;
-      height: 100px;
-      animation: rightup;
-      animation-duration: 10s;
-    }
-    .back-img {
-      position: absolute;
-      bottom: 0px;
-      right: -12px;
-      width: 300px;
-      height: 100px;
-      transform: rotate(180deg);
-    }
-    .cont-item {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      align-items: center;
-      margin: 0;
-      z-index: 1;
-      h2 {
-        margin-bottom: 40px;
-        font-size: 40px;
-        font-family: ${Font.des};
-        color: #fff;
-        text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
-      }
-      p {
-        font-size: 20px;
-        font-family: ${Font.des};
-        text-align: center;
-      }
-      button {
-        width: 300px;
-        height: 80px;
-        margin-top: 70px;
-        border: 3px solid #fff;
-        border-radius: 10px;
-        background-color: ${COLOR.deep};
-        font-size: 18px;
-        font-family: ${Font.des};
-        color: #fff;
-        &:hover {
-        }
-      }
-    }
-    .main-img {
-      display: none;
+`;
+
+const Button = styled.button`
+  width: 400px;
+  height: 80px;
+  margin-top: 170px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  font-size: 50px;
+  font-family: ${Font.des};
+  color: ${COLOR.trend_main};
+  background-color: transparent;
+  img {
+    width: 150px;
+    height: 100px;
+    &:hover {
+      filter: grayscale(80%);
     }
   }
 `;

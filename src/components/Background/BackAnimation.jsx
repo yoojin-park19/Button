@@ -1,7 +1,4 @@
 import styled from '@emotion/styled';
-// import { COLOR } from '../../constants';
-// import { Font } from '../../constants';
-// import { Link } from 'react-router-dom';
 export const BackAnimationIndex = (props) => {
   return (
     <BackAnimation
@@ -17,12 +14,12 @@ export const BackAnimationIndex = (props) => {
     </BackAnimation>
   );
 };
+
 const BackAnimation = styled.div`
-  position: absolute;
-  top: 130px;
+  position: relative;
   left: -65px;
   width: 100px;
-  z-index: -10;
+  z-index: -20;
   .item0,
   .item1,
   .item2,
@@ -78,25 +75,20 @@ const BackAnimation = styled.div`
       0% {
         transform: translate(0px, 0px) rotate(5deg);
       }
-
       100% {
         transform: ${(props) =>
           `translateX(${props.transFormX.i}px) translateY(${props.transFormY.i}px)`};
       }
     }
     position: absolute;
+    top: 50%;
     left: 50%;
     width: 40px;
     height: 40px;
     &.on {
       transform: ${(props) =>
         `translateX(${props.transFormX}px) translateY(${props.transFormY}px)`};
-      transition: ${(props) => props.duration * 0.3}s;
+      transition: ${(props) => props.duration * 0.4}s;
     }
-    /* animation-name: scatter;
-    animation-duration: ${(props) => props.duration * 0.3}s;
-    animation-duration: 5s; */
-  }
-  @media screen and (max-width: 390px) {
   }
 `;

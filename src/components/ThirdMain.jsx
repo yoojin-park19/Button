@@ -30,7 +30,6 @@ export const ThirdMain = () => {
 };
 
 const ThridMainPage = styled.section`
-  background: url('./images/thirdBack.png');
   background-size: cover;
   height: 100vh;
   display: flex;
