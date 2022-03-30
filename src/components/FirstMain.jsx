@@ -60,7 +60,7 @@ const Img = styled.div`
     animation-duration: 8s;
     z-index: -1;
   }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 720px) {
     background: none;
 
     position: relative;

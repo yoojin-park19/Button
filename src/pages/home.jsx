@@ -46,14 +46,15 @@ const HomeIndexPage = () => {
   };
   return (
     <HomePage>
-      <img src="../images/logo.png" className="logo" alt="button" />
+      <img
+        src="../images/newLogo.jpg
+        "
+        className="logo"
+        alt="button"
+        onClick={check}
+      />
       <div className="cont-check">
         <div>{rendering()}</div>
-
-        <button className="check-box" alt="check here" onClick={check} />
-        {active ? (
-          <img src="../images/check.png" className="check" alt="check" />
-        ) : null}
         {active ? (
           <div>
             <div className="card right fadeout"></div>
@@ -65,26 +66,30 @@ const HomeIndexPage = () => {
 };
 
 const HomePage = styled.section`
-  @keyframes fadeout {
+  @keyframes fadein {
     100% {
-      opacity: 0;
+      opacity: 0.1;
       transform: scale(0);
     }
-    75% {
-      opacity: 0.1;
-      transform: scale(2);
+    80% {
+      opacity: 0.5;
+      transform: scale(5);
     }
-    50% {
-      opacity: 0.2;
-      transform: scale(4);
-    }
-    25% {
-      opacity: 0.3;
+    60% {
+      opacity: 0.6;
       transform: scale(6);
     }
-    0% {
-      opacity: 0.4;
+    40% {
+      opacity: 0.8;
       transform: scale(8);
+    }
+    20% {
+      opacity: 0.9;
+      transform: scale(9);
+    }
+    0% {
+      opacity: 1;
+      transform: scale(10);
     }
   }
   position: relative;
@@ -93,68 +98,51 @@ const HomePage = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #c4a1fd, #fff);
   background-image: url('./images/flowers_circle.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
   overflow: hidden;
   .logo {
-    margin: 200px 0 0;
-    width: 580px;
-    height: 120px;
+    position: absolute;
+    top: 35%;
+    width: 300px;
+    height: 300px;
+    z-index: 10;
   }
   .cont-check {
     position: relative;
-    z-index: 10;
-    .check-box {
-      background: url('../images/checkbox.svg') no-repeat;
-      background-size: cover;
-      background-color: #fff;
-      position: absolute;
-      top: 100px;
-      left: -50px;
-      width: 110px;
-      height: 110px;
-    }
-    .check {
-      width: 150px;
-      height: 140px;
-      position: absolute;
-      top: 50px;
-      left: -50px;
-    }
+    top: 50%;
   }
   .card {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    opacity: 0.4;
-    transform: scale(8);
-
-    &.right {
-      top: 0px;
-      left: -70px;
-    }
-    &.fadeout {
-      animation: fadeout 1.2s linear 0s reverse;
-      background-color: ${COLOR.main};
-      border-radius: 100px;
+    width: 300px;
+    height: 300px;
+    transform: scale(10);
+    border-radius: 100%;
+    .right {
+      position: absolute;
+      top: 50px;
+      right: 30px;
     }
     &.left {
-      top: 40px;
       right: -110px;
       top: -50px;
       left: 0;
     }
-  }
-  @media screen and (max-width: 390px) {
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    .logo {
-      width: 100vw;
+    &.fadeout {
+      animation: fadein 2s linear 0s reverse;
+      background-color: #fff;
+      border-radius: 100px;
+      z-index: 30;
     }
+  }
+  @media screen and (max-width: 720px) {
+    .logo {
+    position: absolute;
+    top: 40%;
+    width: 160px;
+    height: 160px;
   }
 `;
 
