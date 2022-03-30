@@ -2,43 +2,25 @@ import styled from '@emotion/styled';
 // import { COLOR } from '../../constants';
 // import { Font } from '../../constants';
 // import { Link } from 'react-router-dom';
-import { useState } from 'react';
 export const BackAnimationIndex = (props) => {
-  // const [random, setRandom] = useState([]);
-  // const [transForm, setTransform] = useState([]);
-  // for (let i = 0; i < 30; i++) {
-  //   random.push('item' + i);
-  //   transForm.push(parseInt(Math.random() * 100));
-  // }
   return (
-    <BackAnimation>
-      {/* {random.map((item, index) => (
-        <>
-          <li>{transForm[index]}</li>
-          <img
-            key={index}
-            className={item}
-            transform={transForm[index]}
-            src="./images/background/magnolia.png"
-            alt="아이템"
-          />
-        </>
-      ))} */}
+    <BackAnimation
+      transFormX={props.transFormX}
+      transFormY={props.transFormY}
+      duration={props.duration}
+    >
+      <img
+        className={props.item}
+        src="./images/background/magnolia.png"
+        alt="아이템"
+      />
     </BackAnimation>
   );
 };
-const BackAnimation = styled.section`
-  @keyframes scatter {
-    0% {
-      transform: translate(0px, 0px) rotate(5deg);
-    }
-
-    100% {
-      transform: ${(props) => `translateX(${props.transForm}px)`};
-    }
-  }
+const BackAnimation = styled.div`
   position: absolute;
-  top: 50%;
+  top: 130px;
+  left: -65px;
   width: 100px;
   z-index: -10;
   .item0,
@@ -70,14 +52,50 @@ const BackAnimation = styled.section`
   .item26,
   .item27,
   .item28,
-  .item29 {
+  .item29,
+  .item30,
+  .item31,
+  .item32,
+  .item33,
+  .item34,
+  .item35,
+  .item36,
+  .item37,
+  .item38,
+  .item39,
+  .item40,
+  .item41,
+  .item42,
+  .item43,
+  .item44,
+  .item45,
+  .item46,
+  .item47,
+  .item48,
+  .item49,
+  .item50 {
+    @keyframes scatter {
+      0% {
+        transform: translate(0px, 0px) rotate(5deg);
+      }
+
+      100% {
+        transform: ${(props) =>
+          `translateX(${props.transFormX.i}px) translateY(${props.transFormY.i}px)`};
+      }
+    }
     position: absolute;
     left: 50%;
     width: 40px;
     height: 40px;
-    animation-name: scatter;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    &.on {
+      transform: ${(props) =>
+        `translateX(${props.transFormX}px) translateY(${props.transFormY}px)`};
+      transition: ${(props) => props.duration * 0.3}s;
+    }
+    /* animation-name: scatter;
+    animation-duration: ${(props) => props.duration * 0.3}s;
+    animation-duration: 5s; */
   }
   @media screen and (max-width: 390px) {
   }

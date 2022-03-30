@@ -1,28 +1,55 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { COLOR } from '../constants';
 import { BackAnimationIndex } from '../components/Background/BackAnimation';
 const HomeIndexPage = () => {
   const [active, setActive] = useState(false);
-  console.log(active);
+  const [backAni, setBackAni] = useState(false);
+  let transformX = [];
+  let transformY = [];
+  let duration = [];
   function check() {
+    setBackAni(!backAni);
     setActive(!active);
+    return;
   }
   if (active) {
     setTimeout(function () {
       locateKap();
       console.log('실행');
-    }, 1000);
+    }, 2500);
     function locateKap() {
       window.location.href = '/main';
     }
   }
 
+  const itemClass = useRef();
+  console.log(itemClass);
+  const rendering = () => {
+    const result = [];
+    for (let i = 0; i < 50; i++) {
+      transformX.push(parseInt(Math.random() * 3000) * -1 + 1500);
+      transformY.push(parseInt(Math.random() * 3000) * -1 + 1500);
+      duration.push(parseInt(Math.random() * 90));
+      result.push(
+        <BackAnimationIndex
+          key={i}
+          item={backAni ? `item` + i + ' on' : `item` + i}
+          transFormX={transformX[i]}
+          transFormY={transformY[i]}
+          duration={duration[i]}
+        />,
+      );
+    }
+    // console.log(result);
+    return result;
+  };
   return (
     <HomePage>
-      <BackAnimationIndex />
       <img src="../images/logo.png" className="logo" alt="button" />
       <div className="cont-check">
+        <div>{rendering()}</div>
+
         <button className="check-box" alt="check here" onClick={check} />
         {active ? (
           <img src="../images/check.png" className="check" alt="check" />
@@ -71,6 +98,7 @@ const HomePage = styled.section`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
+  overflow: hidden;
   .logo {
     margin: 200px 0 0;
     width: 580px;
@@ -82,6 +110,7 @@ const HomePage = styled.section`
     .check-box {
       background: url('../images/checkbox.svg') no-repeat;
       background-size: cover;
+      background-color: #fff;
       position: absolute;
       top: 100px;
       left: -50px;
@@ -108,8 +137,9 @@ const HomePage = styled.section`
       left: -70px;
     }
     &.fadeout {
-      animation: fadeout 1s linear 0s reverse;
+      animation: fadeout 1.2s linear 0s reverse;
       background-color: ${COLOR.main};
+      border-radius: 100px;
     }
     &.left {
       top: 40px;
