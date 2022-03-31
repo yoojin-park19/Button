@@ -9,6 +9,7 @@ export const COLOR = {
   blue: '#2E70FF',
   trend_main: '#800080',
   trend_sub: '#DB7093',
+  top: '#6667AB',
 };
 
 export const Font = {

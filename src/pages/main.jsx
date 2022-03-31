@@ -12,9 +12,7 @@ const MainIndexPage = () => {
     <>
       <MainHeader />
       <MainPage>
-        <Fade bottom>
-          <FirstMain />
-        </Fade>
+        <FirstMain />
         <Fade bottom>
           <SecondMain />
         </Fade>
@@ -26,6 +24,7 @@ const MainIndexPage = () => {
   );
 };
 const MainPage = styled.section`
-  background-color: ${COLOR.main};
+  margin-top: 70px;
+  background: url('./images/background/eiffel.svg') no-repeat;
 `;
 export default MainIndexPage;

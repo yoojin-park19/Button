@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { COLOR } from '../constants';
 export const MainHeader = () => {
   const [displaytoggle, setDisplaytoggle] = useState(false);
   const mediaTarget = window.innerWidth;
@@ -42,6 +43,7 @@ export const MainHeader = () => {
 };
 
 const Mainheader = styled.section`
+  background-color: ${COLOR.deep};
   display: flex;
   align-items: center;
   justify-content: space-between;
