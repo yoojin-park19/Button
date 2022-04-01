@@ -1,20 +1,38 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { COLOR } from '../constants';
+import { useState, useEffect } from 'react';
 export const MainHeader = () => {
-  const [displaytoggle, setDisplaytoggle] = useState(false);
+  let [displaytoggle, setDisplaytoggle] = useState(false);
   const mediaTarget = window.innerWidth;
-  console.log(mediaTarget);
-
+  const resizingHandler = () => {
+    if (mediaTarget >= 1023) {
+      setDisplaytoggle(true);
+    } else if (mediaTarget <= 1023) {
+      setDisplaytoggle(false);
+    }
+  };
+  useEffect(() => {
+    if (mediaTarget >= 1023) {
+      setDisplaytoggle(true);
+    } else if (mediaTarget <= 1023) {
+      setDisplaytoggle(false);
+    }
+    window.addEventListener('resize', resizingHandler);
+    return () => {
+      // 메모리 누수를 줄이기 위한 removeEvent
+      window.removeEventListener('resize', resizingHandler);
+    };
+  }, [mediaTarget]);
   const displayOn = () => {
-    setDisplaytoggle((prev) => !prev);
-    console.log(displaytoggle);
+    setDisplaytoggle(!displaytoggle);
   };
   return (
     <Mainheader>
       <div className="media_align">
-        <img src="../images/logo_trans.png" alt="logo" />
+        <Link to="/main">
+          <img src="../images/logo_trans.png" alt="logo" />
+        </Link>
         <button
           onClick={displayOn}
           className={displaytoggle ? 'moreListBtn on' : 'moreListBtn'}
@@ -33,7 +51,7 @@ export const MainHeader = () => {
           <Link to="/category">
             <p>CATEGORY</p>
           </Link>
-          <Link to="#">
+          <Link to="/about">
             <p>ABOUT US</p>
           </Link>
         </div>

@@ -1,0 +1,75 @@
+import styled from '@emotion/styled';
+import { useState } from 'react';
+import { Perfume } from '../../constants/database';
+import { Font, COLOR } from '../../constants';
+import Fade from 'react-reveal/Fade';
+export const AboutMain = () => {
+  return (
+    <>
+      <AboutMains>
+        <ImgContainer>
+          <img src="./images/about_item1.png" alt="우리에 대해서" />
+        </ImgContainer>
+        <Fade right cascade>
+          <FirstItem>
+            <ul>
+              <li>
+                <h2>저희는 '향'이 주는 중요한 의미를 알고 있습니다.</h2>
+              </li>
+            </ul>
+            {/* 애니메이션 */}
+            <ul>
+              <li>
+                <h3>'향'에는 많은 것들이 담겨있습니다.</h3>
+              </li>
+              <li>오늘의 '기분'을 나타 낼 수도 있으며,</li>
+              <li>당신의 '성격'을 보여 줄 수도 있습니다.</li>
+              <li>지친 하루를 '위로'받을 수도 있습니다.</li>
+              <li>오늘의 '기분'을 나타 낼 수도 있습니다.</li>
+              <li>#E9967A- sub color</li>
+            </ul>
+          </FirstItem>
+        </Fade>
+      </AboutMains>
+    </>
+  );
+};
+
+const AboutMains = styled.main`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #800080;
+`;
+const ImgContainer = styled.div`
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    filter: drop-shadow(20px 10px 10px #000);
+  }
+`;
+const FirstItem = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  background-color: #000;
+  text-align: center;
+  font-family: 'Song Myung', serif;
+  ul {
+    color: #fff;
+    margin-bottom: 20px;
+    li {
+      margin-bottom: 10px;
+      h2 {
+        font-size: 18px;
+      }
+    }
+  }
+`;
