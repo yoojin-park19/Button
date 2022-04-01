@@ -96,4 +96,6 @@ const Mainheader = styled.section`
       padding-bottom: 20px;
     }
   }
+  @media screen and (max-width: 720px) {
+    background-color: #fff;
 `;

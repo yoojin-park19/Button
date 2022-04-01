@@ -33,7 +33,6 @@ const SecondMainPage = styled.section`
     top: 0;
     left: 100px;
     text-align: center;
-    text-align: center;
     h2 {
       font-size: 120px;
       font-family: ${Font.des};
@@ -46,13 +45,28 @@ const SecondMainPage = styled.section`
       font-family: ${Font.etilte};
     }
   }
+  @media screen and (max-width: 720px) {
+    height: 80vh;
+    .cont-item {
+      left: 0px;
+      width: 100vw;
+      h2 {
+        font-size: 50px;
+        color: #fff;
+      }
+      .kr {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+  } ;
 `;
 
 const Button = styled.button`
   width: 400px;
   height: 80px;
   margin-top: 170px;
-  border: 3px solid #fff;
+  border: none;
   border-radius: 10px;
   font-size: 50px;
   font-family: ${Font.des};
@@ -65,4 +79,18 @@ const Button = styled.button`
       filter: grayscale(80%);
     }
   }
+  @media screen and (max-width: 720px) {
+    width: 300px;
+    margin-top: 170px;
+    border: none;
+    font-size: 50px;
+    color: #fff;
+    &:hover {
+      color: ${COLOR.right};
+    }
+    img {
+      display: none;
+    }
+  }
+  } ;
 `;
