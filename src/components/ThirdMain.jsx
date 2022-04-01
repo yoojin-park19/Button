@@ -34,8 +34,9 @@ const ThridMainPage = styled.section`
   height: 100vh;
   display: flex;
   justify-content: center;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 720px) {
     height: 100%;
+    padding-bottom: 50px;
   }
 `;
 
@@ -44,8 +45,9 @@ const CardList = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 100px;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 720px) {
     flex-direction: column;
+    gap: 50px;
   }
 `;
 
@@ -79,7 +81,18 @@ const Card = styled.section`
     border-radius: 10px;
     color: #fff;
   }
-  @media screen and (max-width: 440px) {
-    height: 200px;
+  @media screen and (max-width: 720px) {
+  height: 150px;
+  gap: 20px;
+  background-color: transparent;
+  box-shadow: none;
+  p {
+    font-family: ${Font.des};
+    font-size: 30px;
+    color: #fff;
+  }
+  button {
+    width: 148px;
+    height: 48px;
   }
 `;
