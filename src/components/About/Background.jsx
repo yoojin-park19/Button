@@ -14,14 +14,13 @@ export const BackgroundImg = () => {
     positionY.push(parseInt(Math.random() * 100));
     duration.push(Math.random() * 80 + 10);
   }
-  console.log(duration);
   return (
     <Backgrounds>
       <div className="contianer">
         {arr.map((item, index) => (
           <>
             <BackgroundItemIndex
-              key={index}
+              key={index.toString()}
               positionY={positionY[index]}
               duration={duration[index]}
               width={30}
@@ -30,7 +29,7 @@ export const BackgroundImg = () => {
               alt={``}
             />
             <BackgroundItemIndex
-              key={index + `100`}
+              key={index + 100}
               width={40}
               positionY={positionY[index + 40]}
               duration={duration[index]}
