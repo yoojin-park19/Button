@@ -6,6 +6,7 @@ import TestIndexPage from './pages/test';
 import GiftIndexPage from './pages/forGift';
 import CategoryIndexPage from './pages/category';
 import GiftResultIndexPage from './pages/giftResult';
+import AboutIndexPage from './pages/about';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
           <Route path="/gift" exact component={GiftIndexPage} />
           <Route path="/category" exact component={CategoryIndexPage} />
           <Route path="/giftResult" exact component={GiftResultIndexPage} />
+          <Route path="/About" exact component={AboutIndexPage} />
         </Switch>
       </BrowserRouter>
     </div>
