@@ -11,6 +11,7 @@ export const ItemStarLeft = (props) => {
       duration={props.duration}
       width={props.width}
       height={props.height}
+      background={props.background}
     >
       <div
         className={'star' + ' ' + props.item}
@@ -19,6 +20,7 @@ export const ItemStarLeft = (props) => {
         width={props.width}
         height={props.height}
         duration={props.duration}
+        background={props.background}
       ></div>
     </ItemStarsLefts>
   );
@@ -31,6 +33,7 @@ export const ItemStarRight = (props) => {
       duration={props.duration}
       width={props.width}
       height={props.height}
+      background={props.background}
     >
       <div
         className={'star' + ' ' + props.item}
@@ -39,6 +42,7 @@ export const ItemStarRight = (props) => {
         width={props.width}
         height={props.height}
         duration={props.duration}
+        background={props.background}
       ></div>
     </ItemStarsRights>
   );
@@ -60,10 +64,11 @@ const ItemStarsLefts = styled.div`
     z-index: 20;
     width: ${(props) => `${props.width}px`};
     height: ${(props) => `${props.height}px`};
-    background-color: #fff;
+    background-color: ${(props) => `${props.background}`};
     border-radius: 100%;
     animation: twinkle;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     &.star_0,
     &.star_1,
     &.star_2,
@@ -117,10 +122,11 @@ const ItemStarsRights = styled.div`
     z-index: 20;
     width: ${(props) => `${props.width}px`};
     height: ${(props) => `${props.height}px`};
-    background-color: #fff;
+    background-color: ${(props) => `${props.background}`};
     border-radius: 100%;
     animation: twinkle;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     &.star_0,
     &.star_1,
     &.star_2,
