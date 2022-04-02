@@ -16,7 +16,7 @@ export const Cards = (props) => {
 };
 
 const Card = styled.li`
-  width: 250px;
+  width: 300px;
   height: 600px;
   padding: 10px 20px;
   border: 1px solid #000;
@@ -26,13 +26,13 @@ const Card = styled.li`
   align-items: center;
   text-align: center;
   border-radius: 10px;
-  border: none;
-  background-color: ${COLOR.sub};
-  box-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 13px double ${COLOR.top};
+  background-color: #fff;
+  box-shadow: 8px 14px 14px rgba(0, 0, 0, 0.25);
   position: relative;
   img {
     width: 180px;
-    height: 300px;
+    height: 250px;
     margin-bottom: 30px;
   }
   .title {
@@ -54,6 +54,6 @@ const Card = styled.li`
     align-self: flex-start;
     position: absolute;
     bottom: 10px;
-    right: 125px;
+    right: 150px;
   }
 `;

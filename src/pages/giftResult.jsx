@@ -126,9 +126,10 @@ const GiftResultIndexPage = (props) => {
       <ResultPage>
         <p className="head">향수를 선물해보세요.</p>
         {active ? null : (
-          <button className="btn-start" onClick={data}>
-            Click to see your new vibe
-          </button>
+          <Button onClick={data}>
+            <img src="./images/background/flower.png" alt="시작 버튼" />
+            <p>Click to see your gift</p>
+          </Button>
         )}
         {active ? (
           <CardList>
@@ -191,48 +192,100 @@ const GiftResultIndexPage = (props) => {
 };
 
 const ResultPage = styled.section`
-  background-color: ${COLOR.main};
-  height: 100%;
+  background-color: ${COLOR.top};
+  height: 100vh;
   padding: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   .head {
-    padding: 0 50px;
+    padding: 0 70px;
     margin-bottom: 50px;
     font-size: 28px;
-    font-family: ${Font.des};
+    font-family: ${Font.title};
+    color: #fff;
     text-align: center;
     line-height: 2;
-    border-bottom: 2px double #000;
+    border-bottom: 2px double #fff;
   }
   .dim {
-    filter: blur(5px);
-  }
-  .btn-start {
-    z-index: 10;
-    border: none;
-    background-color: transparent;
-    position: relative;
-    top: 150px;
-    color: #fff;
-    font-size: 30px;
+    filter: blur(25px);
   }
   .btn-again {
     margin: 50px 0;
     width: 150px;
     height: 50px;
     border: none;
-    background-color: ${COLOR.deep};
-    color: #fff;
+    border-radius: 13px;
+    background-color: #fff;
     font-size: 18px;
+    cursor: pointer;
+    &:hover {
+      background-color: ${COLOR.right};
+    }
+  }
+  @media screen and (max-width: 720px) {
+    padding: 50px 0;
+    height: 100%;
+    .dim {
+      filter: blur(100px);
+    }
+    .head {
+      display: none;
+      padding: 0 10px;
+      margin-bottom: 0px;
+      font-size: 14px;
+    }
+    .btn-again {
+      display: none;
+    }
   }
 `;
-
 const CardList = styled.ul`
   display: flex;
   gap: 80px;
+  @media screen and (max-width: 720px) {
+    gap: 30px;
+    flex-direction: column;
+  }
 `;
 
+const Button = styled.button`
+  position: absolute;
+  top: 20%;
+  background-color: transparent;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  img {
+    width: 750px;
+  }
+  p {
+    position: absolute;
+    top: 50%;
+    right: 34%;
+    font-size: 30px;
+    font-family: ${Font.etitle};
+    &:hover {
+      color: ${COLOR.trend_main};
+    }
+  }
+  @media screen and (max-width: 720px) {
+    top: 50px;
+    img {
+      width: 450px;
+    }
+    p {
+      position: absolute;
+      top: 50%;
+      right: 32%;
+      font-size: 20px;
+      &:hover {
+        color: ${COLOR.trend_main};
+      }
+    }
+  }
+`;
 export default GiftResultIndexPage;

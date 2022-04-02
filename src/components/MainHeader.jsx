@@ -1,32 +1,32 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { COLOR } from '../constants';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 export const MainHeader = () => {
   let [displaytoggle, setDisplaytoggle] = useState(false);
-  const mediaTarget = window.innerWidth;
+
   const resizingHandler = () => {
-    if (mediaTarget >= 1023) {
+    if (window.innerWidth <= 1023) {
       setDisplaytoggle(true);
-    } else if (mediaTarget <= 1023) {
+    } else {
       setDisplaytoggle(false);
     }
   };
+
   useEffect(() => {
-    if (mediaTarget >= 1023) {
+    if (window.innerWidth <= 1023) {
       setDisplaytoggle(true);
-    } else if (mediaTarget <= 1023) {
-      setDisplaytoggle(false);
     }
     window.addEventListener('resize', resizingHandler);
     return () => {
-      // 메모리 누수를 줄이기 위한 removeEvent
       window.removeEventListener('resize', resizingHandler);
     };
-  }, [mediaTarget]);
+  }, []);
+
   const displayOn = () => {
-    setDisplaytoggle(!displaytoggle);
+    setDisplaytoggle((prev) => !prev);
   };
+
   return (
     <Mainheader>
       <div className="media_align">
@@ -40,7 +40,7 @@ export const MainHeader = () => {
           <img src="./images/icon/icon_menu_btn.svg" alt="더보기" />
         </button>
       </div>
-      {displaytoggle ? (
+      {displaytoggle ? null : (
         <div className="cont-menu">
           <Link to="/test">
             <p>FOR YOU</p>
@@ -55,13 +55,13 @@ export const MainHeader = () => {
             <p>ABOUT US</p>
           </Link>
         </div>
-      ) : null}
+      )}
     </Mainheader>
   );
 };
 
 const Mainheader = styled.section`
-  background-color: ${COLOR.deep};
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,7 +78,7 @@ const Mainheader = styled.section`
     gap: 60px;
     font-size: 18px;
   }
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: center;
