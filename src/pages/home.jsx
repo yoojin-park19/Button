@@ -27,7 +27,7 @@ const HomeIndexPage = () => {
   console.log(itemClass);
   const rendering = () => {
     const result = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 70; i++) {
       transformX.push(parseInt(Math.random() * 3000) * -1 + 1500);
       transformY.push(parseInt(Math.random() * 3000) * -1 + 1500);
       duration.push(parseInt(Math.random() * 90));
@@ -139,10 +139,11 @@ const HomePage = styled.section`
   }
   @media screen and (max-width: 720px) {
     .logo {
-    position: absolute;
-    top: 40%;
-    width: 160px;
-    height: 160px;
+      position: absolute;
+      top: 40%;
+      width: 160px;
+      height: 160px;
+    }
   }
 `;
 

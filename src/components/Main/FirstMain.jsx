@@ -89,7 +89,7 @@ const FirstMainPage = styled.section`
       animation-duration: 5s;
     }
   }
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 720px) {
     height: 130vh;
     .main-img {
       border: 1px solid red;

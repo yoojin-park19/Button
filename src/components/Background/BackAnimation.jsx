@@ -8,7 +8,7 @@ export const BackAnimationIndex = (props) => {
     >
       <img
         className={props.item}
-        src="./images/background/magnolia.png"
+        src="./images/background/backgrounditem.png"
         alt="아이템"
       />
     </BackAnimation>
@@ -70,7 +70,30 @@ const BackAnimation = styled.div`
   .item47,
   .item48,
   .item49,
-  .item50 {
+  .item50,
+  .item51,
+  .item52,
+  .item53,
+  .item54,
+  .item55,
+  .item56,
+  .item57,
+  .item58,
+  .item59,
+  .item60,
+  .item61,
+  .item62,
+  .item63,
+  .item64,
+  .item65,
+  .item66,
+  .item67,
+  .item68,
+  .item69,
+  .item70,
+  .item71,
+  .item72,
+  .item80 {
     @keyframes scatter {
       0% {
         transform: translate(0px, 0px) rotate(5deg);
