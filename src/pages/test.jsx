@@ -1,28 +1,24 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { TestList } from '../constants/testList';
 import { COLOR, Font } from '../constants';
 import { MainHeader } from '../components/MainHeader';
-import { Welcome } from '../components/Test/Welcome';
 import { Question0nePage } from '../components/Test/Question0ne';
 
 const TestIndexPage = () => {
-  const test = false;
+  const [test, setTest] = useState(true);
   return (
     <>
       <MainHeader />
       <TestPage>
         <div className="container">
-          <TestProgress>
-            <div className="bar"></div>
-            <p className="amount">
-              <span className="number"></span>/ 12
-            </p>
-          </TestProgress>
           {test ? (
-            <>
-              <Welcome description={TestList[0].Title} />
-            </>
+            <Welcome>
+              <h1>당신을 위한 향수를 추천해드릴께요.</h1>
+              <button onClick={() => setTest(false)}>
+                <img src="./images/background/backgrounditem.png" alt="클릭" />
+                Click to Find your mood
+              </button>
+            </Welcome>
           ) : (
             <>
               <div className="wrap">
@@ -35,81 +31,82 @@ const TestIndexPage = () => {
     </>
   );
 };
+const Welcome = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  gap: 50px;
+  text-align: center;
+  color: #fff;
+  font-family: ${Font.title};
+  font-size: 40px;
+  button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    font-family: ${Font.des};
+    &:hover {
+      color: ${COLOR.sub};
+    }
+    img {
+      margin-right: 10px;
+      &:hover {
+        filter: hue-rotate(90deg);
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    margin: 80px;
+    line-height: 1.5;
+    gap: 80px;
+    font-size: 28px;
+    button {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`;
 
 const TestPage = styled.section`
   width: 100vw;
   height: 100%;
-  background-color: ${COLOR.main};
+  display: flex;
+  background-color: ${COLOR.top};
   font-family: ${Font.title};
   .container {
     width: 60vw;
     height: 90vh;
     margin: 0 auto;
     position: relative;
-    background-color: ${COLOR.main};
+    background-color: ${COLOR.top};
     box-sizing: border-box;
     padding-top: 50px;
     padding-left: 5vw;
     padding-right: 5vw;
   }
   .wrap {
-    height: 418px;
+    height: 90vh;
     width: 50vw;
-    padding: 50px 5vw;
+    padding: 80px 5vw;
     box-sizing: border-box;
-    margin: 0 1%;
     border-radius: 10px;
-    background-color: rgba(236, 236, 236, 0.6);
+    background-color: #fff;
     box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.3);
   }
-  @media screen and (max-width: 420px) {
-    width: 100vw;
-    height: 100vh;
+  @media screen and (max-width: 720px) {
     .container {
       width: 100vw;
-      padding: 0px;
-      margin: 0px;
+      height: 100vh;
+      padding-top: 10px;
     }
     .wrap {
-      height: 100vh;
-      width: 100vw;
-      padding: 50px 5vw;
-      box-sizing: border-box;
-      margin: 0 auto;
-      border-radius: 0;
-      background-color: rgba(236, 236, 236, 0.6);
-      box-shadow: none;
+      height: 87vh;
+      width: 90vw;
+      padding: 40px 0px;
     }
-  }
-`;
-const TestProgress = styled.section`
-  display: flex;
-  justify-content: space-between;
-  width: 50vw;
-  height: 33px;
-  border-radius: 10px;
-  background-color: ${COLOR.gray};
-  padding-right: 20px;
-  margin-bottom: 50px;
-  box-shadow: 5px 5px 3px 4px rgba(0, 0, 0, 0.1);
-  font-size: 60px;
-  font-family: ${Font.des};
-  .bar {
-    width: 50px;
-    height: 33px;
-    border-radius: 10px;
-    background-color: ${COLOR.right};
-  }
-  .amount {
-    height: 33px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 20px;
-    color: ${COLOR.blue};
-  }
-  @media screen and (max-width: 420px) {
-    display: none;
   }
 `;
 

@@ -102,6 +102,7 @@ export const Question0nePage = (props) => {
               ) : null}
             </div>
           </form>
+          <div className="count">{Test}/5</div>
         </Question0ne>
       ) : (
         <Link
@@ -124,75 +125,112 @@ const Button = styled.button`
   margin: 80px auto;
   border-radius: 10px;
   border: none;
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px 1px rgba(202, 171, 32, 0.322);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   font-family: ${Font.title};
-  background-color: rgba(254, 254, 254, 0.8);
-  color: ${COLOR.main};
+  background-color: ${COLOR.top};
+  color: #fff;
   &:hover {
-    background-color: ${COLOR.right};
-    color: ${COLOR.deep};
+    background-color: rgba(202, 171, 32, 0.322);
+    color: ${COLOR.trend_main};
   }
 `;
 
 const Question0ne = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 40vw;
-  height: 20px;
+  height: 100px;
   .itemContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: relative;
     div {
       position: relative;
     }
-  }
-  input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    top: -100px;
-    left: -100px;
-  }
-  label {
-    display: block;
-    width: 40vw;
-    height: 40px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    padding-left: 40px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    line-height: 40px;
-    &:hover {
-      background-color: ${COLOR.right};
-      color: ${COLOR.deep};
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: -100px;
+      left: -100px;
+    }
+    label {
+      display: flex;
+      width: 40vw;
+      height: 90px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      padding: 25px;
+      font-size: 20px;
+      border-radius: 10px;
+      background-color: ${COLOR.top};
+      box-shadow: 2px 2px 2px 1px rgba(202, 171, 32, 0.322);
+      color: #fff;
+      line-height: 40px;
+      &:hover {
+        background-color: rgba(202, 171, 32, 0.322);
+        color: ${COLOR.trend_main};
+        &::before {
+          content: '';
+          display: block;
+          background: url('./images/background/backgrounditem.png');
+          width: 30px;
+          height: 60px;
+          margin: -18px 15px 0 0;
+        }
+      }
     }
   }
   .questionTit {
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    color: ${COLOR.deep};
   }
-  @media screen and (max-width: 420px) {
+  .count {
+    margin-top: 80px;
+  }
+  @media screen and (max-width: 720px) {
     width: 90vw;
-    .questionTit {
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 20px;
+    .itemContainer {
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80vw;
+        padding: 10px;
+        font-size: 17px;
+        line-height: 25px;
+        &:hover {
+          background-color: rgba(202, 171, 32, 0.322);
+          color: ${COLOR.trend_main};
+          &::before {
+            content: '';
+            display: block;
+            background: url('./images/background/backgrounditem.png');
+            width: 30px;
+            height: 60px;
+            margin: -18px 15px 0 0;
+          }
+        }
+      }
     }
-    label {
-    display: flex;
-    align-items:center;
-    width: 90vw;
-    height: 60px;
-    font-size: 14px;
-    line-height: 16px;
-
+    .questionTit {
+      text-align: center;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+    .count {
+      margin-top: 20px;
+    }
   }
 `;
