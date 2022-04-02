@@ -14,7 +14,7 @@ export const COLOR = {
 
 export const Font = {
   title: `'gowun', serif`,
-  etilte: `'Stylish', sans-serif`,
+  etitle: `'Stylish', sans-serif`,
   des: `'Caveat', cursive`,
 };
 
