@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { COLOR } from '../../constants';
-import { Link } from 'react-router-dom';
 
 export const Cards = (props) => {
   return (
