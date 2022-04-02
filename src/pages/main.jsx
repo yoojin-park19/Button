@@ -14,11 +14,13 @@ const MainIndexPage = () => {
       <MainHeader />
       <MainPage>
         <MainBackAni />
-        <FirstMain />
-        <Fade bottom>
+        <Fade right>
+          <FirstMain />
+        </Fade>
+        <Fade left>
           <SecondMain />
         </Fade>
-        <Fade right>
+        <Fade bottom>
           <ThirdMain />
         </Fade>
       </MainPage>
@@ -32,7 +34,12 @@ const MainPage = styled.section`
   background-size: cover;
   overflow: hidden;
   @media screen and (max-width: 720px) {
-    background-position: -620px 0;
+    margin-top: 0px;
+    padding-top: 30px;
+  background: url('./images/background/background_demo.jpg') no-repeat;
+    background-size: cover;
+    background-position: -127px;
+    background-color: ${COLOR.deep};
   }
 `;
 export default MainIndexPage;

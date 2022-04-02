@@ -42,18 +42,31 @@ const FirstMainPage = styled.section`
       font-family: ${Font.etilte};
     }
   }
+  @media screen and (max-width: 720px) {
+  padding-top: 50px;
+  .cont-item {
+    right: 0px;
+    h2 {
+      font-size: 50px;
+      color: #fff;
+      text-shadow: 8px 4px 15px rgba(105, 0, 147, 1);
+    }
+    .kr {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
 `;
 
 const Button = styled.button`
   width: 400px;
   height: 80px;
   margin-top: 170px;
-  border: 3px solid #fff;
-  border-radius: 10px;
   font-size: 50px;
   font-family: ${Font.des};
   color: ${COLOR.trend_main};
   background-color: transparent;
+  border: none;
   img {
     width: 150px;
     height: 100px;
@@ -61,5 +74,16 @@ const Button = styled.button`
       filter: grayscale(80%);
     }
   }
+  @media screen and (max-width: 720px) {
+    margin-top: 170px;
+    border: none;
+    font-size: 50px;
+    color: #fff;
+    &:hover {
+      color: ${COLOR.right};
+    }
+    img {
+      display: none;
+    }
+  }
 `;
-
