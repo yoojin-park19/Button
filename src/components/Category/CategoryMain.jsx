@@ -7,25 +7,37 @@ import { BrandCategory } from './BrandCategory';
 import { MiddleCategory } from './MiddleCategory';
 import { GenderCategory } from './GenderCategory';
 export const CategoryMain = () => {
-  const [activePrice, setActivePrice] = useState('false');
-  const [activeBrand, setActiveBrand] = useState('false');
-  const [activeMiddle, setActiveMiddle] = useState('false');
-  const [activeGender, setActiveGender] = useState('false');
+  const [activePrice, setActivePrice] = useState(false);
+  const [activeBrand, setActiveBrand] = useState(false);
+  const [activeMiddle, setActiveMiddle] = useState(false);
+  const [activeGender, setActiveGender] = useState(false);
 
   const Pricelist = () => {
-    setActivePrice(!activePrice);
+    setActivePrice((prev) => !prev);
+    setActiveBrand(false);
+    setActiveMiddle(false);
+    setActiveGender(false);
   };
 
   function Brandlist() {
-    setActiveBrand(!activeBrand);
+    setActivePrice(false);
+    setActiveBrand((prev) => !prev);
+    setActiveMiddle(false);
+    setActiveGender(false);
   }
 
   function Middlelist() {
-    setActiveMiddle(!activeMiddle);
+    setActivePrice(false);
+    setActiveBrand(false);
+    setActiveMiddle((prev) => !prev);
+    setActiveGender(false);
   }
 
   function Genderlist() {
-    setActiveGender(!activeGender);
+    setActivePrice(false);
+    setActiveBrand(false);
+    setActiveMiddle(false);
+    setActiveGender((prev) => !prev);
   }
 
   return (
@@ -37,25 +49,25 @@ export const CategoryMain = () => {
               <button className="listCont" onClick={Pricelist}>
                 가격별로 보기
               </button>
-              {activePrice ? null : <PriceCategory />}
+              {activePrice ? <PriceCategory /> : null}
             </div>
             <div>
               <button className="listCont" onClick={Brandlist}>
                 브랜드별로 보기
               </button>
-              {activeBrand ? null : <BrandCategory />}
+              {activeBrand ? <BrandCategory /> : null}
             </div>
             <div>
               <button className="listCont" onClick={Middlelist}>
                 향기별로 보기
               </button>
-              {activeMiddle ? null : <MiddleCategory />}
+              {activeMiddle ? <MiddleCategory /> : null}
             </div>
             <div>
               <button className="listCont" onClick={Genderlist}>
                 성별로 보기
               </button>
-              {activeGender ? null : <GenderCategory />}
+              {activeGender ? <GenderCategory /> : null}
             </div>
           </div>
         </AssortContainer>
