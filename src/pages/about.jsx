@@ -17,6 +17,7 @@ const style = css`
     background-color: #febfa2;
   }
 `;
+
 const About = styled.section`
   background-color: #febfa2;
 `;
@@ -24,4 +25,5 @@ const About = styled.section`
 const GlobalStyle = () => {
   return <Global styles={style} />;
 };
+
 export default AboutIndexPage;
