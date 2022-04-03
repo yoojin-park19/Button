@@ -128,10 +128,20 @@ const MiddleCategoryPage = styled.section`
   height: 100vh;
   width: 100vw;
   display: flex;
+  @media screen and (max-width: 720px) {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const MiddlePage = styled.ul`
   text-align: left;
+  display: flex;
+  flex-direction: column;
   margin-left: 20px;
   .assortList {
     button {
@@ -150,6 +160,37 @@ const MiddlePage = styled.ul`
       }
     }
   }
+  @media screen and (max-width: 720px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    left: -23px;
+    width: 100%;
+    .assortList {
+      display: flex;
+      width: 140px;
+      height: 80px;
+      button {
+        width: 150px;
+        height: 80px;
+        color: white;
+        font-family: ${Font.gowun};
+        text-align: center;
+        font-size: 13px;
+        border: none;
+        background-color: ${COLOR.figma};
+        color: #000;
+        &:hover {
+          background-color: ${COLOR.right};
+          width: 150px;
+          height: 80px;
+        }
+      }
+    }
+  }
 `;
 
 const AssortPage = styled.section`
@@ -158,7 +199,7 @@ const AssortPage = styled.section`
   width: 100vw;
   list-style: none;
   position: relative;
-  top: -285px;
+  top: -220px;
   padding: 100px;
   background-color: #fff;
   .cartegory-card {
@@ -166,5 +207,28 @@ const AssortPage = styled.section`
     display: flex;
     gap: 0 50px;
     flex-wrap: wrap;
+  }
+  @media screen and (max-width: 720px) {
+    position: absolute;
+    height: 1000px;
+    overflow-y: scroll;
+    width: 100vw;
+    list-style: none;
+    top: 0px;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cartegory-card {
+      position: absolute;
+      top: 100px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 50px;
+      flex-wrap: wrap;
+    }
   }
 `;
