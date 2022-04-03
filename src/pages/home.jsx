@@ -102,6 +102,7 @@ const HomePage = styled.section`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
+  /* background-color: #fff; */
   overflow: hidden;
   .logo {
     position: absolute;
