@@ -225,6 +225,7 @@ export const MiddleCategory = () => {
 
 const MiddleCategoryPage = styled.section`
   height: 100vh;
+  width: 100vw;
   display: flex;
 `;
 
@@ -233,28 +234,32 @@ const MiddlePage = styled.ul`
   margin-left: 20px;
   .assortList {
     button {
-      width: 150px;
-      height: 40px;
+      width: 250px;
+      height: 50px;
       color: white;
       font-family: ${Font.gowun};
       text-align: left;
+      font-size: 16px;
       border: none;
       background-color: transparent;
       &:hover {
-        background-color: ${COLOR.sub};
+        background-color: ${COLOR.figma};
+        width: 250px;
+        height: 50px;
       }
     }
   }
 `;
 
 const AssortPage = styled.section`
-  height: 100vh;
-  width: 73vw;
+  height: 1000px;
+  overflow-y: scroll;
+  width: 100vw;
   list-style: none;
   position: relative;
-  top: -310px;
+  top: -240px;
   padding: 100px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #fff;
   .cartegory-card {
     box-sizing: border-box;
     display: flex;
