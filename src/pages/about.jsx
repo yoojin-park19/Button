@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { AboutMain } from '../components/About/AboutMain';
 import { Global, css } from '@emotion/react';
-
 const AboutIndexPage = () => {
   return (
     <>
@@ -15,12 +14,16 @@ const AboutIndexPage = () => {
 };
 const style = css`
   body {
-    background-color: red;
+    background-color: #febfa2;
   }
+`;
+
+const About = styled.section`
+  background-color: #febfa2;
 `;
 
 const GlobalStyle = () => {
   return <Global styles={style} />;
 };
-const About = styled.section``;
+
 export default AboutIndexPage;

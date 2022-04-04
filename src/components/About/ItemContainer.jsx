@@ -1,42 +1,129 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
-export const ItemContainer = () => {
+import { TextContainer } from './ItemCont/TextContainer';
+export const ItemContainer = (props) => {
+  const [ScrollY, setScrollY] = useState(0); // window 의 pageYOffset값을 저장
+  const [ScrollFixed, setScrollFixed] = useState(false);
+  let count = 0;
+  console.log(`ScrollY:` + ScrollY);
+
+  function handleScroll() {
+    count += 1;
+    if (ScrollY <= 760) {
+      setScrollY(window.pageYOffset);
+      setScrollFixed(true);
+    } else {
+      setScrollY(window.pageYOffset);
+      setScrollFixed(false);
+    }
+  }
+  useEffect(() => {
+    function scrollListener() {
+      window.addEventListener('scroll', handleScroll);
+    } //  window 에서 스크롤을 감시 시작
+    scrollListener(); // window 에서 스크롤을 감시
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }; //  window 에서 스크롤을 감시를 종료
+  });
+
+  console.log('scrolled' + count);
   return (
     <>
-      <ItemContainers>
-        <Title>About us</Title>
-        <ItemWrapper>
-          <ImgContainer>
-            <Fade right cascade>
-              <img
-                className="item2"
-                src="./images/about/back_item2.png"
-                alt=""
+      {ScrollFixed ? (
+        <ItemContainers position={'fixed'}>
+          <Title>About us</Title>
+          <ItemWrapper>
+            <ImgContainer>
+              <Fade right cascade>
+                <img
+                  className="item2"
+                  src="./images/about/back_item2.png"
+                  alt=""
+                />
+                <img
+                  className="item4"
+                  src="./images/about/back_item4.png"
+                  alt=""
+                />
+                <img
+                  className="item3"
+                  src="./images/about/back_item3.png"
+                  alt=""
+                />
+              </Fade>
+            </ImgContainer>
+            {ScrollY >= 0 && ScrollY < 100 ? (
+              <TextContainer
+                src={'./images/about/gucci_item.png'}
+                title={'안녕하세요'}
+                des={'오늘도 좋은 향수와 함께하세요.'}
               />
-              <img
-                className="item4"
-                src="./images/about/back_item4.png"
-                alt=""
+            ) : null}
+            {ScrollY <= 200 && ScrollY >= 100 ? (
+              <TextContainer
+                src={'./images/about/chanel_item.png'}
+                title={'두번째 페이지'}
+                des={'오늘도 좋은 향수와 함께하세요.'}
               />
-              <img
-                className="item3"
-                src="./images/about/back_item3.png"
-                alt=""
+            ) : null}
+            {ScrollY >= 201 ? (
+              <TextContainer
+                src={'./images/about/deep_item.png'}
+                title={'세번째 페이지'}
+                des={'오늘도 좋은 향수와 함께하세요.'}
               />
-            </Fade>
-          </ImgContainer>
-          <TextContainer>
-            <img className="item5" src="./images/about/gucci_item.png" alt="" />
-            <ul>
-              <li>
-                <h3>저희 사이트를 </h3>
-              </li>
-              <li>방문해주셔서 감사합니다.</li>
-            </ul>
-          </TextContainer>
-        </ItemWrapper>
-      </ItemContainers>
+            ) : null}
+          </ItemWrapper>
+        </ItemContainers>
+      ) : (
+        <ItemContainers position={'relative'}>
+          <Title>About us</Title>
+          <ItemWrapper>
+            <ImgContainer>
+              <Fade right cascade>
+                <img
+                  className="item2"
+                  src="./images/about/back_item2.png"
+                  alt=""
+                />
+                <img
+                  className="item4"
+                  src="./images/about/back_item4.png"
+                  alt=""
+                />
+                <img
+                  className="item3"
+                  src="./images/about/back_item3.png"
+                  alt=""
+                />
+              </Fade>
+            </ImgContainer>
+            {ScrollY >= 0 && ScrollY < 5 ? (
+              <TextContainer
+                src={'./images/about/gucci_item.png'}
+                title={'안녕하세요'}
+                des={'오늘도 좋은 향수와 함께하세요.'}
+              />
+            ) : null}
+            {ScrollY <= 8 && ScrollY >= 5 ? (
+              <TextContainer
+                src={'./images/about/chanel_item.png'}
+                title={'두번째 페이지'}
+                des={'오늘도 좋은 향수와 함께하세요.'}
+              />
+            ) : null}
+            {ScrollY >= 9 ? (
+              <TextContainer
+                src={'./images/about/deep_item.png'}
+                title={'세번째 페이지'}
+                des={'오늘도 좋은 향수와 함께하세요.'}
+              />
+            ) : null}
+          </ItemWrapper>
+        </ItemContainers>
+      )}
     </>
   );
 };
@@ -44,7 +131,8 @@ export const ItemContainer = () => {
 const ItemContainers = styled.div`
   width: 70vw;
   height: 80vh;
-  position: relative;
+  position: ${(props) => `${props.position}`};
+  /* position: fixed; */
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -88,39 +176,5 @@ const ImgContainer = styled.div`
     position: absolute;
     bottom: 100px;
     left: 0;
-  }
-`;
-
-const TextContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: 15vw;
-  gap: 100px;
-  width: 80vw;
-  height: 80vh;
-  text-align: center;
-  font-family: 'Do Hyeon', sans-serif;
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 300px;
-    li {
-      margin-bottom: 20px;
-      h3 {
-        font-family: 'Do Hyeon';
-
-        font-size: 20px;
-        margin-bottom: 30px;
-      }
-    }
-  }
-  .item5 {
-    width: 280px;
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
   }
 `;
