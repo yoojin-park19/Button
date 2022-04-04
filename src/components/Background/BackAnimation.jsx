@@ -106,8 +106,8 @@ const BackAnimation = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     &.on {
       transform: ${(props) =>
         `translateX(${props.transFormX}px) translateY(${props.transFormY}px)`};
