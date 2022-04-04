@@ -202,14 +202,15 @@ const QuestionGift = styled.section`
     width: 90vw;
     .itemContainer {
       label {
+        height: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         width: 80vw;
-        padding: 10px;
-        font-size: 17px;
-        line-height: 25px;
+        padding: 5px;
+        font-size: 15px;
+        line-height: 20px;
         &:hover {
           background-color: rgba(202, 171, 32, 0.322);
           color: ${COLOR.trend_main};

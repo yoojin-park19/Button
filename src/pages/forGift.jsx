@@ -42,7 +42,7 @@ const Welcome = styled.section`
   text-align: center;
   color: #fff;
   font-family: ${Font.title};
-  font-size: 40px;
+  font-size: 28px;
   button {
     color: #fff;
     background-color: transparent;
@@ -50,16 +50,17 @@ const Welcome = styled.section`
     font-size: 30px;
     font-family: ${Font.des};
     &:hover {
-      color: ${COLOR.sub}
+      color: ${COLOR.sub};
     }
     img {
       margin-right: 10px;
-      &:hover{
+      &:hover {
         filter: hue-rotate(90deg);
       }
     }
-    @media screen and (max-width: 720px) {
-    margin: 80px;
+  }
+  @media screen and (max-width: 720px) {
+    margin: 50px;
     line-height: 1.5;
     gap: 80px;
     font-size: 28px;
@@ -99,11 +100,11 @@ const TestPage = styled.section`
   @media screen and (max-width: 720px) {
     .container {
       width: 100vw;
-      height: 100vh;
+      height: 90vh;
       padding-top: 10px;
     }
     .wrap {
-      height: 87vh;
+      height: 80vh;
       width: 90vw;
       padding: 40px 0px;
     }

@@ -15,7 +15,7 @@ export const Cards = (props) => {
 };
 
 const Card = styled.li`
-  width: 300px;
+  max-width: 300px;
   height: 600px;
   padding: 10px 20px;
   border: 1px solid #000;
