@@ -1,23 +1,27 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
-import Fade from 'react-reveal/Fade';
+import { Font } from '../../../constants';
+
 export const TextContainer = (props) => {
   return (
     <>
-      <TextContainers>
+      <TextContainers width={props.width}>
         <img className="item5" src={props.src} alt="" />
         <ul>
           <li>
             <h3>{props.title} </h3>
           </li>
-          <li>{props.des}</li>
+          <li width={props.width} height={props.height} align={'start'}>
+            {props.des}
+          </li>
+          <li width={props.width} height={props.height} align={'start'}>
+            {props.des2}
+          </li>
         </ul>
       </TextContainers>
     </>
   );
 };
 const TextContainers = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -26,7 +30,7 @@ const TextContainers = styled.div`
   width: 80vw;
   height: 80vh;
   text-align: center;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: ${Font.title};
   .fixed {
     display: fixed;
   }
@@ -39,9 +43,11 @@ const TextContainers = styled.div`
     height: 300px;
     li {
       margin-bottom: 20px;
+      width: ${(props) => `${props.width}`}px;
+      height: ${(props) => `${props.height}`}px;
+      text-align: ${(props) => `${props.align}`};
       h3 {
-        font-family: 'Do Hyeon';
-
+        font-family: ${Font.title};
         font-size: 20px;
         margin-bottom: 30px;
       }
