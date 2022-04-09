@@ -2,9 +2,12 @@ import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import { TextContainer } from './ItemCont/TextContainer';
+import { Font } from '../../constants';
+import { Link } from 'react-router-dom';
+
 export const ItemContainer = (props) => {
   const [ScrollY, setScrollY] = useState(0); // window 의 pageYOffset값을 저장
-  const [ScrollFixed, setScrollFixed] = useState(false);
+  const [ScrollFixed, setScrollFixed] = useState(true);
   let count = 0;
   console.log(`ScrollY:` + ScrollY);
 
@@ -33,7 +36,7 @@ export const ItemContainer = (props) => {
     <>
       {ScrollFixed ? (
         <ItemContainers position={'fixed'}>
-          <Title>About us</Title>
+          <Title size={40}>ABOUT US</Title>
           <ItemWrapper>
             <ImgContainer>
               <Fade right cascade>
@@ -58,7 +61,12 @@ export const ItemContainer = (props) => {
               <TextContainer
                 src={'./images/about/gucci_item.png'}
                 title={'안녕하세요'}
-                des={'오늘도 좋은 향수와 함께하세요.'}
+                des={'저희 사이트를 방문해주셔서 감사드립니다.'}
+                des2={
+                  '저희는 향수를 더 친숙하고, 쉽게 접할 수 있도록 만들고 싶어서 이 사이트를 제작하였습니다.'
+                }
+                width={300}
+                height={100}
               />
             ) : null}
             {ScrollY <= 200 && ScrollY >= 100 ? (
@@ -78,50 +86,55 @@ export const ItemContainer = (props) => {
           </ItemWrapper>
         </ItemContainers>
       ) : (
-        <ItemContainers position={'relative'}>
-          <Title>About us</Title>
-          <ItemWrapper>
-            <ImgContainer>
-              <Fade right cascade>
-                <img
-                  className="item2"
-                  src="./images/about/back_item2.png"
-                  alt=""
-                />
-                <img
-                  className="item4"
-                  src="./images/about/back_item4.png"
-                  alt=""
-                />
-                <img
-                  className="item3"
-                  src="./images/about/back_item3.png"
-                  alt=""
-                />
-              </Fade>
-            </ImgContainer>
-            {ScrollY >= 0 && ScrollY < 5 ? (
-              <TextContainer
-                src={'./images/about/gucci_item.png'}
-                title={'안녕하세요'}
-                des={'오늘도 좋은 향수와 함께하세요.'}
-              />
-            ) : null}
-            {ScrollY <= 8 && ScrollY >= 5 ? (
-              <TextContainer
-                src={'./images/about/chanel_item.png'}
-                title={'두번째 페이지'}
-                des={'오늘도 좋은 향수와 함께하세요.'}
-              />
-            ) : null}
-            {ScrollY >= 9 ? (
-              <TextContainer
-                src={'./images/about/deep_item.png'}
-                title={'세번째 페이지'}
-                des={'오늘도 좋은 향수와 함께하세요.'}
-              />
-            ) : null}
-          </ItemWrapper>
+        <ItemContainers
+          position={'fixed'}
+          src={'./images/about/back_item1.png'}
+        >
+          <Title
+            top={-200}
+            size={30}
+            color={'#efefef'}
+            shadow={'2px 2px 1px rgb(0,0,0.1)'}
+          >
+            Contact us
+          </Title>
+          <Contact>
+            <ul>
+              <li className="park">
+                <Fade left>
+                  <h2>Front-End</h2>
+                </Fade>
+                <Fade left>
+                  <h3>박유진</h3>
+                </Fade>
+                <Fade left>
+                  <p>urreal@naver.com</p>
+                </Fade>
+                <Fade left>
+                  <a href="https://github.com/yoojin-park19">
+                    <p className="github">Github 바로가기</p>
+                  </a>
+                </Fade>
+              </li>
+              <li className="kim">
+                <Fade right>
+                  <h2>Front-End</h2>
+                </Fade>
+                <Fade right>
+                  <h3>김상돈</h3>
+                </Fade>
+                <Fade right>
+                  <p>gorist@likelion.org</p>
+                </Fade>
+                <Fade right>
+                  <a href="https://github.com/Sangdon1029">
+                    <p className="github">Github 바로가기</p>
+                  </a>
+                </Fade>
+              </li>
+            </ul>
+            <div></div>
+          </Contact>
         </ItemContainers>
       )}
     </>
@@ -132,18 +145,25 @@ const ItemContainers = styled.div`
   width: 70vw;
   height: 80vh;
   position: ${(props) => `${props.position}`};
-  /* position: fixed; */
   z-index: 20;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #e8d5c0;
+  background-image: ${(props) => `url(${props.src})`};
+  background-size: 90vw 110vh;
+  background-position: -15vw -10vh;
+  background-repeat: no-repeat;
+  border-radius: 20px;
   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
 `;
 const Title = styled.p`
-  font-size: 40px;
-  font-family: 'Song Myung', serif;
+  font-size: ${(props) => `${props.size}px`};
+  font-family: ${Font.title};
+  margin-top: ${(props) => `${props.top}px`};
+  color: ${(props) => `${props.color}`};
+  text-shadow: ${(props) => `${props.shadow}`};
 `;
 
 const ItemWrapper = styled.div`
@@ -176,5 +196,41 @@ const ImgContainer = styled.div`
     position: absolute;
     bottom: 100px;
     left: 0;
+  }
+`;
+const Contact = styled.div`
+  width: 400px;
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  h2 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .park {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .kim {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .github {
+    width: 150px;
+    &:hover {
+      background-color: #cfcfcf;
+    }
   }
 `;
