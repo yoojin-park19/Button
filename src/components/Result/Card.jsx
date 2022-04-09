@@ -29,6 +29,7 @@ const Card = styled.li`
   background-color: #fff;
   box-shadow: 8px 14px 14px rgba(0, 0, 0, 0.25);
   position: relative;
+  color: #000;
   img {
     width: 180px;
     height: 250px;
