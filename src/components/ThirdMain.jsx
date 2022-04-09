@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { Font } from '../constants';
+import { COLOR, Font } from '../constants';
 
 export const ThirdMain = () => {
   return (
@@ -24,6 +24,12 @@ export const ThirdMain = () => {
             <button>바로가기</button>
           </Link>
         </Card>
+        <Card>
+          <p>About US</p>
+          <Link to="/about">
+            <button>바로가기</button>
+          </Link>
+        </Card>
       </CardList>
     </ThridMainPage>
   );
@@ -44,10 +50,10 @@ const CardList = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 100px;
   @media screen and (max-width: 720px) {
-    flex-direction: column;
-    gap: 50px;
+    gap: 10px;
   }
 `;
 
@@ -75,7 +81,7 @@ const Card = styled.section`
   button {
     width: 148px;
     height: 58px;
-    background-color: #b6a1fd;
+    background-color: ${COLOR.deep};
     box-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -84,8 +90,9 @@ const Card = styled.section`
   @media screen and (max-width: 720px) {
   height: 150px;
   gap: 20px;
-  background-color: transparent;
-  box-shadow: none;
+  background-color: rgba(248, 245, 245, 0.7);
+  box-shadow: 10px 10px 4px rgba(101, 98, 98, 0.25);
+  border-radius: 5px;
   p {
     font-family: ${Font.des};
     font-size: 30px;

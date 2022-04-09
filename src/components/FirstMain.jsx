@@ -10,9 +10,7 @@ export const FirstMain = () => {
         <p className="kr">당신에게 어울리는 향수를 추천해드릴께요</p>
         <Link to="/test">
           <Button>
-            <img src="./images/check.svg" alt="체크" />
-            <p>Click to</p>
-            <p>Find Your Mood</p>
+            <p>Click to Find Your Mood</p>
           </Button>
         </Link>
       </div>
@@ -21,69 +19,74 @@ export const FirstMain = () => {
 };
 
 const FirstMainPage = styled.section`
-  height: 90vh;
+  height: 50vh;
   display: flex;
-  padding-top: 200px;
+  padding-top: 300px;
   justify-content: space-evenly;
   position: relative;
   .cont-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
-    right: 150px;
+    right: 200px;
     text-align: center;
     h2 {
-      font-size: 120px;
+      font-size: 90px;
       font-family: ${Font.des};
-      color: ${COLOR.trend_main};
-      text-shadow: 8px 4px 15px rgba(105, 0, 147, 0.7);
+      color: #fff;
+      text-shadow: 8px 4px 5px #4f355ab1;
     }
     .kr {
-      color: #777;
-      font-size: 30px;
-      font-family: ${Font.etilte};
+      color: #fff;
+      font-size: 26px;
+      margin-top: 40px;
+      font-family: ${Font.etitle};
     }
   }
   @media screen and (max-width: 720px) {
-  padding-top: 50px;
-  .cont-item {
-    right: 0px;
-    h2 {
-      font-size: 50px;
-      color: #fff;
-      text-shadow: 8px 4px 15px rgba(105, 0, 147, 1);
+    padding-top: 300px;
+    position: relative;
+    .cont-item {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      left: 20px;
+      text-align: center;
+      h2 {
+        font-size: 40px;
+      }
+      .kr {
+        color: #fff;
+        font-size: 20px;
+      }
     }
-    .kr {
-      color: #fff;
-      font-size: 20px;
-    }
+  }
+  @media screen and (max-width: 420px) {
+    .cont-item {
+      width:200px;
+      left: 110px;
   }
 `;
 
 const Button = styled.button`
-  width: 400px;
-  height: 80px;
-  margin-top: 170px;
-  font-size: 50px;
+  max-width: 400px;
+  min-width: 280px;
+  height: 60px;
+  margin-top: 40px;
+  font-size: 30px;
   font-family: ${Font.des};
-  color: ${COLOR.trend_main};
-  background-color: transparent;
+  color: #fff;
+  text-shadow: 8px 4px 15px rgba(105, 0, 147, 1);
+  background-color: rgba(105, 0, 147, 1);
   border: none;
-  img {
-    width: 150px;
-    height: 100px;
-    &:hover {
-      filter: grayscale(80%);
-    }
+  border-radius: 10px;
+  box-shadow: 8px 4px 5px #35213f;
+  &:hover {
+    color: ${COLOR.right};
+    background-color: ${COLOR.sub};
   }
   @media screen and (max-width: 720px) {
-    margin-top: 170px;
-    border: none;
-    font-size: 50px;
-    color: #fff;
-    &:hover {
-      color: ${COLOR.right};
-    }
-    img {
-      display: none;
-    }
-  }
+  font-size: 24px;
 `;
