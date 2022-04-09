@@ -36,9 +36,17 @@ const MainPage = styled.section`
   @media screen and (max-width: 720px) {
     margin-top: 0px;
     padding-top: 30px;
-  background: url('./images/background/background_demo.jpg') no-repeat;
+    background: url('./images/background/background_demo.jpg') no-repeat;
     background-size: cover;
-    background-position: -127px;
+    background-position: -172px;
+    background-color: ${COLOR.deep};
+  }
+  @media screen and (max-width: 420px) {
+    margin-top: 0px;
+    padding-top: 30px;
+    background: url('./images/background/background_demo.jpg') no-repeat;
+    background-size: cover;
+    background-position: -690px;
     background-color: ${COLOR.deep};
   }
 `;
