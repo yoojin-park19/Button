@@ -91,6 +91,7 @@ const AssortContainer = styled.section`
   height: 100vh;
   position: relative;
   display: flex;
+  padding-right: 20px;
   .assortwrap {
     background-color: ${COLOR.top};
     display: flex;
