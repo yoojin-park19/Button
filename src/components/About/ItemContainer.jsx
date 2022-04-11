@@ -43,17 +43,17 @@ export const ItemContainer = (props) => {
                 <img
                   className="item2"
                   src="./images/about/back_item2.png"
-                  alt=""
+                  alt="배경이미지"
                 />
                 <img
                   className="item4"
                   src="./images/about/back_item4.png"
-                  alt=""
+                  alt="배경이미지"
                 />
                 <img
                   className="item3"
                   src="./images/about/back_item3.png"
-                  alt=""
+                  alt="배경이미지"
                 />
               </Fade>
             </ImgContainer>
@@ -157,6 +157,11 @@ const ItemContainers = styled.div`
   background-repeat: no-repeat;
   border-radius: 20px;
   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
+  @media screen and (max-width: 420px) {
+    background-color: #6667aa;
+    background-position: -73vw 0vh;
+    background-size: 1160px;
+  }
 `;
 const Title = styled.p`
   font-size: ${(props) => `${props.size}px`};
@@ -164,6 +169,11 @@ const Title = styled.p`
   margin-top: ${(props) => `${props.top}px`};
   color: ${(props) => `${props.color}`};
   text-shadow: ${(props) => `${props.shadow}`};
+  @media screen and (max-width: 420px) {
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0.1);
+  }
 `;
 
 const ItemWrapper = styled.div`
@@ -196,6 +206,9 @@ const ImgContainer = styled.div`
     position: absolute;
     bottom: 100px;
     left: 0;
+  }
+  @media screen and (max-width: 420px) {
+    display: none;
   }
 `;
 const Contact = styled.div`
@@ -231,6 +244,20 @@ const Contact = styled.div`
     width: 150px;
     &:hover {
       background-color: #cfcfcf;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+    .kim {
+      top: 90px;
+      right: 120px;
+    }
+    .park {
+      top: -50px;
+      left: 130px;
     }
   }
 `;
