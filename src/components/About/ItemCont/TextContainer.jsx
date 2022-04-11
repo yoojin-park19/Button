@@ -57,4 +57,28 @@ const TextContainers = styled.div`
     width: 280px;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
   }
+  @media screen and (max-width: 420px) {
+    gap: 10px;
+    width: 280px;
+    color: #fff;
+    ul {
+      position: relative;
+      z-index: 20;
+      width: 200px;
+      margin-top: 100px;
+      margin-left: 10px;
+      li {
+        width: 200px;
+        text-align: center;
+      }
+    }
+    .item5 {
+      position: absolute;
+      z-index: 10;
+      top: 20px;
+      left: 50%;
+      margin-left: -60px;
+      width: 120px;
+    }
+  }
 `;

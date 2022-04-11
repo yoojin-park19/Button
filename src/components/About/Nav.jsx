@@ -75,4 +75,15 @@ const NavIndex = styled.div`
       font-size: 8px;
     }
   }
+  @media screen and (max-width: 420px) {
+    width: 100vw;
+    height: 60px;
+    top: 0px;
+    right: 0;
+    border-radius: 0;
+    .navCont {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
 `;
