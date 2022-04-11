@@ -72,7 +72,7 @@ const Welcome = styled.section`
 
 const TestPage = styled.section`
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   background-color: ${COLOR.top};
   font-family: ${Font.title};
@@ -88,7 +88,7 @@ const TestPage = styled.section`
     padding-right: 5vw;
   }
   .wrap {
-    height: 90vh;
+    height: 80vh;
     width: 50vw;
     padding: 80px 5vw;
     box-sizing: border-box;
@@ -103,7 +103,7 @@ const TestPage = styled.section`
       padding-top: 10px;
     }
     .wrap {
-      height: 80vh;
+      height: 85vh;
       width: 90vw;
       padding: 40px 0px;
     }

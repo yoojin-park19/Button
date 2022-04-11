@@ -137,6 +137,9 @@ const Button = styled.button`
     background-color: rgba(202, 171, 32, 0.322);
     color: ${COLOR.trend_main};
   }
+  @media screen and (max-width: 720px) {
+    font-size: 24px;
+  }
 `;
 
 const Question0ne = styled.section`
@@ -202,7 +205,7 @@ const Question0ne = styled.section`
     width: 90vw;
     .itemContainer {
       label {
-        height: 80px;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;

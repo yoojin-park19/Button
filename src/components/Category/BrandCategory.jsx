@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Perfume } from '../../constants/database';
@@ -347,7 +348,8 @@ const BrandPage = styled.ul`
 `;
 
 const AssortPage = styled.section`
-  height: 1000px;
+  max-height: 100%;
+  min-height: 100vh;
   overflow-y: scroll;
   width: 100vw;
   list-style: none;
