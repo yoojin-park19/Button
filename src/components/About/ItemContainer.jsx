@@ -9,8 +9,6 @@ export const ItemContainer = (props) => {
   const [ScrollY, setScrollY] = useState(0); // window 의 pageYOffset값을 저장
   const [ScrollFixed, setScrollFixed] = useState(true);
   let count = 0;
-  console.log(`ScrollY:` + ScrollY);
-
   function handleScroll() {
     count += 1;
     if (ScrollY <= 760) {
@@ -31,7 +29,6 @@ export const ItemContainer = (props) => {
     }; //  window 에서 스크롤을 감시를 종료
   });
 
-  console.log('scrolled' + count);
   return (
     <>
       {ScrollFixed ? (
@@ -57,7 +54,7 @@ export const ItemContainer = (props) => {
                 />
               </Fade>
             </ImgContainer>
-            {ScrollY >= 0 && ScrollY < 100 ? (
+            {ScrollY >= 0 && ScrollY < 200 ? (
               <TextContainer
                 src={'./images/about/gucci_item.png'}
                 title={'안녕하세요'}
@@ -69,14 +66,14 @@ export const ItemContainer = (props) => {
                 height={100}
               />
             ) : null}
-            {ScrollY <= 200 && ScrollY >= 100 ? (
+            {ScrollY <= 400 && ScrollY >= 200 ? (
               <TextContainer
                 src={'./images/about/chanel_item.png'}
                 title={'두번째 페이지'}
                 des={'오늘도 좋은 향수와 함께하세요.'}
               />
             ) : null}
-            {ScrollY >= 201 ? (
+            {ScrollY >= 401 ? (
               <TextContainer
                 src={'./images/about/deep_item.png'}
                 title={'세번째 페이지'}
