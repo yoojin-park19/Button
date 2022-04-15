@@ -60,7 +60,6 @@ const Welcome = styled.section`
     }
   }
   @media screen and (max-width: 720px) {
-    margin: 50px;
     line-height: 1.5;
     gap: 80px;
     font-size: 28px;
@@ -69,17 +68,24 @@ const Welcome = styled.section`
       flex-direction: column;
     }
   }
+  @media screen and (max-width: 420px) {
+    margin-right: 20px;
+    font-size: 22px;
+    button {
+      font-size: 26px;
+    }
+  }
 `;
 
 const TestPage = styled.section`
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   background-color: ${COLOR.top};
-  font-family: ${Font.title};
+  font-family: ${Font.kr};
   .container {
     width: 60vw;
-    height: 90vh;
+    height: 95vh;
     margin: 0 auto;
     position: relative;
     background-color: ${COLOR.top};
@@ -89,9 +95,9 @@ const TestPage = styled.section`
     padding-right: 5vw;
   }
   .wrap {
-    height: 800px;
+    height: 90vh;
     width: 50vw;
-    padding: 80px 5vw;
+    padding: 50px 5vw;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #fff;
@@ -104,7 +110,7 @@ const TestPage = styled.section`
       padding-top: 10px;
     }
     .wrap {
-      height: 80vh;
+      height: 70vh;
       width: 90vw;
       padding: 40px 0px;
     }

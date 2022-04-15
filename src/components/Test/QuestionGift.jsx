@@ -137,6 +137,9 @@ const Button = styled.button`
     background-color: rgba(202, 171, 32, 0.322);
     color: ${COLOR.trend_main};
   }
+  @media screen and (max-width: 720px) {
+    font-size: 24px;
+  }
 `;
 
 const QuestionGift = styled.section`
@@ -154,55 +157,55 @@ const QuestionGift = styled.section`
     div {
       position: relative;
     }
-  }
-  input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    top: -100px;
-    left: -100px;
-  }
-  label {
-    display: flex;
-    width: 40vw;
-    height: 90px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    padding: 25px;
-    font-size: 20px;
-    border-radius: 10px;
-    background-color: ${COLOR.top};
-    box-shadow: 2px 2px 2px 1px rgba(202, 171, 32, 0.322);
-    color: #fff;
-    line-height: 40px;
-    &:hover {
-      background-color: rgba(202, 171, 32, 0.322);
-      color: ${COLOR.trend_main};
-      &::before {
-        content: '';
-        display: block;
-        background: url('./images/background/backgrounditem.png');
-        width: 30px;
-        height: 60px;
-        margin: -18px 15px 0 0;
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: -100px;
+      left: -100px;
+    }
+    label {
+      display: flex;
+      width: 45vw;
+      height: 80px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      padding: 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: ${COLOR.top};
+      box-shadow: 2px 2px 2px 1px rgba(202, 171, 32, 0.322);
+      color: #fff;
+      line-height: 40px;
+      &:hover {
+        background-color: rgba(202, 171, 32, 0.322);
+        color: ${COLOR.trend_main};
+        &::before {
+          content: '';
+          display: block;
+          background: url('./images/background/backgrounditem.png');
+          width: 30px;
+          height: 60px;
+          margin: -18px 15px 0 0;
+        }
       }
     }
   }
   .questionTit {
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 24px;
     margin-bottom: 50px;
     color: ${COLOR.deep};
   }
   .count {
-    margin-top: 80px;
+    margin-top: 20px;
   }
   @media screen and (max-width: 720px) {
     width: 90vw;
     .itemContainer {
       label {
-        height: 80px;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
