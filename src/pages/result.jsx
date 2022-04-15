@@ -196,7 +196,7 @@ const ResultIndexPage = (props) => {
 const ResultPage = styled.section`
   background-color: ${COLOR.top};
   height: 100vh;
-  padding: 100px 0;
+  padding: 10px 0 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

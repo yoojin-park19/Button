@@ -141,7 +141,7 @@ const Button = styled.button`
     font-size: 24px;
   }
   @media screen and (max-width: 420px) {
-    width: 350px;
+    width: 300px;
     height: 100px;
   }
 `;
@@ -175,7 +175,7 @@ const QuestionGift = styled.section`
       box-sizing: border-box;
       margin-bottom: 10px;
       padding: 12px 25px;
-      font-size: 16px;
+      font-size: 20px;
       border-radius: 10px;
       background-color: ${COLOR.top};
       box-shadow: 2px 2px 2px 1px rgba(202, 171, 32, 0.322);
@@ -239,7 +239,7 @@ const QuestionGift = styled.section`
         height: 70px;
         width: 80vw;
         padding: 15px;
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }
