@@ -132,48 +132,53 @@ const GiftResultIndexPage = (props) => {
           </Button>
         )}
         {active ? (
-          <CardList>
-            {firstOne.map((item, index) => (
-              <div key={index}>
-                <Cards
-                  image={item.image}
-                  title={item.title}
-                  etitle={item.etitle}
-                  des={item.des}
-                  price={item.price}
-                  brand={item.brand}
-                />
-              </div>
-            ))}
-            {SecondOne.map((item, index) => (
-              <div key={index}>
-                <Cards
-                  image={item.image}
-                  title={item.title}
-                  etitle={item.etitle}
-                  des={item.des}
-                  price={item.price}
-                  brand={item.brand}
-                />
-              </div>
-            ))}
-            {ThirdOne ? (
-              <>
-                {ThirdOne.map((item, index) => (
-                  <div key={index}>
-                    <Cards
-                      image={item.image}
-                      title={item.title}
-                      etitle={item.etitle}
-                      des={item.des}
-                      price={item.price}
-                      brand={item.brand}
-                    />
-                  </div>
-                ))}
-              </>
-            ) : null}
-          </CardList>
+          <ResultShowPage>
+            <CardList>
+              {firstOne.map((item, index) => (
+                <div key={index}>
+                  <Cards
+                    image={item.image}
+                    title={item.title}
+                    etitle={item.etitle}
+                    des={item.des}
+                    price={item.price}
+                    brand={item.brand}
+                  />
+                </div>
+              ))}
+              {SecondOne.map((item, index) => (
+                <div key={index}>
+                  <Cards
+                    image={item.image}
+                    title={item.title}
+                    etitle={item.etitle}
+                    des={item.des}
+                    price={item.price}
+                    brand={item.brand}
+                  />
+                </div>
+              ))}
+              {ThirdOne ? (
+                <>
+                  {ThirdOne.map((item, index) => (
+                    <div key={index}>
+                      <Cards
+                        image={item.image}
+                        title={item.title}
+                        etitle={item.etitle}
+                        des={item.des}
+                        price={item.price}
+                        brand={item.brand}
+                      />
+                    </div>
+                  ))}
+                </>
+              ) : null}
+            </CardList>
+            <Link to="/test">
+              <button className="btn-again">Find Again</button>
+            </Link>
+          </ResultShowPage>
         ) : (
           <div className="dim">
             <CardList>
@@ -183,9 +188,6 @@ const GiftResultIndexPage = (props) => {
             </CardList>
           </div>
         )}
-        <Link to="/test">
-          <button className="btn-again">Find Again</button>
-        </Link>
       </ResultPage>
     </>
   );
@@ -194,12 +196,12 @@ const GiftResultIndexPage = (props) => {
 const ResultPage = styled.section`
   background-color: ${COLOR.top};
   height: 100vh;
-  padding: 50px 0;
+  padding: 100px 0;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   .head {
     padding: 0 70px;
     margin-bottom: 50px;
@@ -243,6 +245,14 @@ const ResultPage = styled.section`
     }
   }
 `;
+
+const ResultShowPage = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const CardList = styled.ul`
   display: flex;
   gap: 80px;
@@ -253,19 +263,22 @@ const CardList = styled.ul`
 `;
 
 const Button = styled.button`
-  position: absolute;
-  top: 20%;
+  position: relative;
   background-color: transparent;
   border: none;
   z-index: 999;
   cursor: pointer;
   img {
-    width: 750px;
+    width: 500px;
+    position: absolute;
+    top: -70px;
+    left: -250px;
   }
   p {
+    width: 400px;
     position: absolute;
-    top: 50%;
-    right: 34%;
+    top: 150px;
+    right: -190px;
     font-size: 30px;
     font-family: ${Font.etitle};
     &:hover {
@@ -273,18 +286,20 @@ const Button = styled.button`
     }
   }
   @media screen and (max-width: 720px) {
-    top: 50px;
     img {
       width: 450px;
     }
     p {
       position: absolute;
-      top: 50%;
-      right: 32%;
+      top: 130px;
+      right: -160px;
       font-size: 20px;
       &:hover {
         color: ${COLOR.trend_main};
       }
+    }
+    @media screen and (max-width: 420px) {
+      left: 10%;
     }
   }
 `;

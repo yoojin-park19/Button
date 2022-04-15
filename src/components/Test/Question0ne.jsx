@@ -119,6 +119,7 @@ export const Question0nePage = (props) => {
     </>
   );
 };
+
 const Button = styled.button`
   width: 300px;
   height: 100px;
@@ -166,12 +167,12 @@ const Question0ne = styled.section`
     }
     label {
       display: flex;
-      width: 40vw;
-      height: 90px;
+      width: 45vw;
+      height: 80px;
       box-sizing: border-box;
       margin-bottom: 10px;
       padding: 25px;
-      font-size: 20px;
+      font-size: 16px;
       border-radius: 10px;
       background-color: ${COLOR.top};
       box-shadow: 2px 2px 2px 1px rgba(202, 171, 32, 0.322);
@@ -193,13 +194,13 @@ const Question0ne = styled.section`
   }
   .questionTit {
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 24px;
     margin-bottom: 50px;
     color: ${COLOR.deep};
   }
   .count {
-    margin-top: 80px;
+    margin-top: 20px;
   }
   @media screen and (max-width: 720px) {
     width: 90vw;

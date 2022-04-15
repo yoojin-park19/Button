@@ -6,127 +6,102 @@ import { Link } from 'react-router-dom';
 export const SecondMain = () => {
   return (
     <SecondMainPage>
-      <img className="back-paint" src="./images/paint.png" alt="배경" />
+      <img src="./images/background/second.jpg" alt="" />
       <div className="cont-item">
-        <h2>It's For your loved ones</h2>
-        <p>
-          Give your precious people a scent. The scent will be a valuable clue
-          for that person to remember you.
+        <h2>For your loved ones</h2>
+        <p className="kr">
+          당신의 소중한 사람의 분위기나 느낌에 따라 선물을 추천해드릴께요.
         </p>
-        <p>
-          We recommend gifts according to your preference, mood, purpose and
-          price.
-        </p>
-        <Link to="#">
-          <button>Find Your Gift</button>
+        <Link to="/test">
+          <Button>
+            <p>보러가기</p>
+          </Button>
         </Link>
       </div>
-      <img
-        className="main-img"
-        src="./images/second_item.png"
-        alt="recommend gift"
-      />
-      <img className="back-img" src="./images/watercolor.png" alt="배경" />
-      <img className="back-paint2" src="./images/paint.png" alt="배경" />
     </SecondMainPage>
   );
 };
 
 const SecondMainPage = styled.section`
-  @keyframes showup {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes rightup {
-    from {
-      left: -500px;
-    }
-    to {
-      left: -15px;
-    }
-  }
-  @keyframes leftup {
-    from {
-      right: -500px;
-    }
-    to {
-      right: -50px;
-    }
-  }
-  background-color: ${COLOR.main};
-  height: 120vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  gap: 100px;
-  position: relative;
-  .back-paint {
-    position: absolute;
-    left: -15px;
-    top: -80px;
-    width: 550px;
-    height: 150px;
-    animation: rightup;
-    animation-duration: 2s;
-  }
-  .back-img {
-    position: absolute;
-    top: 330px;
-    right: 300px;
-    width: 550px;
-    height: 150px;
-    transform: rotate(180deg);
-    animation: showup;
-    animation-duration: 4s;
-  }
-  .back-paint2 {
-    position: absolute;
-    bottom: 230px;
-    right: -50px;
-    width: 550px;
-    height: 150px;
-    transform: rotate(180deg);
-    animation: leftup;
-    animation-duration: 4s;
+  justify-content: space-between;
+  img {
+    width: 50%;
   }
   .cont-item {
-    margin: 100px 0;
-    width: 500px;
-    animation: showup;
-    animation-duration: 4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 150px;
+    width: 400px;
+    text-align: center;
     h2 {
-      margin-bottom: 40px;
-      font-size: 60px;
-      font-family: ${Font.des};
-      color: #fff;
-      text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 90px;
+      font-family: ${Font.etitle};
+      color: #000;
+      text-shadow: 8px 4px 5px #4f355ab1;
     }
-    p {
-      font-size: 30px;
-      font-family: ${Font.des};
+    .kr {
+      color: #000;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-top: 40px;
+      font-family: ${Font.kr};
     }
-    button {
-      width: 250px;
-      height: 40px;
-      margin-top: 70px;
-      border: none;
-      background-color: ${COLOR.point};
-      font-size: 18px;
-      color: #fff;
-      &:hover {
-        background-color: #797742;
+  }
+  @media screen and (max-width: 720px) {
+    display: flex;
+    align-items: center;
+    background: url('./images/background/second.jpg');
+    background-size: cover;
+    background-position: -220px;
+    .cont-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 120px;
+      width: 300px;
+      text-align: center;
+      h2 {
+        font-size: 50px;
+        color: #fff;
+      }
+      .kr {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+    img {
+      display: none;
+    }
+    @media screen and (max-width: 420px) {
+      .cont-item {
+        width: 200px;
+        margin-left: 80px;
       }
     }
   }
-  .main-img {
-    margin-top: 10px;
-    width: 550px;
-    height: 500px;
-    z-index: 1;
-    animation: showup;
-    animation-duration: 4s;
+`;
+
+const Button = styled.button`
+  width: 400px;
+  height: 60px;
+  margin-top: 40px;
+  font-size: 24px;
+  font-family: ${Font.kr};
+  color: #fff;
+  background-color: ${COLOR.deep};
+  border: none;
+  border-radius: 10px;
+  &:hover {
+    color: ${COLOR.right};
+    background-color: ${COLOR.sub};
+  }
+  @media screen and (max-width: 720px) {
+    font-size: 16px;
+    width: 250px;
+    background-color: transparent;
+    border: 3px double #fff;
   }
 `;
