@@ -28,8 +28,12 @@ const ForthMainPage = styled.section`
   justify-content: space-between;
   border-top: 10px double #fff;
   background-color: ${COLOR.deep};
+  font-family: ${Font.title};
   @media screen and (max-width: 720px) {
     height: 100%;
+  }
+  @media screen and (max-width: 420px) {
+    display: none;
   }
 `;
 const DevInfo = styled.section`
@@ -47,7 +51,8 @@ const Button = styled.button`
   margin: 20px;
   border-radius: 10px;
   border: none;
-  width: 60px;
+  width: 65px;
+  font-family: ${Font.kr};
   :hover {
     background-color: ${COLOR.right};
   }

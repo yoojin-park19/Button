@@ -28,7 +28,7 @@ const FirstMainPage = styled.section`
   justify-content: space-between;
   .cont-item {
     display: flex;
-    margin-left: 150px;
+    margin-left: 10%;
     flex-direction: column;
     justify-content: center;
     width: 400px;
@@ -76,7 +76,7 @@ const FirstMainPage = styled.section`
     @media screen and (max-width: 420px) {
       .cont-item {
         width: 200px;
-        margin-left: 80px;
+        margin-left: 25%;
       }
     }
   }

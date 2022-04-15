@@ -78,7 +78,7 @@ const ThridMainPage = styled.section`
     @media screen and (max-width: 420px) {
       .cont-item {
         width: 200px;
-        margin-left: 80px;
+        margin-left: 25%;
       }
     }
   }

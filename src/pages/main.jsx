@@ -1,7 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import styled from '@emotion/styled';
-import { COLOR } from '../constants';
 import { MainHeader } from '../components/MainHeader';
 import { FirstMain } from '../components/Main/FirstMain';
 import { SecondMain } from '../components/Main/SecondMain';
@@ -33,7 +32,6 @@ const MainIndexPage = () => {
 };
 const MainPage = styled.section`
   position: relative;
-  /* background: url('./images/background/lastback.jpg') no-repeat; */
   background-size: cover;
   overflow: hidden;
 `;
