@@ -43,19 +43,19 @@ export const MainBackAni = (props) => {
     top_fixed.push(parseInt(136));
     left.push(parseInt(i * 60 + i * 30));
     left2.push(parseInt(i * 83 + i * 30));
-    left4.push(parseInt(i * 83 + i * 30));
-    left5.push(parseInt(i * 83 + i * 160));
-    left6.push(parseInt(i * 83 + i * 160));
-    duration.push(Math.random() * 20 + 2);
-    duration2.push(Math.random() * 20 + 3);
-    duration4.push(Math.random() * 20 + 1);
-    duration5.push(Math.random() * 20 + 1);
+    left4.push(parseInt(i * 103 + i * 30));
+    left5.push(parseInt(i * 123 + i * 160));
+    left6.push(parseInt(i * 143 + i * 260));
+    duration.push(Math.random() * 7.13 + 0.4);
+    duration2.push(Math.random() * 7.8 + 0.4);
+    duration3.push(Math.random() * 8.12 + 0.2);
+    duration4.push(Math.random() * 8.72 + 0.2);
+    duration5.push(Math.random() * 9.24 + 0.2);
   }
   for (let i = 1; i < 5; i++) {
     arr1.push(i);
     top3.push(parseInt(i * 186 + i * 22));
     left3.push(parseInt(i * 303 + i * 30));
-    duration3.push(Math.random() * 10 + 1);
   }
   return (
     <MainBackAniPage>
@@ -68,6 +68,7 @@ export const MainBackAni = (props) => {
           duration={duration[index]}
           width={2}
           height={2}
+          scale={1.2}
           background={'#fff'}
         />
       ))}
@@ -79,6 +80,7 @@ export const MainBackAni = (props) => {
           left={left2[index]}
           width={3}
           height={3}
+          scale={1.2}
           duration={duration2[index]}
           background={'#fff'}
         />
@@ -91,6 +93,7 @@ export const MainBackAni = (props) => {
           right={left2[index]}
           width={2}
           height={2}
+          scale={1.2}
           duration={duration2[index]}
           background={'#fff'}
         />
@@ -103,6 +106,7 @@ export const MainBackAni = (props) => {
           right={left[index]}
           width={2}
           height={2}
+          scale={1.6}
           duration={duration2[index]}
           background={'#fff'}
         />
@@ -115,6 +119,7 @@ export const MainBackAni = (props) => {
           right={left3[index]}
           width={2}
           height={2}
+          scale={1.2}
           duration={duration3[index]}
           background={'#fff'}
         />
@@ -127,6 +132,7 @@ export const MainBackAni = (props) => {
           right={left4[index]}
           width={1}
           height={1}
+          scale={3}
           duration={duration4[index]}
           background={'#fff'}
         />
@@ -137,8 +143,9 @@ export const MainBackAni = (props) => {
           item={'star_' + index}
           top={top5[index]}
           right={left5[index]}
-          width={3}
-          height={3}
+          width={2}
+          height={2}
+          scale={3}
           duration={duration5[index]}
           background={'#fff'}
         />
@@ -148,9 +155,10 @@ export const MainBackAni = (props) => {
           key={(index + 180).toString()}
           item={'star_' + index}
           top={top6[index]}
-          right={left6[index]}
-          width={1}
-          height={1}
+          right={left4[index]}
+          width={2}
+          height={2}
+          scale={4}
           duration={duration5[index]}
           background={'#fff'}
         />
@@ -163,6 +171,7 @@ export const MainBackAni = (props) => {
           right={left4[index]}
           width={1}
           height={1}
+          scale={1.2}
           duration={duration3[index]}
           background={`#fff`}
         />
@@ -175,6 +184,7 @@ export const MainBackAni = (props) => {
           right={left2[index]}
           width={1}
           height={1}
+          scale={5}
           duration={duration2[index]}
           background={'#fff'}
         />
@@ -187,6 +197,7 @@ export const MainBackAni = (props) => {
           right={left2[index]}
           width={1}
           height={1}
+          scale={1.2}
           duration={duration3[index]}
           background={'yellow'}
         />
@@ -199,6 +210,7 @@ export const MainBackAni = (props) => {
           right={left5[index]}
           width={2}
           height={2}
+          scale={1.2}
           duration={duration5[index]}
           background={'yellow'}
         />
@@ -209,8 +221,9 @@ export const MainBackAni = (props) => {
           item={'star_' + index}
           top={210}
           right={left3[index]}
-          width={3}
-          height={3}
+          width={2}
+          height={2}
+          scale={1.2}
           duration={duration2[index]}
           background={'yellow'}
         />
@@ -223,6 +236,7 @@ export const MainBackAni = (props) => {
           right={left5[index]}
           width={2}
           height={2}
+          scale={1.2}
           duration={duration5[index]}
           background={'yellow'}
         />
@@ -235,6 +249,7 @@ export const MainBackAni = (props) => {
           right={left4[index]}
           width={1}
           height={1}
+          scale={1.2}
           duration={duration2[index]}
           background={'#fff'}
         />
@@ -247,8 +262,61 @@ export const MainBackAni = (props) => {
           right={left6[index]}
           width={2}
           height={2}
+          scale={1.2}
           duration={duration3[index]}
           background={'yellow'}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 420).toString()}
+          item={'star_' + index}
+          top={352}
+          right={left3[index]}
+          width={2}
+          height={2}
+          duration={duration3[index]}
+          background={'#F5F1E0'}
+          scale={2}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 420).toString()}
+          item={'star_' + index}
+          top={452}
+          right={left4[index]}
+          width={2}
+          height={2}
+          duration={duration3[index]}
+          background={'#F5F1E0'}
+          scale={2}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 420).toString()}
+          item={'star_' + index}
+          top={962}
+          right={left2[index]}
+          width={2}
+          height={2}
+          duration={duration3[index]}
+          background={'#F5F1E0'}
+          scale={2}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 420).toString()}
+          item={'star_' + index}
+          top={1232}
+          right={left2[index]}
+          width={2}
+          height={2}
+          duration={duration3[index]}
+          background={'#F5F1E0'}
+          scale={2}
         />
       ))}
     </MainBackAniPage>

@@ -34,6 +34,7 @@ export const ItemStarRight = (props) => {
       width={props.width}
       height={props.height}
       background={props.background}
+      scale={props.scale}
     >
       <div
         className={'star' + ' ' + props.item}
@@ -43,6 +44,7 @@ export const ItemStarRight = (props) => {
         height={props.height}
         duration={props.duration}
         background={props.background}
+        scale={props.scale}
       ></div>
     </ItemStarsRights>
   );
@@ -55,6 +57,7 @@ const ItemStarsLefts = styled.div`
     }
     100% {
       opacity: 1;
+      transform: ${(props) => `scale(${props.scale});`};
     }
   }
   position: absolute;
@@ -69,6 +72,8 @@ const ItemStarsLefts = styled.div`
     animation: twinkle;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-timing-function: linear;
+
     &.star_0,
     &.star_1,
     &.star_2,
@@ -115,6 +120,7 @@ const ItemStarsRights = styled.div`
     }
     100% {
       opacity: 1;
+      transform: ${(props) => `scale(${props.scale});`};
     }
   }
   .star {
@@ -127,6 +133,7 @@ const ItemStarsRights = styled.div`
     animation: twinkle;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-timing-function: linear;
     &.star_0,
     &.star_1,
     &.star_2,

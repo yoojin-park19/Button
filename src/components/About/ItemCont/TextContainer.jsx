@@ -79,6 +79,7 @@ const TextContainers = styled.div`
       left: 50%;
       margin-left: -60px;
       width: 120px;
+      height: 171px;
     }
   }
 `;
