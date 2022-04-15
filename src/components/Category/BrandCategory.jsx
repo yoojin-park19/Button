@@ -13,6 +13,7 @@ export const BrandCategory = () => {
   const [active5, setActive5] = useState(false);
   const [active6, setActive6] = useState(false);
   const [active7, setActive7] = useState(false);
+  const [active8, setActive8] = useState(false);
   const [brand1, setBrand1] = useState([]);
   const [brand2, setBrand2] = useState([]);
   const [brand3, setBrand3] = useState([]);
@@ -20,6 +21,7 @@ export const BrandCategory = () => {
   const [brand5, setBrand5] = useState([]);
   const [brand6, setBrand6] = useState([]);
   const [brand7, setBrand7] = useState([]);
+  const [brand8, setBrand8] = useState([]);
   function brandcheck1() {
     setActive1(!active1);
     if (active2) {
@@ -39,6 +41,9 @@ export const BrandCategory = () => {
     }
     if (active7) {
       setActive7(!active7);
+    }
+    if (active8) {
+      setActive8(!active8);
     }
     Perfume.map((item, index) => {
       if (item.brand === '조말론') {
@@ -67,6 +72,9 @@ export const BrandCategory = () => {
     if (active7) {
       setActive7(!active7);
     }
+    if (active8) {
+      setActive8(!active8);
+    }
     Perfume.map((item, index) => {
       if (item.brand === '샤넬') {
         brand2.push(item);
@@ -88,6 +96,8 @@ export const BrandCategory = () => {
       setActive6(!active6);
     } else if (active7) {
       setActive7(!active7);
+    } else if (active8) {
+      setActive8(!active8);
     }
     Perfume.map((item, index) => {
       if (item.brand === '딥디크') {
@@ -111,6 +121,8 @@ export const BrandCategory = () => {
       setActive6(!active6);
     } else if (active7) {
       setActive7(!active7);
+    } else if (active8) {
+      setActive8(!active8);
     }
     Perfume.map((item, index) => {
       if (item.brand === '구찌') {
@@ -133,6 +145,8 @@ export const BrandCategory = () => {
       setActive5(!active6);
     } else if (active7) {
       setActive7(!active7);
+    } else if (active8) {
+      setActive8(!active8);
     }
     Perfume.map((item, index) => {
       if (item.brand === '불가리') {
@@ -156,6 +170,8 @@ export const BrandCategory = () => {
       setActive5(!active5);
     } else if (active7) {
       setActive7(!active7);
+    } else if (active8) {
+      setActive8(!active8);
     }
     Perfume.map((item, index) => {
       if (item.brand === '크리드') {
@@ -178,11 +194,37 @@ export const BrandCategory = () => {
       setActive5(!active5);
     } else if (active6) {
       setActive6(!active6);
+    } else if (active8) {
+      setActive8(!active8);
     }
     Perfume.map((item, index) => {
       if (item.brand === '버버리') {
         brand7.push(item);
         setBrand7(brand7);
+      }
+    });
+  }
+  function brandcheck8() {
+    setActive8(!active8);
+    if (active1) {
+      setActive1(!active1);
+    } else if (active2) {
+      setActive2(!active2);
+    } else if (active3) {
+      setActive3(!active3);
+    } else if (active4) {
+      setActive4(!active4);
+    } else if (active5) {
+      setActive5(!active5);
+    } else if (active6) {
+      setActive6(!active6);
+    } else if (active7) {
+      setActive7(!active7);
+    }
+    Perfume.map((item, index) => {
+      if (item.brand === '바이레도') {
+        brand8.push(item);
+        setBrand8(brand8);
       }
     });
   }
@@ -211,6 +253,9 @@ export const BrandCategory = () => {
         </li>
         <li className="assortList">
           <button onClick={brandcheck7}>버버리</button>
+        </li>
+        <li className="assortList">
+          <button onClick={brandcheck8}>바이레도</button>
         </li>
       </BrandPage>
       <AssortPage>
@@ -317,6 +362,23 @@ export const BrandCategory = () => {
         {active7 ? (
           <div className="cartegory-card">
             {brand7.map((item, index) => (
+              <div key={index}>
+                <Cards
+                  image={item.image}
+                  alt={item.alt}
+                  title={item.title}
+                  etitle={item.etitle}
+                  des={item.des}
+                  price={item.price}
+                  brand={item.brand}
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {active8 ? (
+          <div className="cartegory-card">
+            {brand8.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
