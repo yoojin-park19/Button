@@ -108,7 +108,7 @@ const HomePage = styled.section`
   .logo {
     position: absolute;
     border-radius: 100%;
-    top: 35%;
+    top: 330px;
     width: 300px;
     height: 300px;
     z-index: 10;
@@ -143,7 +143,14 @@ const HomePage = styled.section`
   @media screen and (max-width: 720px) {
     .logo {
       position: absolute;
-      top: 40%;
+      top: 370px;
+      width: 250px;
+      height: 250px;
+    }
+  @media screen and (max-width: 420px) {
+    .logo {
+      position: absolute;
+      top: 410px;
       width: 160px;
       height: 160px;
     }

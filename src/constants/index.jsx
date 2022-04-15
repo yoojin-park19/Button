@@ -13,8 +13,9 @@ export const COLOR = {
 
 export const Font = {
   title: `'gowun', serif`,
-  etitle: `'Stylish', sans-serif`,
+  etitle: `'Babylonica', cursive`,
   des: `'Caveat', cursive`,
+  kr: 'GmarketSansMedium',
 };
 
 //컴포넌트에서 사용하실 떄는 ${COLOR.main} 이런 식으로 사용하시면 됩니다~

@@ -3,9 +3,10 @@ import Fade from 'react-reveal/Fade';
 import styled from '@emotion/styled';
 import { COLOR } from '../constants';
 import { MainHeader } from '../components/MainHeader';
-import { FirstMain } from '../components/FirstMain';
-import { SecondMain } from '../components/SecondMain';
-import { ThirdMain } from '../components/ThirdMain';
+import { FirstMain } from '../components/Main/FirstMain';
+import { SecondMain } from '../components/Main/SecondMain';
+import { ThirdMain } from '../components/Main/ThirdMain';
+import { ForthMain } from '../components/Main/ForthMain';
 import { MainBackAni } from '../components/Main/MainBackAni';
 
 const MainIndexPage = () => {
@@ -14,40 +15,26 @@ const MainIndexPage = () => {
       <MainHeader />
       <MainPage>
         <MainBackAni />
-        <Fade right>
+        <Fade left>
           <FirstMain />
         </Fade>
-        <Fade left>
+        <Fade right>
           <SecondMain />
         </Fade>
-        <Fade bottom>
+        <Fade left>
           <ThirdMain />
+        </Fade>
+        <Fade bottom>
+          <ForthMain />
         </Fade>
       </MainPage>
     </>
   );
 };
 const MainPage = styled.section`
-  /* margin-top: 70px; */
   position: relative;
-  background: url('./images/background/background_demo.jpg') no-repeat;
+  /* background: url('./images/background/lastback.jpg') no-repeat; */
   background-size: cover;
   overflow: hidden;
-  @media screen and (max-width: 720px) {
-    margin-top: 0px;
-    padding-top: 30px;
-    background: url('./images/background/background_demo.jpg') no-repeat;
-    background-size: cover;
-    background-position: -172px;
-    background-color: ${COLOR.deep};
-  }
-  @media screen and (max-width: 420px) {
-    margin-top: 0px;
-    padding-top: 30px;
-    background: url('./images/background/background_demo.jpg') no-repeat;
-    background-size: cover;
-    background-position: -690px;
-    background-color: ${COLOR.deep};
-  }
 `;
 export default MainIndexPage;

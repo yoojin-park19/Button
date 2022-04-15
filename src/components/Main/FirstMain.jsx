@@ -5,97 +5,101 @@ import { Link } from 'react-router-dom';
 export const FirstMain = () => {
   return (
     <FirstMainPage>
-      <img className="back-flower" src="./images/flower.png" alt="배경" />
-      <img className="main-img" src="./images/lavender.jpg" alt="home" />
       <div className="cont-item">
-        <h2>It's For You</h2>
-        <p>Choose a perfume that suits your mood.</p>
-        <p>We recommend perfume to suit the mood you want.</p>
-        <Link to="#">
-          <button>Find Your Mood</button>
+        <h2>For You</h2>
+        <p className="kr">
+          당신의 그날의 기분, 원하는 분위기, 선호하는 향기에 따라 향수를 추천
+          드릴께요.
+        </p>
+        <Link to="/test">
+          <Button>
+            <p>보러가기</p>
+          </Button>
         </Link>
       </div>
-      <img className="back-img" src="./images/lavender_back.png" alt="라벤더" />
+      <img src="./images/background/first.jpg" alt="" />
     </FirstMainPage>
   );
 };
 
 const FirstMainPage = styled.section`
-  /* @keyframes showup {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  } */
-  background-color: ${COLOR.main};
-  height: 130vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  position: relative;
-  .main-img {
-    margin: 100px 150px 0 0;
-    width: 400px;
-    height: 400px;
-    z-index: 1;
-  }
+  justify-content: space-between;
   .cont-item {
-    margin-top: 150px;
-    margin-left: 200px;
-    z-index: 1;
-    animation: showup;
-    animation-duration: 3s;
+    display: flex;
+    margin-left: 150px;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    text-align: center;
     h2 {
-      margin-bottom: 40px;
-      font-size: 60px;
-      font-family: ${Font.des};
-      color: #fff;
-      text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 90px;
+      font-family: ${Font.etitle};
+      color: #000;
+      text-shadow: 8px 4px 5px #4f355ab1;
     }
-    p {
-      font-size: 30px;
-      font-family: ${Font.des};
+    .kr {
+      color: #000;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-top: 40px;
+      font-family: ${Font.kr};
     }
-    button {
-      width: 250px;
-      height: 40px;
-      margin-top: 70px;
-      border: none;
-      background-color: ${COLOR.point};
-      font-size: 18px;
-      color: #fff;
-      &:hover {
-        background-color: #797742;
-      }
-    }
-    .back-flower {
-      position: absolute;
-      top: 200px;
-      left: 520px;
-      width: 200px;
-      height: 400px;
-      animation: showup;
-      animation-duration: 5s;
-    }
-    .back-img {
-      position: absolute;
-      width: 400px;
-      height: 530px;
-      right: -50px;
-      top: 230px;
-      transform: rotate(35deg);
-      animation: showup;
-      animation-duration: 5s;
-    }
+  }
+  img {
+    width: 50%;
   }
   @media screen and (max-width: 720px) {
-    height: 130vh;
-    .main-img {
-      border: 1px solid red;
-      margin: 100px 150px 0 0;
-      width: 100px;
-      height: 100px;
+    display: flex;
+    align-items: center;
+    background: url('./images/background/first.jpg');
+    .cont-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 120px;
+      width: 300px;
+      text-align: center;
+      h2 {
+        font-size: 50px;
+        color: #fff;
+      }
+      .kr {
+        font-size: 16px;
+        color: #fff;
+      }
     }
+    img {
+      display: none;
+    }
+    @media screen and (max-width: 420px) {
+      .cont-item {
+        width: 200px;
+        margin-left: 80px;
+      }
+    }
+  }
+`;
+
+const Button = styled.button`
+  width: 400px;
+  height: 60px;
+  margin-top: 40px;
+  font-size: 24px;
+  font-family: ${Font.kr};
+  color: #fff;
+  background-color: ${COLOR.deep};
+  border: none;
+  border-radius: 10px;
+  &:hover {
+    color: ${COLOR.right};
+    background-color: ${COLOR.sub};
+  }
+  @media screen and (max-width: 720px) {
+    font-size: 16px;
+    width: 250px;
+    background-color: transparent;
+    border: 3px double #fff;
   }
 `;
