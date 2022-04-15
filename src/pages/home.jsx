@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import { useState, useRef, useEffect } from 'react';
-import { COLOR } from '../constants';
+import { useState } from 'react';
 import { BackAnimationIndex } from '../components/Background/BackAnimation';
 const HomeIndexPage = () => {
   const [active, setActive] = useState(false);
@@ -23,8 +22,6 @@ const HomeIndexPage = () => {
     }
   }
 
-  const itemClass = useRef();
-  console.log(itemClass);
   const rendering = () => {
     const result = [];
     for (let i = 0; i < 70; i++) {
@@ -41,7 +38,6 @@ const HomeIndexPage = () => {
         />,
       );
     }
-    // console.log(result);
     return result;
   };
   return (
@@ -103,12 +99,11 @@ const HomePage = styled.section`
   background-repeat: no-repeat;
   background-position: 50%;
   position: relative;
-  /* background-color: #fff; */
   overflow: hidden;
   .logo {
     position: absolute;
     border-radius: 100%;
-    top: 330px;
+    top: 32%;
     width: 300px;
     height: 300px;
     z-index: 10;
@@ -143,16 +138,17 @@ const HomePage = styled.section`
   @media screen and (max-width: 720px) {
     .logo {
       position: absolute;
-      top: 370px;
+      top: 35%;
       width: 250px;
       height: 250px;
     }
-  @media screen and (max-width: 420px) {
-    .logo {
-      position: absolute;
-      top: 410px;
-      width: 160px;
-      height: 160px;
+    @media screen and (max-width: 420px) {
+      .logo {
+        position: absolute;
+        top: 40%;
+        width: 160px;
+        height: 160px;
+      }
     }
   }
 `;
