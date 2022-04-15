@@ -245,6 +245,7 @@ const ResultPage = styled.section`
     }
   }
 `;
+
 const ResultShowPage = styled.section`
   display: flex;
   flex-direction: column;
@@ -287,18 +288,16 @@ const Button = styled.button`
   @media screen and (max-width: 720px) {
     img {
       width: 450px;
+      left: -220px;
     }
     p {
       position: absolute;
       top: 130px;
-      right: -160px;
+      right: -190px;
       font-size: 20px;
       &:hover {
         color: ${COLOR.trend_main};
       }
-    }
-    @media screen and (max-width: 420px) {
-      left: 10%;
     }
   }
 `;
