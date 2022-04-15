@@ -119,7 +119,7 @@ const TestPage = styled.section`
       padding-top: 30px;
     }
     .wrap {
-      height: 95vh;
+      height: 75vh;
       padding: 5px 0px;
     }
   }

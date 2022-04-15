@@ -28,7 +28,7 @@ const FirstMainPage = styled.section`
   justify-content: space-between;
   .cont-item {
     display: flex;
-    margin-left: 10%;
+    margin-left: 15%;
     flex-direction: column;
     justify-content: center;
     width: 400px;

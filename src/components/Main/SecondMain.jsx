@@ -33,7 +33,7 @@ const SecondMainPage = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 150px;
+    margin-right: 15%;
     width: 400px;
     text-align: center;
     h2 {
