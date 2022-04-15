@@ -12,12 +12,14 @@ export const BrandCategory = () => {
   const [active4, setActive4] = useState(false);
   const [active5, setActive5] = useState(false);
   const [active6, setActive6] = useState(false);
+  const [active7, setActive7] = useState(false);
   const [brand1, setBrand1] = useState([]);
   const [brand2, setBrand2] = useState([]);
   const [brand3, setBrand3] = useState([]);
   const [brand4, setBrand4] = useState([]);
   const [brand5, setBrand5] = useState([]);
   const [brand6, setBrand6] = useState([]);
+  const [brand7, setBrand7] = useState([]);
   function brandcheck1() {
     setActive1(!active1);
     if (active2) {
@@ -34,6 +36,9 @@ export const BrandCategory = () => {
     }
     if (active6) {
       setActive6(!active6);
+    }
+    if (active7) {
+      setActive7(!active7);
     }
     Perfume.map((item, index) => {
       if (item.brand === '조말론') {
@@ -59,6 +64,9 @@ export const BrandCategory = () => {
     if (active6) {
       setActive6(!active6);
     }
+    if (active7) {
+      setActive7(!active7);
+    }
     Perfume.map((item, index) => {
       if (item.brand === '샤넬') {
         brand2.push(item);
@@ -77,7 +85,9 @@ export const BrandCategory = () => {
     } else if (active5) {
       setActive5(!active5);
     } else if (active6) {
-      setActive5(!active6);
+      setActive6(!active6);
+    } else if (active7) {
+      setActive7(!active7);
     }
     Perfume.map((item, index) => {
       if (item.brand === '딥디크') {
@@ -98,7 +108,9 @@ export const BrandCategory = () => {
     } else if (active5) {
       setActive5(!active5);
     } else if (active6) {
-      setActive5(!active6);
+      setActive6(!active6);
+    } else if (active7) {
+      setActive7(!active7);
     }
     Perfume.map((item, index) => {
       if (item.brand === '구찌') {
@@ -119,6 +131,8 @@ export const BrandCategory = () => {
       setActive4(!active4);
     } else if (active6) {
       setActive5(!active6);
+    } else if (active7) {
+      setActive7(!active7);
     }
     Perfume.map((item, index) => {
       if (item.brand === '불가리') {
@@ -140,11 +154,35 @@ export const BrandCategory = () => {
       setActive4(!active4);
     } else if (active5) {
       setActive5(!active5);
+    } else if (active7) {
+      setActive7(!active7);
     }
     Perfume.map((item, index) => {
       if (item.brand === '크리드') {
         brand6.push(item);
         setBrand6(brand6);
+      }
+    });
+  }
+  function brandcheck7() {
+    setActive7(!active7);
+    if (active1) {
+      setActive1(!active1);
+    } else if (active2) {
+      setActive2(!active2);
+    } else if (active3) {
+      setActive3(!active3);
+    } else if (active4) {
+      setActive4(!active4);
+    } else if (active5) {
+      setActive5(!active5);
+    } else if (active6) {
+      setActive6(!active6);
+    }
+    Perfume.map((item, index) => {
+      if (item.brand === '버버리') {
+        brand7.push(item);
+        setBrand7(brand7);
       }
     });
   }
@@ -170,6 +208,9 @@ export const BrandCategory = () => {
         </li>
         <li className="assortList">
           <button onClick={brandcheck6}>크리드</button>
+        </li>
+        <li className="assortList">
+          <button onClick={brandcheck7}>버버리</button>
         </li>
       </BrandPage>
       <AssortPage>
@@ -259,6 +300,23 @@ export const BrandCategory = () => {
         {active6 ? (
           <div className="cartegory-card">
             {brand6.map((item, index) => (
+              <div key={index}>
+                <Cards
+                  image={item.image}
+                  alt={item.alt}
+                  title={item.title}
+                  etitle={item.etitle}
+                  des={item.des}
+                  price={item.price}
+                  brand={item.brand}
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {active7 ? (
+          <div className="cartegory-card">
+            {brand7.map((item, index) => (
               <div key={index}>
                 <Cards
                   image={item.image}
