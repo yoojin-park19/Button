@@ -120,7 +120,7 @@ export const QuestionGiftPage = (props) => {
   );
 };
 const Button = styled.button`
-  width: 300px;
+  width: 450px;
   height: 100px;
   margin: 80px auto;
   border-radius: 10px;
@@ -130,7 +130,7 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  font-family: ${Font.title};
+  font-family: ${Font.kr};
   background-color: ${COLOR.top};
   color: #fff;
   &:hover {
@@ -139,6 +139,10 @@ const Button = styled.button`
   }
   @media screen and (max-width: 720px) {
     font-size: 24px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 350px;
+    height: 100px;
   }
 `;
 
@@ -167,10 +171,10 @@ const QuestionGift = styled.section`
     label {
       display: flex;
       width: 45vw;
-      height: 80px;
+      height: 65px;
       box-sizing: border-box;
       margin-bottom: 10px;
-      padding: 25px;
+      padding: 12px 25px;
       font-size: 16px;
       border-radius: 10px;
       background-color: ${COLOR.top};
@@ -184,9 +188,10 @@ const QuestionGift = styled.section`
           content: '';
           display: block;
           background: url('./images/background/backgrounditem.png');
-          width: 30px;
-          height: 60px;
-          margin: -18px 15px 0 0;
+          background-size: contain;
+          width: 20px;
+          height: 40px;
+          margin: -5px 15px 0 0;
         }
       }
     }
@@ -205,36 +210,37 @@ const QuestionGift = styled.section`
     width: 90vw;
     .itemContainer {
       label {
-        height: 60px;
+        height: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         width: 80vw;
         padding: 5px;
-        font-size: 15px;
+        font-size: 20px;
         line-height: 20px;
-        &:hover {
-          background-color: rgba(202, 171, 32, 0.322);
-          color: ${COLOR.trend_main};
-          &::before {
-            content: '';
-            display: block;
-            background: url('./images/background/backgrounditem.png');
-            width: 30px;
-            height: 60px;
-            margin: -18px 15px 0 0;
-          }
-        }
       }
     }
     .questionTit {
       text-align: center;
-      font-size: 19px;
-      margin-bottom: 30px;
+      font-size: 24px;
+      margin: 40px 0;
     }
     .count {
-      margin-top: 20px;
+      margin-top: 10px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .questionTit {
+      font-size: 18px;
+    }
+    .itemContainer {
+      label {
+        height: 70px;
+        width: 80vw;
+        padding: 15px;
+        font-size: 16px;
+      }
     }
   }
 `;

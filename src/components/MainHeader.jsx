@@ -116,4 +116,5 @@ const Mainheader = styled.section`
   }
   @media screen and (max-width: 720px) {
     background-color: #fff;
+  }
 `;

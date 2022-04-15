@@ -78,7 +78,7 @@ const Welcome = styled.section`
 
 const TestPage = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   background-color: ${COLOR.top};
   font-family: ${Font.kr};
@@ -89,12 +89,12 @@ const TestPage = styled.section`
     position: relative;
     background-color: ${COLOR.top};
     box-sizing: border-box;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-left: 5vw;
     padding-right: 5vw;
   }
   .wrap {
-    height: 90vh;
+    height: 80vh;
     width: 50vw;
     padding: 50px 5vw;
     box-sizing: border-box;
@@ -106,12 +106,21 @@ const TestPage = styled.section`
     .container {
       width: 100vw;
       height: 90vh;
-      padding-top: 10px;
+      padding-top: 50px;
     }
     .wrap {
-      height: 70vh;
+      height: 100vh;
       width: 90vw;
-      padding: 40px 0px;
+      padding: 20px 0px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .container {
+      padding-top: 30px;
+    }
+    .wrap {
+      height: 95vh;
+      padding: 5px 0px;
     }
   }
 `;
