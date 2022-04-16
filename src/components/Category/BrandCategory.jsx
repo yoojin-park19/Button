@@ -6,6 +6,16 @@ import { Font, COLOR } from '../../constants';
 import { Cards } from './CategoryItem';
 
 export const BrandCategory = () => {
+  let [int1, setInt1] = useState(0);
+  let [int2, setInt2] = useState(0);
+  let [int3, setInt3] = useState(0);
+  let [int4, setInt4] = useState(0);
+  let [int5, setInt5] = useState(0);
+  let [int6, setInt6] = useState(0);
+  let [int7, setInt7] = useState(0);
+  let [int8, setInt8] = useState(0);
+  let [int9, setInt9] = useState(0);
+  let [int10, setInt10] = useState(0);
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
   const [active3, setActive3] = useState(false);
@@ -16,44 +26,58 @@ export const BrandCategory = () => {
   const [active8, setActive8] = useState(false);
   const [active9, setActive9] = useState(false);
   const [active10, setActive10] = useState(false);
-  const [brand1, setBrand1] = useState([]);
-  const [brand2, setBrand2] = useState([]);
-  const [brand3, setBrand3] = useState([]);
-  const [brand4, setBrand4] = useState([]);
-  const [brand5, setBrand5] = useState([]);
-  const [brand6, setBrand6] = useState([]);
-  const [brand7, setBrand7] = useState([]);
-  const [brand8, setBrand8] = useState([]);
-  const [brand9, setBrand9] = useState([]);
-  const [brand10, setBrand10] = useState([]);
+  let [brand1, setBrand1] = useState([]);
+  let [brand2, setBrand2] = useState([]);
+  let [brand3, setBrand3] = useState([]);
+  let [brand4, setBrand4] = useState([]);
+  let [brand5, setBrand5] = useState([]);
+  let [brand6, setBrand6] = useState([]);
+  let [brand7, setBrand7] = useState([]);
+  let [brand8, setBrand8] = useState([]);
+  let [brand9, setBrand9] = useState([]);
+  let [brand10, setBrand10] = useState([]);
   function brandcheck1() {
     setActive1(!active1);
+    setInt1(int1++);
+    if (int1 === 1) {
+      setBrand1((brand1 = []));
+      setInt1((int1 = 0));
+    }
     if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     }
     if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     }
     if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     }
     if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     }
     if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     }
     if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     }
     if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     }
     if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     }
     if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '조말론') {
@@ -64,32 +88,38 @@ export const BrandCategory = () => {
   }
   function brandcheck2() {
     setActive2(!active2);
+    setInt2(int2++);
+    if (int2 === 1) {
+      setBrand2((brand2 = []));
+      setInt2((int2 = 0));
+    }
     if (active1) {
       setActive1(!active1);
-    }
-    if (active3) {
+      setBrand1((brand1 = []));
+    } else if (active3) {
       setActive3(!active3);
-    }
-    if (active4) {
+      setBrand3((brand3 = []));
+    } else if (active4) {
       setActive4(!active4);
-    }
-    if (active5) {
+      setBrand4((brand4 = []));
+    } else if (active5) {
       setActive5(!active5);
-    }
-    if (active6) {
+      setBrand5((brand5 = []));
+    } else if (active6) {
       setActive6(!active6);
-    }
-    if (active7) {
+      setBrand6((brand6 = []));
+    } else if (active7) {
       setActive7(!active7);
-    }
-    if (active8) {
+      setBrand7((brand7 = []));
+    } else if (active8) {
       setActive8(!active8);
-    }
-    if (active9) {
+      setBrand8((brand8 = []));
+    } else if (active9) {
       setActive9(!active9);
-    }
-    if (active10) {
+      setBrand9((brand9 = []));
+    } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '샤넬') {
@@ -100,24 +130,38 @@ export const BrandCategory = () => {
   }
   function brandcheck3() {
     setActive3(!active3);
+    setInt3(int3++);
+    if (int3 === 1) {
+      setBrand3((brand3 = []));
+      setInt3((int3 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '딥디크') {
@@ -126,27 +170,40 @@ export const BrandCategory = () => {
       }
     });
   }
-
   function brandcheck4() {
     setActive4(!active4);
+    setInt4(int4++);
+    if (int4 === 1) {
+      setBrand4((brand4 = []));
+      setInt4((int4 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '구찌') {
@@ -157,24 +214,38 @@ export const BrandCategory = () => {
   }
   function brandcheck5() {
     setActive5(!active5);
+    setInt5(int5++);
+    if (int5 === 1) {
+      setBrand5((brand5 = []));
+      setInt5((int5 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active6) {
-      setActive5(!active6);
+      setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '불가리') {
@@ -183,27 +254,40 @@ export const BrandCategory = () => {
       }
     });
   }
-
   function brandcheck6() {
     setActive6(!active6);
+    setInt6(int6++);
+    if (int6 === 1) {
+      setBrand6((brand6 = []));
+      setInt6((int6 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '크리드') {
@@ -214,24 +298,38 @@ export const BrandCategory = () => {
   }
   function brandcheck7() {
     setActive7(!active7);
+    setInt7(int7++);
+    if (int7 === 1) {
+      setBrand7((brand7 = []));
+      setInt7((int7 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '버버리') {
@@ -242,24 +340,38 @@ export const BrandCategory = () => {
   }
   function brandcheck8() {
     setActive8(!active8);
+    setInt8(int8++);
+    if (int8 === 1) {
+      setBrand8((brand8 = []));
+      setInt8((int8 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '바이레도') {
@@ -270,24 +382,38 @@ export const BrandCategory = () => {
   }
   function brandcheck9() {
     setActive9(!active9);
+    setInt9(int9++);
+    if (int9 === 1) {
+      setBrand9((brand9 = []));
+      setInt9((int9 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active10) {
       setActive10(!active10);
+      setBrand10((brand10 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '아쿠아디파르마') {
@@ -298,24 +424,38 @@ export const BrandCategory = () => {
   }
   function brandcheck10() {
     setActive10(!active10);
+    setInt10(int10++);
+    if (int10 === 1) {
+      setBrand10((brand10 = []));
+      setInt10((int10 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setBrand1((brand1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setBrand2((brand2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setBrand3((brand3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setBrand4((brand4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setBrand5((brand5 = []));
     } else if (active6) {
       setActive6(!active6);
+      setBrand6((brand6 = []));
     } else if (active7) {
       setActive7(!active7);
+      setBrand7((brand7 = []));
     } else if (active8) {
       setActive8(!active8);
+      setBrand8((brand8 = []));
     } else if (active9) {
       setActive9(!active9);
+      setBrand9((brand9 = []));
     }
     Perfume.map((item, index) => {
       if (item.brand === '르라보') {
