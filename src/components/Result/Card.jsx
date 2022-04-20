@@ -8,7 +8,7 @@ export const Cards = (props) => {
       <p className="title">{props.title}</p>
       <p className="etitle">{props.etitle}</p>
       <p className="price">50ml 기준 : {props.price} 원</p>
-      <p classNmae="des">{props.des}</p>
+      <p className="des">{props.des}</p>
       <p className="brand">{props.brand}</p>
     </Card>
   );

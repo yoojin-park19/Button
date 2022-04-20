@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { COLOR, Font } from '../constants';
 import { MainHeader } from '../components/MainHeader';
-
 import { QuestionGiftPage } from '../components/Test/QuestionGift';
 
 const GiftIndexPage = () => {
