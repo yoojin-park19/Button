@@ -87,6 +87,8 @@ const TestPage = styled.section`
   display: flex;
   background-color: ${COLOR.top};
   font-family: ${Font.kr};
+  padding-bottom: 20px;
+
   .container {
     width: 60vw;
     margin: 0 auto;
