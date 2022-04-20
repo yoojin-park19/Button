@@ -116,10 +116,11 @@ const ResultIndexPage = (props) => {
       }
     }
   }
-  let firstOne = matchData[0];
-  let SecondOne = matchData[1];
-  let ThirdOne = matchData[2];
-
+  // Issue#49
+  let reduceDuple = [...new Set(matchData.map(JSON.stringify))].map(JSON.parse);
+  let firstOne = reduceDuple[0];
+  let SecondOne = reduceDuple[1];
+  let ThirdOne = reduceDuple[2];
   return (
     <>
       <MainHeader />
