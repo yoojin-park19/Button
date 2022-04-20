@@ -69,15 +69,19 @@ export const ItemContainer = (props) => {
             {ScrollY <= 400 && ScrollY >= 200 ? (
               <TextContainer
                 src={'./images/about/chanel_item.png'}
-                title={'두번째 페이지'}
-                des={'오늘도 좋은 향수와 함께하세요.'}
+                title={'다양하게 준비했어요.'}
+                des={
+                  '카테고리 페이지에서는 향수를 세분화해서 추천 향수뿐만 아니라, 다양한 향수를 구경하실 수 있어요.'
+                }
               />
             ) : null}
             {ScrollY >= 401 ? (
               <TextContainer
                 src={'./images/about/deep_item.png'}
-                title={'세번째 페이지'}
-                des={'오늘도 좋은 향수와 함께하세요.'}
+                title={'자주 방문해주세요'}
+                des={
+                  '계속 들어오시고 싶어질 수 있도록 페이지를 꾸준히 업데이트 할게요.'
+                }
               />
             ) : null}
           </ItemWrapper>
