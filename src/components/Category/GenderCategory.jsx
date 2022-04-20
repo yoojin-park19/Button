@@ -9,17 +9,27 @@ export const GenderCategory = () => {
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
   const [active3, setActive3] = useState(false);
-  const [gender1, setGender1] = useState([]);
-  const [gender2, setGender2] = useState([]);
-  const [gender3, setGender3] = useState([]);
+  let [int1, setInt1] = useState(0);
+  let [int2, setInt2] = useState(0);
+  let [int3, setInt3] = useState(0);
+  let [gender1, setGender1] = useState([]);
+  let [gender2, setGender2] = useState([]);
+  let [gender3, setGender3] = useState([]);
 
   function gendercheck1() {
     setActive1(!active1);
+    setInt1(int1++);
+    if (int1 === 1) {
+      setGender1((gender1 = []));
+      setInt1((int1 = 0));
+    }
     if (active2) {
       setActive2(!active2);
+      setGender2((gender2 = []));
     }
     if (active3) {
       setActive3(!active3);
+      setGender3((gender3 = []));
     }
     Perfume.map((item, index) => {
       if (item.gender === 1) {
@@ -28,13 +38,21 @@ export const GenderCategory = () => {
       }
     });
   }
+
   function gendercheck2() {
     setActive2(!active2);
+    setInt2(int2++);
+    if (int2 === 1) {
+      setGender2((gender2 = []));
+      setInt2((int2 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setGender1((gender1 = []));
     }
     if (active3) {
       setActive3(!active3);
+      setGender3((gender3 = []));
     }
     Perfume.map((item, index) => {
       if (item.gender === 2) {
@@ -43,12 +61,21 @@ export const GenderCategory = () => {
       }
     });
   }
+
   function gendercheck3() {
     setActive3(!active3);
+    setInt3(int3++);
+    if (int3 === 1) {
+      setGender3((gender3 = []));
+      setInt3((int3 = 0));
+    }
+    if (active2) {
+      setActive2(!active2);
+      setGender2((gender2 = []));
+    }
     if (active1) {
       setActive1(!active1);
-    } else if (active2) {
-      setActive2(!active2);
+      setGender1((gender1 = []));
     }
     Perfume.map((item, index) => {
       if (item.gender === 3) {
@@ -57,6 +84,7 @@ export const GenderCategory = () => {
       }
     });
   }
+
   return (
     <MiddleCategoryPage>
       <MiddlePage>
