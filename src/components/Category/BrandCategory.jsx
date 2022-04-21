@@ -717,14 +717,16 @@ const BrandPage = styled.ul`
     position: absolute;
     top: 0px;
     z-index: 999;
-    left: -23px;
-    width: 100%;
+    left: -20px;
+    width: 100vw;
+    overflow: scroll;
     .assortList {
       display: flex;
-      width: 80px;
+      width: 100vw;
       height: 80px;
       button {
-        width: 150px;
+        width: 100%;
+        min-width: 60px;
         height: 80px;
         color: white;
         font-family: ${Font.gowun};
@@ -735,7 +737,7 @@ const BrandPage = styled.ul`
         color: #000;
         &:hover {
           background-color: ${COLOR.right};
-          width: 150px;
+          width: 100%;
           height: 80px;
         }
       }

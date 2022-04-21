@@ -6,29 +6,43 @@ import { Font, COLOR } from '../../constants';
 import { Cards } from './CategoryItem';
 
 export const MiddleCategory = () => {
+  let [int1, setInt1] = useState(0);
+  let [int2, setInt2] = useState(0);
+  let [int3, setInt3] = useState(0);
+  let [int4, setInt4] = useState(0);
+  let [int5, setInt5] = useState(0);
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
   const [active3, setActive3] = useState(false);
   const [active4, setActive4] = useState(false);
   const [active5, setActive5] = useState(false);
-  const [middle1, setMiddle1] = useState([]);
-  const [middle2, setMiddle2] = useState([]);
-  const [middle3, setMiddle3] = useState([]);
-  const [middle4, setMiddle4] = useState([]);
-  const [middle5, setMiddle5] = useState([]);
+  let [middle1, setMiddle1] = useState([]);
+  let [middle2, setMiddle2] = useState([]);
+  let [middle3, setMiddle3] = useState([]);
+  let [middle4, setMiddle4] = useState([]);
+  let [middle5, setMiddle5] = useState([]);
   function middlecheck1() {
     setActive1(!active1);
+    setInt1(int1++);
+    if (int1 === 1) {
+      setMiddle1((middle1 = []));
+      setInt1((int1 = 0));
+    }
     if (active2) {
       setActive2(!active2);
+      setMiddle2((middle2 = []));
     }
     if (active3) {
       setActive3(!active3);
+      setMiddle3((middle3 = []));
     }
     if (active4) {
       setActive4(!active4);
+      setMiddle4((middle4 = []));
     }
     if (active5) {
       setActive5(!active5);
+      setMiddle5((middle5 = []));
     }
     Perfume.map((item, index) => {
       if (item.second === 1) {
@@ -39,17 +53,26 @@ export const MiddleCategory = () => {
   }
   function middlecheck2() {
     setActive2(!active2);
+    setInt2(int2++);
+    if (int2 === 1) {
+      setMiddle2((middle2 = []));
+      setInt2((int2 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setMiddle1((middle1 = []));
     }
     if (active3) {
       setActive3(!active3);
+      setMiddle3((middle3 = []));
     }
     if (active4) {
       setActive4(!active4);
+      setMiddle4((middle4 = []));
     }
     if (active5) {
       setActive5(!active5);
+      setMiddle5((middle5 = []));
     }
     Perfume.map((item, index) => {
       if (item.second === 2) {
@@ -60,14 +83,23 @@ export const MiddleCategory = () => {
   }
   function middlecheck3() {
     setActive3(!active3);
+    setInt3(int3++);
+    if (int3 === 1) {
+      setMiddle3((middle3 = []));
+      setInt3((int3 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setMiddle1((middle1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setMiddle2((middle2 = []));
     } else if (active4) {
       setActive4(!active4);
+      setMiddle4((middle4 = []));
     } else if (active5) {
       setActive5(!active5);
+      setMiddle5((middle5 = []));
     }
     Perfume.map((item, index) => {
       if (item.second === 3) {
@@ -79,14 +111,23 @@ export const MiddleCategory = () => {
 
   function middlecheck4() {
     setActive4(!active4);
+    setInt4(int4++);
+    if (int4 === 1) {
+      setMiddle4((middle4 = []));
+      setInt4((int4 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setMiddle1((middle1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setMiddle2((middle2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setMiddle3((middle3 = []));
     } else if (active5) {
       setActive5(!active5);
+      setMiddle5((middle5 = []));
     }
     Perfume.map((item, index) => {
       if (item.second === 4) {
@@ -97,14 +138,23 @@ export const MiddleCategory = () => {
   }
   function middlecheck5() {
     setActive5(!active5);
+    setInt5(int5++);
+    if (int5 === 1) {
+      setMiddle5((middle5 = []));
+      setInt5((int5 = 0));
+    }
     if (active1) {
       setActive1(!active1);
+      setMiddle1((middle1 = []));
     } else if (active2) {
       setActive2(!active2);
+      setMiddle2((middle2 = []));
     } else if (active3) {
       setActive3(!active3);
+      setMiddle3((middle3 = []));
     } else if (active4) {
       setActive4(!active4);
+      setMiddle4((middle4 = []));
     }
     Perfume.map((item, index) => {
       if (item.second === 5) {
@@ -267,14 +317,14 @@ const MiddlePage = styled.ul`
     position: absolute;
     top: 0px;
     z-index: 999;
-    left: -23px;
-    width: 100%;
+    left: -20px;
+    width: 100vw;
     .assortList {
       display: flex;
-      width: 80px;
+      width: 100vw;
       height: 80px;
       button {
-        width: 150px;
+        width: 100%;
         height: 80px;
         color: white;
         font-family: ${Font.gowun};
@@ -285,7 +335,7 @@ const MiddlePage = styled.ul`
         color: #000;
         &:hover {
           background-color: ${COLOR.right};
-          width: 150px;
+          width: 100%;
           height: 80px;
         }
       }
