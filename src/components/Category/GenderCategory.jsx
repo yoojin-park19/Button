@@ -154,7 +154,7 @@ export const GenderCategory = () => {
 };
 
 const MiddleCategoryPage = styled.section`
-  height: 100vh;
+  height: 180px;
   width: 100vw;
   display: flex;
   @media screen and (max-width: 720px) {
@@ -174,7 +174,7 @@ const MiddlePage = styled.ul`
   margin-left: 20px;
   .assortList {
     button {
-      width: 250px;
+      width: 240px;
       height: 50px;
       color: white;
       font-family: ${Font.gowun};
@@ -184,7 +184,7 @@ const MiddlePage = styled.ul`
       background-color: transparent;
       &:hover {
         background-color: ${COLOR.figma};
-        width: 250px;
+        width: 240px;
         height: 50px;
       }
     }
@@ -229,7 +229,7 @@ const AssortPage = styled.section`
   width: 100vw;
   list-style: none;
   position: relative;
-  top: -220px;
+  top: -360px;
   padding: 100px;
   background-color: #fff;
   .cartegory-card {

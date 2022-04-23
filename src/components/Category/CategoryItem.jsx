@@ -6,7 +6,6 @@ export const Cards = (props) => {
   let str = props.des;
   let length = 100; // 표시할 글자수 기준
   if (str.length > length) {
-    console.log(str.length);
     str = str.substring(0, 100) + '...';
   }
 

@@ -79,7 +79,7 @@ export const CategoryMain = () => {
 
 const CategoryMainPage = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 880px;
   box-sizing: border-box;
   overflow: hidden;
   @media screen and (max-width: 720px) {
@@ -88,9 +88,9 @@ const CategoryMainPage = styled.section`
 `;
 
 const AssortContainer = styled.section`
-  height: 100vh;
   position: relative;
   display: flex;
+  overflow: scroll;
   padding-right: 20px;
   .assortwrap {
     background-color: ${COLOR.top};
@@ -111,7 +111,7 @@ const AssortContainer = styled.section`
     margin-left: 10px;
     &:hover {
       background-color: ${COLOR.figma};
-      width: 260px;
+      width: 250px;
       padding: 10px 0 10px 10px;
     }
   }
