@@ -10,11 +10,22 @@ export const TextContainer = (props) => {
           <li>
             <h3>{props.title} </h3>
           </li>
-          <li width={props.width} height={props.height} align={'start'}>
+          <li width={props.width} height={props.height} align={'center'}>
             {props.des}
           </li>
-          <li width={props.width} height={props.height} align={'start'}>
+          <li width={props.width} height={props.height} align={'center'}>
             {props.des2}
+          </li>
+          <li width={props.width} height={props.height} align={'center'}>
+            {props.des3}
+          </li>
+          <li
+            className="animation"
+            width={props.width}
+            height={props.height}
+            align={'center'}
+          >
+            {props.des4}
           </li>
         </ul>
       </TextContainers>
@@ -22,6 +33,15 @@ export const TextContainer = (props) => {
   );
 };
 const TextContainers = styled.div`
+  @keyframes animation1 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -30,7 +50,7 @@ const TextContainers = styled.div`
   width: 80vw;
   height: 80vh;
   text-align: center;
-  font-family: ${Font.title};
+  font-family: ${Font.des};
   .fixed {
     display: fixed;
   }
@@ -39,16 +59,22 @@ const TextContainers = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
     width: 300px;
     height: 300px;
+    .animation {
+      font-family: ${Font.ko};
+    }
     li {
       margin-bottom: 20px;
       width: ${(props) => `${props.width}`}px;
       height: ${(props) => `${props.height}`}px;
       text-align: ${(props) => `${props.align}`};
       h3 {
-        font-family: ${Font.title};
-        font-size: 20px;
+        text-shadow: 4px 3px 4px rgba(106, 105, 106, 0.6);
+        font-family: ${Font.des};
+        font-size: 26px;
         margin-bottom: 30px;
       }
     }
@@ -57,6 +83,7 @@ const TextContainers = styled.div`
     width: 280px;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
   }
+
   @media screen and (max-width: 420px) {
     gap: 10px;
     width: 280px;

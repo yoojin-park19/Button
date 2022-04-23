@@ -57,11 +57,11 @@ export const ItemContainer = (props) => {
             {ScrollY >= 0 && ScrollY < 200 ? (
               <TextContainer
                 src={'./images/about/gucci_item.png'}
-                title={'안녕하세요'}
-                des={'저희 사이트를 방문해주셔서 감사드립니다.'}
-                des2={
-                  '저희는 향수를 더 친숙하고, 쉽게 접할 수 있도록 만들고 싶어서 이 사이트를 제작하였습니다.'
-                }
+                title={'방문해주셔서 감사드립니다.'}
+                des={'저희는 향수를 더 친숙하고'}
+                des2={`쉽게 접할 수 있도록 만들자! `}
+                des3={`하는 생각으로 부터 출발하게 되었습니다.`}
+                des4={'↓ 스크롤을 내려주세요 ↓'}
                 width={300}
                 height={100}
               />
@@ -69,19 +69,21 @@ export const ItemContainer = (props) => {
             {ScrollY <= 400 && ScrollY >= 200 ? (
               <TextContainer
                 src={'./images/about/chanel_item.png'}
-                title={'다양하게 준비했어요.'}
-                des={
-                  '카테고리 페이지에서는 향수를 세분화해서 추천 향수뿐만 아니라, 다양한 향수를 구경하실 수 있어요.'
-                }
+                title={'다양하게 준비했어요!!'}
+                des={'카테고리 페이지에서는 향수를 세분화해서'}
+                des2={` 추천 향수뿐만 아니라`}
+                des3={`다양한 향수를 구경하실 수 있어요.`}
+                des4={'↓ 스크롤을 내려주세요 ↓'}
               />
             ) : null}
             {ScrollY >= 401 ? (
               <TextContainer
                 src={'./images/about/deep_item.png'}
                 title={'자주 방문해주세요'}
-                des={
-                  '계속 들어오시고 싶어질 수 있도록 페이지를 꾸준히 업데이트 할게요.'
-                }
+                des={'계속 들어오시고 싶어질 수 있도록 '}
+                des2={'페이지는 계속해서 업데이트 될거에요.'}
+                des3={'많은 도움이 되었으면 좋겠습니다.'}
+                des4={'↓ 스크롤을 내려주세요 ↓'}
               />
             ) : null}
           </ItemWrapper>
@@ -166,7 +168,7 @@ const ItemContainers = styled.div`
 `;
 const Title = styled.p`
   font-size: ${(props) => `${props.size}px`};
-  font-family: ${Font.title};
+  font-family: ${Font.kr};
   margin-top: ${(props) => `${props.top}px`};
   color: ${(props) => `${props.color}`};
   text-shadow: ${(props) => `${props.shadow}`};

@@ -464,8 +464,6 @@ export const BrandCategory = () => {
       }
     });
   }
-
-  // console.log(price1);
   return (
     <BrandCategoryPage>
       <BrandPage>
@@ -675,7 +673,7 @@ export const BrandCategory = () => {
 };
 
 const BrandCategoryPage = styled.section`
-  height: 100vh;
+  height: 500px;
   width: 100vw;
   display: flex;
   @media screen and (max-width: 720px) {
@@ -695,7 +693,7 @@ const BrandPage = styled.ul`
   margin-left: 20px;
   .assortList {
     button {
-      width: 250px;
+      width: 240px;
       height: 50px;
       color: white;
       font-family: ${Font.gowun};
@@ -705,7 +703,7 @@ const BrandPage = styled.ul`
       background-color: transparent;
       &:hover {
         background-color: ${COLOR.figma};
-        width: 250px;
+        width: 240px;
         height: 50px;
       }
     }
