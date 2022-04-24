@@ -88,16 +88,17 @@ const CategoryMainPage = styled.section`
 `;
 
 const AssortContainer = styled.section`
-  position: relative;
+  height: 883px;
   display: flex;
+  position: relative;
   overflow: scroll;
   padding-right: 20px;
   .assortwrap {
-    background-color: ${COLOR.top};
     display: flex;
+    padding-top: 100px;
+    background-color: ${COLOR.top};
     gap: 20px 0;
     flex-direction: column;
-    padding-top: 100px;
   }
   .listCont {
     width: 250px;
