@@ -349,7 +349,7 @@ const AssortPage = styled.section`
   width: 100vw;
   list-style: none;
   position: relative;
-  top: -170px;
+  top: -156px;
   padding: 100px;
   background-color: #fff;
   .cartegory-card {
