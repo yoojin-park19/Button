@@ -3,10 +3,30 @@ import { COLOR } from '../../constants';
 import { Font } from '../../constants';
 import { Link } from 'react-router-dom';
 import { MainBackAni } from '../../components/Main/MainBackAni';
+import { useState, useEffect } from 'react';
 
 export const FirstMain = () => {
+  const [isMobile, setisMobile] = useState(false);
+  const resizingHandler = () => {
+    if (window.innerWidth <= 720) {
+      setisMobile(true);
+    } else {
+      setisMobile(false);
+    }
+  };
+  useEffect(() => {
+    if (window.innerWidth <= 720) {
+      setisMobile(true);
+    }
+    window.addEventListener('resize', resizingHandler);
+    return () => {
+      window.removeEventListener('resize', resizingHandler);
+    };
+  }, []);
+
   return (
     <FirstMainPage>
+      {isMobile ? <MainBackAni /> : null}
       <div className="cont-item">
         <div className="cont-tit">
           <h2>For You</h2>
@@ -22,7 +42,7 @@ export const FirstMain = () => {
         </div>
       </div>
       <div className="img-wrap">
-        <MainBackAni />
+        {isMobile ? null : <MainBackAni />}
         <img src="./images/background/first.jpg" alt="france" />
       </div>
     </FirstMainPage>
@@ -78,15 +98,17 @@ const FirstMainPage = styled.section`
       flex-direction: column;
       align-items: center;
       margin-left: 120px;
-      width: 300px;
       text-align: center;
-      h2 {
-        font-size: 50px;
-        color: #fff;
-      }
-      .kr {
-        font-size: 16px;
-        color: #fff;
+      .cont-tit {
+        width: 320px;
+        h2 {
+          font-size: 50px;
+          color: #fff;
+        }
+        .kr {
+          font-size: 16px;
+          color: #fff;
+        }
       }
     }
     img {

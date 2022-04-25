@@ -163,8 +163,6 @@ export const PriceCategory = () => {
       }
     });
   }
-
-  // console.log(price1);
   return (
     <PriceCategoryPage>
       <PricePage>

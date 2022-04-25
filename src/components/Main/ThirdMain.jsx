@@ -60,6 +60,7 @@ const ThridMainPage = styled.section`
     }
   }
   .img-wrap {
+    display: none;
     width: 50%;
     position: relative;
     img {
@@ -72,20 +73,25 @@ const ThridMainPage = styled.section`
     align-items: center;
     background: url('./images/background/third.jpg');
     background-size: cover;
+    justify-content: center;
     .cont-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-left: 120px;
-      width: 300px;
       text-align: center;
-      h2 {
-        font-size: 50px;
-        color: #fff;
-      }
-      .kr {
-        font-size: 16px;
-        color: #fff;
+      justify-content: center;
+      width: 100%;
+      .cont-tit {
+        z-index: 20;
+        width: 320px;
+        h2 {
+          font-size: 50px;
+          color: #fff;
+        }
+        .kr {
+          font-size: 16px;
+          color: #fff;
+        }
       }
     }
     img {
@@ -94,7 +100,6 @@ const ThridMainPage = styled.section`
     @media screen and (max-width: 420px) {
       .cont-item {
         width: 200px;
-        margin-left: 25%;
       }
     }
   }
