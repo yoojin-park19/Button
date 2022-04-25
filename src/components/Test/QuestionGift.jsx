@@ -18,7 +18,6 @@ export const QuestionGiftPage = (props) => {
       setTest(Test + 1);
     }
   };
-  console.log(checkList);
   return (
     <>
       {Test !== 5 ? (

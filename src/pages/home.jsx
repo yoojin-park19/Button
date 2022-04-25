@@ -15,7 +15,6 @@ const HomeIndexPage = () => {
   if (active) {
     setTimeout(function () {
       locateKap();
-      console.log('실행');
     }, 2500);
     function locateKap() {
       window.location.href = '/main';

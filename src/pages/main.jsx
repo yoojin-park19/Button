@@ -15,9 +15,7 @@ const MainIndexPage = () => {
   function onScroll() {
     setTestY((testY = window.scrollY));
     if (testY < comparisionY[0]) {
-      console.log('위로 올렸습니다.');
     } else if (testY > comparisionY[0]) {
-      console.log('아래로 내렸습니다.');
     }
     setComparisionY(comparisionY.splice(0, 1, testY));
   }

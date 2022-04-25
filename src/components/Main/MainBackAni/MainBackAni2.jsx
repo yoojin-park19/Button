@@ -1,11 +1,8 @@
 import styled from '@emotion/styled';
-import { COLOR } from '../../constants';
-import { Font } from '../../constants';
-import { Link } from 'react-router-dom';
-import { ItemStarLeft, ItemStarRight } from './ItemStar';
+import { ItemStarLeft, ItemStarRight } from '../ItemStar';
 import { useState } from 'react';
 
-export const MainBackAni = (props) => {
+export const MainBackAni2 = (props) => {
   const [arr, setArr] = useState([]);
   const [arr1, setArr1] = useState([]);
   for (let i = 1; i < 6; i++) {
@@ -58,7 +55,7 @@ export const MainBackAni = (props) => {
     left3.push(parseInt(i * 303 + i * 30));
   }
   return (
-    <MainBackAniPage>
+    <MainBackAniPage2>
       {arr1.map((item, index) => (
         <ItemStarLeft
           key={index.toString()}
@@ -267,11 +264,11 @@ export const MainBackAni = (props) => {
           background={`#fff`}
         />
       ))}
-    </MainBackAniPage>
+    </MainBackAniPage2>
   );
 };
 
-const MainBackAniPage = styled.section`
+const MainBackAniPage2 = styled.section`
   position: absolute;
   width: 100%;
   height: 100%;

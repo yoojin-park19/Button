@@ -163,8 +163,6 @@ export const MiddleCategory = () => {
       }
     });
   }
-
-  // console.log(price1);
   return (
     <MiddleCategoryPage>
       <MiddlePage>
