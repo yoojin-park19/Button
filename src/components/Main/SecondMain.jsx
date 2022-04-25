@@ -2,21 +2,27 @@ import styled from '@emotion/styled';
 import { COLOR } from '../../constants';
 import { Font } from '../../constants';
 import { Link } from 'react-router-dom';
+import { MainBackAni } from '../../components/Main/MainBackAni';
 
 export const SecondMain = () => {
   return (
     <SecondMainPage>
-      <img src="./images/background/second.jpg" alt="" />
+      <div className="img-wrap">
+        <MainBackAni />
+        <img src="./images/background/second.jpg" alt="London" />
+      </div>
       <div className="cont-item">
-        <h2>For your loved ones</h2>
-        <p className="kr">
-          당신의 소중한 사람의 분위기나 느낌에 따라 선물을 추천해드릴께요.
-        </p>
-        <Link to="/test">
-          <Button>
-            <p>보러가기</p>
-          </Button>
-        </Link>
+        <div className="cont-tit">
+          <h2>For your loved ones</h2>
+          <p className="kr">
+            당신의 소중한 사람의 분위기나 느낌에 따라 선물을 추천해드릴께요.
+          </p>
+          <Link to="/test">
+            <Button>
+              <p>보러가기</p>
+            </Button>
+          </Link>
+        </div>
       </div>
     </SecondMainPage>
   );
@@ -26,28 +32,40 @@ const SecondMainPage = styled.section`
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  img {
+  .img-wrap {
     width: 50%;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .cont-item {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 15%;
-    width: 400px;
-    text-align: center;
-    h2 {
-      font-size: 90px;
-      font-family: ${Font.etitle};
-      color: #000;
-      text-shadow: 8px 4px 5px #4f355ab1;
-    }
-    .kr {
-      color: #000;
-      font-size: 20px;
-      line-height: 1.5;
-      margin-top: 40px;
-      font-family: ${Font.kr};
+    align-items: center;
+    .cont-tit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      text-align: center;
+      h2 {
+        font-size: 90px;
+        font-family: ${Font.etitle};
+        color: #000;
+        text-shadow: 8px 4px 5px #4f355ab1;
+      }
+      .kr {
+        color: #000;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: 40px;
+        font-family: ${Font.kr};
+      }
     }
   }
   @media screen and (max-width: 720px) {

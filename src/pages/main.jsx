@@ -6,7 +6,6 @@ import { FirstMain } from '../components/Main/FirstMain';
 import { SecondMain } from '../components/Main/SecondMain';
 import { ThirdMain } from '../components/Main/ThirdMain';
 import { ForthMain } from '../components/Main/ForthMain';
-import { MainBackAni } from '../components/Main/MainBackAni';
 import { useState, useRef } from 'react';
 import { useEffect } from 'react';
 const MainIndexPage = () => {
@@ -22,12 +21,10 @@ const MainIndexPage = () => {
     }
     setComparisionY(comparisionY.splice(0, 1, testY));
   }
-
   return (
     <>
       <MainHeader />
       <MainPage>
-        <MainBackAni />
         <Fade left>
           <FirstMain />
         </Fade>
