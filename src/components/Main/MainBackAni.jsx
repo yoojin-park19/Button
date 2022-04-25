@@ -32,19 +32,19 @@ export const MainBackAni = (props) => {
   let duration5 = [];
   let duration6 = [];
 
-  for (let i = 1; i < 11; i++) {
+  for (let i = 1; i < 5; i++) {
     arr.push(i);
     top.push(parseInt(i * 50 + i * 30));
     top2.push(parseInt(i * 76 + i * 42));
-    top4.push(parseInt(i * 76 + 600));
-    top5.push(parseInt(i * 76 + 1000));
+    top4.push(parseInt(i * 76 + 50));
+    top5.push(parseInt(i * 86 + 60));
     top6.push(parseInt(i * 76));
     top7.push(parseInt(i * 126));
     top_fixed.push(parseInt(136));
-    left.push(parseInt(i * 60 + i * 30));
-    left2.push(parseInt(i * 83 + i * 30));
-    left4.push(parseInt(i * 103 + i * 30));
-    left5.push(parseInt(i * 123 + i * 160));
+    left.push(parseInt(i * 60 + 10));
+    left2.push(parseInt(i * 83 + 20));
+    left4.push(parseInt(i * 113 + 30));
+    left5.push(parseInt(i * 123 + 40));
     left6.push(parseInt(i * 143 + i * 260));
     duration.push(Math.random() * 7.13 + 0.4);
     duration2.push(Math.random() * 7.8 + 0.4);
@@ -57,9 +57,11 @@ export const MainBackAni = (props) => {
     top3.push(parseInt(i * 186 + i * 22));
     left3.push(parseInt(i * 303 + i * 30));
   }
+  console.log(left[0]);
+  console.log(arr1);
   return (
     <MainBackAniPage>
-      {arr.map((item, index) => (
+      {arr1.map((item, index) => (
         <ItemStarLeft
           key={index.toString()}
           item={'star_' + index}
@@ -72,7 +74,7 @@ export const MainBackAni = (props) => {
           background={'#fff'}
         />
       ))}
-      {arr.map((item, index) => (
+      {arr1.map((item, index) => (
         <ItemStarLeft
           key={(index + 30).toString()}
           item={'star_' + index}
@@ -85,7 +87,7 @@ export const MainBackAni = (props) => {
           background={'#fff'}
         />
       ))}
-      {arr.map((item, index) => (
+      {arr1.map((item, index) => (
         <ItemStarRight
           key={(index + 60).toString()}
           item={'star_' + index}
@@ -178,145 +180,93 @@ export const MainBackAni = (props) => {
       ))}
       {arr1.map((item, index) => (
         <ItemStarRight
+          key={(index + 220).toString()}
+          item={'star_' + index}
+          top={30}
+          right={left2[index]}
+          width={3}
+          height={3}
+          scale={1.2}
+          duration={duration2[index]}
+          background={`#fff`}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 230).toString()}
+          item={'star_' + index}
+          top={40}
+          right={left3[index]}
+          width={2}
+          height={2}
+          scale={1.2}
+          duration={duration3[index]}
+          background={`#fff`}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
           key={(index + 240).toString()}
           item={'star_' + index}
-          top={top6[index]}
-          right={left2[index]}
+          top={50}
+          right={left5[index]}
+          width={2}
+          height={2}
+          scale={1.6}
+          duration={duration6[index]}
+          background={`#fff`}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 250).toString()}
+          item={'star_' + index}
+          top={100}
+          right={left4[index]}
           width={1}
           height={1}
-          scale={5}
-          duration={duration2[index]}
-          background={'#fff'}
+          scale={1.8}
+          duration={duration4[index]}
+          background={`#fff`}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 260).toString()}
+          item={'star_' + index}
+          top={12}
+          right={left5[index]}
+          width={2}
+          height={2}
+          scale={1.2}
+          duration={duration5[index]}
+          background={`#fff`}
         />
       ))}
       {arr1.map((item, index) => (
         <ItemStarRight
           key={(index + 270).toString()}
           item={'star_' + index}
-          top={top7[index]}
+          top={130}
           right={left2[index]}
+          width={3}
+          height={3}
+          scale={1.2}
+          duration={duration6[index]}
+          background={`#fff`}
+        />
+      ))}
+      {arr1.map((item, index) => (
+        <ItemStarRight
+          key={(index + 280).toString()}
+          item={'star_' + index}
+          top={140}
+          right={left3[index]}
           width={1}
           height={1}
-          scale={1.2}
-          duration={duration3[index]}
-          background={'yellow'}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 300).toString()}
-          item={'star_' + index}
-          top={top_fixed[index]}
-          right={left5[index]}
-          width={2}
-          height={2}
-          scale={1.2}
-          duration={duration5[index]}
-          background={'yellow'}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 300).toString()}
-          item={'star_' + index}
-          top={210}
-          right={left3[index]}
-          width={2}
-          height={2}
-          scale={1.2}
+          scale={2}
           duration={duration2[index]}
-          background={'yellow'}
-        />
-      ))}
-      {arr.map((item, index) => (
-        <ItemStarRight
-          key={(index + 330).toString()}
-          item={'star_' + index}
-          top={322}
-          right={left5[index]}
-          width={2}
-          height={2}
-          scale={1.2}
-          duration={duration5[index]}
-          background={'yellow'}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 360).toString()}
-          item={'star_' + index}
-          top={522}
-          right={left4[index]}
-          width={1}
-          height={1}
-          scale={1.2}
-          duration={duration2[index]}
-          background={'#fff'}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 390).toString()}
-          item={'star_' + index}
-          top={722}
-          right={left6[index]}
-          width={2}
-          height={2}
-          scale={1.2}
-          duration={duration3[index]}
-          background={'yellow'}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 420).toString()}
-          item={'star_' + index}
-          top={352}
-          right={left3[index]}
-          width={2}
-          height={2}
-          duration={duration3[index]}
-          background={'#F5F1E0'}
-          scale={2}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 420).toString()}
-          item={'star_' + index}
-          top={452}
-          right={left4[index]}
-          width={2}
-          height={2}
-          duration={duration3[index]}
-          background={'#F5F1E0'}
-          scale={2}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 420).toString()}
-          item={'star_' + index}
-          top={962}
-          right={left2[index]}
-          width={2}
-          height={2}
-          duration={duration3[index]}
-          background={'#F5F1E0'}
-          scale={2}
-        />
-      ))}
-      {arr1.map((item, index) => (
-        <ItemStarRight
-          key={(index + 420).toString()}
-          item={'star_' + index}
-          top={1232}
-          right={left2[index]}
-          width={2}
-          height={2}
-          duration={duration3[index]}
-          background={'#F5F1E0'}
-          scale={2}
+          background={`#fff`}
         />
       ))}
     </MainBackAniPage>

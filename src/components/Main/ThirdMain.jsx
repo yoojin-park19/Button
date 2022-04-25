@@ -7,18 +7,22 @@ export const ThirdMain = () => {
   return (
     <ThridMainPage>
       <div className="cont-item">
-        <h2>about Perfume</h2>
-        <p className="kr">
-          당신이 원하는 향기, 브랜드, 느낌, 예산에 맞춰 향수를 찾아 볼 수
-          있습니다.
-        </p>
-        <Link to="/category">
-          <Button>
-            <p>보러가기</p>
-          </Button>
-        </Link>
+        <div className="cont-tit">
+          <h2>about Perfume</h2>
+          <p className="kr">
+            당신이 원하는 향기, 브랜드, 느낌, 예산에 맞춰 향수를 찾아 볼 수
+            있습니다.
+          </p>
+          <Link to="/category">
+            <Button>
+              <p>보러가기</p>
+            </Button>
+          </Link>
+        </div>
       </div>
-      <img src="./images/background/third.jpg" alt="" />
+      <div className="img-wrap">
+        <img src="./images/background/third.jpg" alt="Italy" />
+      </div>
     </ThridMainPage>
   );
 };
@@ -28,28 +32,40 @@ const ThridMainPage = styled.section`
   display: flex;
   justify-content: space-between;
   .cont-item {
+    width: 50%;
     display: flex;
-    margin-left: 15%;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
-    text-align: center;
-    h2 {
-      font-size: 90px;
-      font-family: ${Font.etitle};
-      color: #000;
-      text-shadow: 8px 4px 5px #4f355ab1;
-    }
-    .kr {
-      color: #000;
-      font-size: 20px;
-      line-height: 1.5;
-      margin-top: 40px;
-      font-family: ${Font.kr};
+    align-items: center;
+    .cont-tit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      text-align: center;
+      h2 {
+        font-size: 90px;
+        font-family: ${Font.etitle};
+        color: #000;
+        text-shadow: 8px 4px 5px #4f355ab1;
+      }
+      .kr {
+        color: #000;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: 40px;
+        font-family: ${Font.kr};
+      }
     }
   }
-  img {
+  .img-wrap {
     width: 50%;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
   @media screen and (max-width: 720px) {
     display: flex;
