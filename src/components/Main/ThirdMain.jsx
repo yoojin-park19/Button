@@ -60,7 +60,6 @@ const ThridMainPage = styled.section`
     }
   }
   .img-wrap {
-    display: none;
     width: 50%;
     position: relative;
     img {
@@ -94,8 +93,12 @@ const ThridMainPage = styled.section`
         }
       }
     }
-    img {
+    .img-wrap {
       display: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
     @media screen and (max-width: 420px) {
       .cont-item {
