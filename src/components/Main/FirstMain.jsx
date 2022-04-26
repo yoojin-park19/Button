@@ -93,11 +93,11 @@ const FirstMainPage = styled.section`
     display: flex;
     align-items: center;
     background: url('./images/background/first.jpg');
+    justify-content: center;
     .cont-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-left: 120px;
       text-align: center;
       .cont-tit {
         width: 320px;
@@ -111,13 +111,15 @@ const FirstMainPage = styled.section`
         }
       }
     }
-    img {
+    .img-wrap {
       display: none;
+      img {
+        display: none;
+      }
     }
     @media screen and (max-width: 420px) {
       .cont-item {
         width: 200px;
-        margin-left: 25%;
       }
     }
   }

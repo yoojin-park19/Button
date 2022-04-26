@@ -210,6 +210,30 @@ const ImgContainer = styled.div`
     bottom: 100px;
     left: 0;
   }
+  @media screen and (max-width: 720px) {
+    position: absolute;
+    width: 95vw;
+    height: 80vh;
+    .item2 {
+      width: 160px;
+      position: absolute;
+      top: 0px;
+      right: 0;
+    }
+    .item3 {
+      width: 160px;
+      position: absolute;
+      bottom: -70px;
+      left: 0;
+      transform: rotate(-40deg);
+    }
+    .item4 {
+      width: 150px;
+      position: absolute;
+      bottom: 100px;
+      left: 0;
+    }
+  }
   @media screen and (max-width: 420px) {
     display: none;
   }
