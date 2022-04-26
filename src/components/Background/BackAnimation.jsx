@@ -17,9 +17,10 @@ export const BackAnimationIndex = (props) => {
 
 const BackAnimation = styled.div`
   position: relative;
-  left: -65px;
+  top: 50vh;
+  left: 50vw;
   width: 100px;
-  z-index: -20;
+  z-index: 0;
   .item0,
   .item1,
   .item2,
@@ -111,7 +112,15 @@ const BackAnimation = styled.div`
     &.on {
       transform: ${(props) =>
         `translateX(${props.transFormX}px) translateY(${props.transFormY}px)`};
-      transition: ${(props) => props.duration * 0.4}s;
+      transition: ${(props) => props.duration * 0.4 + 2}s;
     }
+  }
+  @media screen and (max-width: 720px) {
+    top: 50vh;
+    left: 40vw;
+  }
+  @media screen and (max-width: 420px) {
+    top: 50vh;
+    left: 40vw;
   }
 `;

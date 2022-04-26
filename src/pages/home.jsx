@@ -15,7 +15,7 @@ const HomeIndexPage = () => {
   if (active) {
     setTimeout(function () {
       locateKap();
-    }, 2500);
+    }, 2000);
     function locateKap() {
       window.location.href = '/main';
     }
@@ -41,72 +41,38 @@ const HomeIndexPage = () => {
   };
   return (
     <HomePage>
-      <img
-        src="../images/newLogo.jpg
-        "
-        className="logo"
-        alt="button"
-        onClick={check}
-      />
-      <div className="cont-check">
-        <div>{rendering()}</div>
-        {active ? (
-          <div>
-            <div className="card right fadeout"></div>
+      <MainCont>
+        <BackAniCont>
+          <div className="cont-check">
+            <div>{rendering()}</div>
           </div>
-        ) : null}
-      </div>
+          {active ? (
+            <div>
+              <div className="card right fadeout"></div>
+            </div>
+          ) : null}
+        </BackAniCont>
+        <Container>
+          <img
+            src="../images/icon/button.png
+        "
+            className="logo"
+            alt="button"
+            onClick={check}
+          />
+        </Container>
+      </MainCont>
     </HomePage>
   );
 };
-
 const HomePage = styled.section`
-  @keyframes fadein {
-    100% {
-      opacity: 0.1;
-      transform: scale(0);
-    }
-    80% {
-      opacity: 0.5;
-      transform: scale(5);
-    }
-    60% {
-      opacity: 0.6;
-      transform: scale(6);
-    }
-    40% {
-      opacity: 0.8;
-      transform: scale(8);
-    }
-    20% {
-      opacity: 0.9;
-      transform: scale(9);
-    }
-    0% {
-      opacity: 1;
-      transform: scale(10);
-    }
-  }
+  background-color: #000;
+  z-index: -30;
+`;
+const MainCont = styled.div`
   position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url('./images/flowers_circle.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  position: relative;
-  overflow: hidden;
-  .logo {
-    position: absolute;
-    border-radius: 100%;
-    top: 32%;
-    width: 300px;
-    height: 300px;
-    z-index: 10;
-  }
+`;
+const BackAniCont = styled.div`
   .cont-check {
     position: relative;
     top: 50%;
@@ -117,6 +83,7 @@ const HomePage = styled.section`
     height: 300px;
     transform: scale(10);
     border-radius: 100%;
+    z-index: -10;
     .right {
       position: absolute;
       top: 50px;
@@ -127,28 +94,29 @@ const HomePage = styled.section`
       top: -50px;
       left: 0;
     }
-    &.fadeout {
-      animation: fadein 2s linear 0s reverse;
-      background-color: #fff;
-      border-radius: 100px;
-      z-index: 30;
-    }
   }
-  @media screen and (max-width: 720px) {
-    .logo {
-      position: absolute;
-      top: 35%;
-      width: 250px;
-      height: 250px;
-    }
-    @media screen and (max-width: 420px) {
-      .logo {
-        position: absolute;
-        top: 40%;
-        width: 160px;
-        height: 160px;
-      }
-    }
+`;
+const Container = styled.section`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('./images/background/home.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  .logo {
+    position: absolute;
+    border-radius: 100%;
+    top: 48%;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
   }
 `;
 
