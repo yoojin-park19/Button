@@ -270,6 +270,7 @@ export const MainBackAni2 = (props) => {
 
 const MainBackAniPage2 = styled.section`
   position: absolute;
+  z-index: 20;
   width: 100%;
   height: 100%;
 `;
