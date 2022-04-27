@@ -36,7 +36,7 @@ export const SecondMain = () => {
           <p className="kr">
             당신의 소중한 사람의 분위기나 느낌에 따라 선물을 추천해드릴께요.
           </p>
-          <Link to="/test">
+          <Link to="/gift">
             <Button>
               <p>보러가기</p>
             </Button>

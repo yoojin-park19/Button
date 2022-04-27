@@ -3,6 +3,7 @@ import { COLOR } from '../../constants';
 import { Font } from '../../constants';
 import { Link } from 'react-router-dom';
 import { MainBackAni } from '../../components/Main/MainBackAni';
+import { MainBackAni2 } from '../../components/Main/MainBackAni/MainBackAni2';
 import { useState, useEffect } from 'react';
 
 export const FirstMain = () => {
@@ -26,7 +27,7 @@ export const FirstMain = () => {
 
   return (
     <FirstMainPage>
-      {isMobile ? <MainBackAni /> : null}
+      {isMobile ? <MainBackAni2 /> : null}
       <div className="cont-item">
         <div className="cont-tit">
           <h2>For You</h2>
@@ -99,6 +100,8 @@ const FirstMainPage = styled.section`
       flex-direction: column;
       align-items: center;
       text-align: center;
+      position: relative;
+      z-index: 30;
       .cont-tit {
         width: 320px;
         h2 {
@@ -117,10 +120,10 @@ const FirstMainPage = styled.section`
         display: none;
       }
     }
-    @media screen and (max-width: 420px) {
-      .cont-item {
-        width: 200px;
-      }
+  }
+  @media screen and (max-width: 420px) {
+    .cont-item {
+      width: 200px;
     }
   }
 `;
