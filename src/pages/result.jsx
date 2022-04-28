@@ -5,6 +5,11 @@ import { COLOR } from '../constants';
 import { Font } from '../constants';
 import { MainHeader } from '../components/MainHeader';
 import { Cards } from '../components/Result/Card';
+import {
+  CardDefault1,
+  CardDefault2,
+  CardDefault3,
+} from '../components/Result/CardDefault';
 import { Perfume } from '../constants/database';
 const ResultIndexPage = (props) => {
   const [active, setActive] = useState(false);
@@ -46,7 +51,7 @@ const ResultIndexPage = (props) => {
   }
 
   function Score() {
-    for (let i = 0; i <= 18; i++) {
+    for (let i = 0; i <= 102; i++) {
       let score = 0;
       for (let j = 0; j <= 4; j++) {
         if (dataList[i][j] === testList[j]) {
@@ -84,8 +89,7 @@ const ResultIndexPage = (props) => {
         matchData.push(matchData75);
         setMatchData(matchData);
       } else {
-        matchData.push(333333);
-        setMatchData(matchData);
+        setMatchData([]);
       }
     } else if (count === 1) {
       let i = parseInt(Object.keys(match100[0]).join(''));
@@ -99,8 +103,7 @@ const ResultIndexPage = (props) => {
           setMatchData(matchData);
         }
       } else {
-        matchData.push(333333);
-        setMatchData(matchData);
+        setMatchData([]);
       }
     } else {
       if (count75) {
@@ -111,13 +114,17 @@ const ResultIndexPage = (props) => {
           setMatchData(matchData);
         }
       } else {
-        matchData.push(333333);
-        setMatchData(matchData);
+        setMatchData([]);
       }
     }
   }
   // Issue#49
   let reduceDuple = [...new Set(matchData.map(JSON.stringify))].map(JSON.parse);
+  console.log(reduceDuple);
+  console.log(reduceDuple[0]);
+  console.log(reduceDuple[1]);
+  console.log(reduceDuple[2]);
+  console.log(matchData);
   let firstOne = reduceDuple[0];
   let SecondOne = reduceDuple[1];
   let ThirdOne = reduceDuple[2];
@@ -135,30 +142,42 @@ const ResultIndexPage = (props) => {
         {active ? (
           <ResultShowPage>
             <CardList>
-              {firstOne.map((item, index) => (
-                <div key={index}>
-                  <Cards
-                    image={item.image}
-                    title={item.title}
-                    etitle={item.etitle}
-                    des={item.des}
-                    price={item.price}
-                    brand={item.brand}
-                  />
-                </div>
-              ))}
-              {SecondOne.map((item, index) => (
-                <div key={index}>
-                  <Cards
-                    image={item.image}
-                    title={item.title}
-                    etitle={item.etitle}
-                    des={item.des}
-                    price={item.price}
-                    brand={item.brand}
-                  />
-                </div>
-              ))}
+              {firstOne ? (
+                <>
+                  {firstOne.map((item, index) => (
+                    <div key={index}>
+                      <Cards
+                        image={item.image}
+                        title={item.title}
+                        etitle={item.etitle}
+                        des={item.des}
+                        price={item.price}
+                        brand={item.brand}
+                      />
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <CardDefault1 />
+              )}
+              {SecondOne ? (
+                <>
+                  {SecondOne.map((item, index) => (
+                    <div key={index}>
+                      <Cards
+                        image={item.image}
+                        title={item.title}
+                        etitle={item.etitle}
+                        des={item.des}
+                        price={item.price}
+                        brand={item.brand}
+                      />
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <CardDefault2 />
+              )}
               {ThirdOne ? (
                 <>
                   {ThirdOne.map((item, index) => (
@@ -174,7 +193,11 @@ const ResultIndexPage = (props) => {
                     </div>
                   ))}
                 </>
-              ) : null}
+              ) : (
+                <>
+                  <CardDefault3 />
+                </>
+              )}
             </CardList>
             <Link to="/test">
               <button className="btn-again">Find Again</button>
