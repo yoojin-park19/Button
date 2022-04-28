@@ -1,45 +1,99 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 import styled from '@emotion/styled';
 import { MainHeader } from '../components/MainHeader';
 import { FirstMain } from '../components/Main/FirstMain';
 import { SecondMain } from '../components/Main/SecondMain';
 import { ThirdMain } from '../components/Main/ThirdMain';
 import { ForthMain } from '../components/Main/ForthMain';
-import { useState, useRef } from 'react';
-import { useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+
 const MainIndexPage = () => {
-  const test = useRef(null);
-  let [testY, setTestY] = useState(0);
-  let [comparisionY, setComparisionY] = useState([0]);
-  function onScroll() {
-    setTestY((testY = window.scrollY));
-    if (testY < comparisionY[0]) {
-    } else if (testY > comparisionY[0]) {
-    }
-    setComparisionY(comparisionY.splice(0, 1, testY));
-  }
+  let scrollRef = useRef();
+  let [scrollYY, setScrollYY] = useState(0);
+  let [allowed, setAllowed] = useState(false);
+  useEffect(() => {
+    const wheelHandler = (e) => {
+      const { deltaY } = e;
+      const pageHeight = window.innerHeight;
+      if (0 < deltaY && scrollYY === 0) {
+        window.scrollTo({
+          top: pageHeight + 100,
+          behavior: 'smooth',
+        });
+        setScrollYY((scrollYY = 1));
+      } else if (deltaY > 0 && scrollYY === 1) {
+        window.scrollTo({
+          top: pageHeight * 2 + 100,
+          behavior: 'smooth',
+        });
+        setScrollYY((scrollYY = 2));
+      } else if (deltaY < 0 && scrollYY === 2) {
+        window.scrollTo({
+          top: pageHeight + 100,
+          behavior: 'smooth',
+        });
+        setScrollYY((scrollYY = 1));
+      } else if (deltaY < 0 && scrollYY === 1) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+        setScrollYY((scrollYY = 0));
+      }
+
+      // else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+      //   console.log('아래로 내리기 실행2');
+      //   scrollRef.current.scrollTo({
+      //     top: pageHeight * 2,
+      //     behavior: 'smooth',
+      //   });
+      // } else {
+      //   scrollRef.current.scrollTo({
+      //     top: pageHeight * 3,
+      //     behavior: 'smooth',
+      //   });
+      // }
+      // } else {
+      //   if (scrollTop >= 0 && scrollTop < pageHeight) {
+      //     scrollRef.current.scrollTo({
+      //       top: 0,
+      //       behavior: 'smooth',
+      //     });
+      //   } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+      //     scrollRef.current.scrollTo({
+      //       top: 0,
+      //       behavior: 'smooth',
+      //     });
+      //   } else {
+      //     scrollRef.current.scrollTo({
+      //       top: pageHeight,
+      //       behavior: 'smooth',
+      //     });
+      //   }
+      // }
+    };
+    const scrollRefCurrent = scrollRef.current;
+    scrollRefCurrent.addEventListener('wheel', wheelHandler);
+    return () => {
+      scrollRefCurrent.removeEventListener('wheel', wheelHandler);
+    };
+  }, [scrollRef, scrollYY]);
+
   return (
-    <>
+    <Container ref={scrollRef}>
       <MainHeader />
       <MainPage>
-        <Fade left>
-          <FirstMain />
-        </Fade>
-        <Fade right>
-          <SecondMain />
-        </Fade>
-        <Fade left>
-          <ThirdMain />
-        </Fade>
-        <Fade bottom>
-          <ForthMain />
-        </Fade>
+        <FirstMain />
+        <SecondMain />
+        <ThirdMain />
+        <ForthMain />
       </MainPage>
-    </>
+    </Container>
   );
 };
+const Container = styled.section``;
 const MainPage = styled.section`
+  overflow-y: auto;
   position: relative;
   background-size: cover;
   overflow: hidden;
