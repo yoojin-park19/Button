@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { COLOR } from '../../constants';
 import { Font } from '../../constants';
 import { Link } from 'react-router-dom';
-import { MainBackAni } from '../../components/Main/MainBackAni';
-import { MainBackAni2 } from '../../components/Main/MainBackAni/MainBackAni2';
+import { MainBackAni } from './MainBackAni';
+import { MainBackAni2 } from './MainBackAnimation/MainBackAni2';
 import { useState, useEffect } from 'react';
 
 export const FirstMain = () => {
@@ -51,6 +51,7 @@ export const FirstMain = () => {
 };
 
 const FirstMainPage = styled.section`
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: space-between;

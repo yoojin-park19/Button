@@ -40,37 +40,6 @@ const MainIndexPage = () => {
         });
         setScrollYY((scrollYY = 0));
       }
-
-      // else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-      //   console.log('아래로 내리기 실행2');
-      //   scrollRef.current.scrollTo({
-      //     top: pageHeight * 2,
-      //     behavior: 'smooth',
-      //   });
-      // } else {
-      //   scrollRef.current.scrollTo({
-      //     top: pageHeight * 3,
-      //     behavior: 'smooth',
-      //   });
-      // }
-      // } else {
-      //   if (scrollTop >= 0 && scrollTop < pageHeight) {
-      //     scrollRef.current.scrollTo({
-      //       top: 0,
-      //       behavior: 'smooth',
-      //     });
-      //   } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-      //     scrollRef.current.scrollTo({
-      //       top: 0,
-      //       behavior: 'smooth',
-      //     });
-      //   } else {
-      //     scrollRef.current.scrollTo({
-      //       top: pageHeight,
-      //       behavior: 'smooth',
-      //     });
-      //   }
-      // }
     };
     const scrollRefCurrent = scrollRef.current;
     scrollRefCurrent.addEventListener('wheel', wheelHandler);
