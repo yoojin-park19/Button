@@ -149,8 +149,6 @@ const QuestionGift = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40vw;
-  height: 100px;
   .itemContainer {
     display: flex;
     flex-direction: column;
@@ -183,6 +181,8 @@ const QuestionGift = styled.section`
       &:hover {
         background-color: rgba(202, 171, 32, 0.322);
         color: ${COLOR.trend_main};
+        font-size: 19px;
+        line-height: 45px;
         &::before {
           content: '';
           display: block;
@@ -206,8 +206,8 @@ const QuestionGift = styled.section`
     margin-top: 20px;
   }
   @media screen and (max-width: 720px) {
-    width: 90vw;
     .itemContainer {
+      padding-bottom: 20px;
       label {
         height: 80px;
         display: flex;
@@ -218,6 +218,9 @@ const QuestionGift = styled.section`
         padding: 5px;
         font-size: 20px;
         line-height: 20px;
+        &:hover {
+          font-size: 18px;
+        }
       }
     }
     .questionTit {
@@ -239,6 +242,15 @@ const QuestionGift = styled.section`
         width: 80vw;
         padding: 15px;
         font-size: 14px;
+        &:hover {
+          background-color: rgba(202, 171, 32, 0.322);
+          color: ${COLOR.trend_main};
+          font-size: 14px;
+          line-height: 15px;
+          &::before {
+            background-repeat: no-repeat;
+          }
+        }
       }
     }
   }

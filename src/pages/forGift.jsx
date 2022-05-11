@@ -70,7 +70,12 @@ const Welcome = styled.section`
   @media screen and (max-width: 420px) {
     font-size: 22px;
     button {
+      display: flex;
+      flex-direction: row;
       font-size: 26px;
+      img {
+        margin-top: -20px;
+      }
     }
   }
 `;
@@ -81,9 +86,10 @@ const TestPage = styled.section`
   display: flex;
   background-color: ${COLOR.top};
   font-family: ${Font.kr};
+  padding-bottom: 20px;
+
   .container {
     width: 60vw;
-    height: 95vh;
     margin: 0 auto;
     position: relative;
     background-color: ${COLOR.top};
@@ -93,7 +99,6 @@ const TestPage = styled.section`
     padding-right: 5vw;
   }
   .wrap {
-    height: 80vh;
     width: 50vw;
     padding: 50px 5vw;
     box-sizing: border-box;
@@ -104,21 +109,22 @@ const TestPage = styled.section`
   @media screen and (max-width: 720px) {
     .container {
       width: 100vw;
-      height: 90vh;
+      height: 150vh;
       padding-top: 50px;
     }
     .wrap {
-      height: 100vh;
       width: 90vw;
       padding: 20px 0px;
     }
   }
   @media screen and (max-width: 420px) {
+    width: 100vw;
+    height: 100vh;
     .container {
       padding-top: 30px;
+      height: 80vh;
     }
     .wrap {
-      height: 75vh;
       padding: 5px 0px;
     }
   }
